@@ -27,7 +27,7 @@ const Testimonials = () => {
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
             Quem treina na Full Force{" "}
-            <span className="text-primary">transforma resultados</span>
+            <span className="absolute -top-3 right-3 bg-yellow-400 text-black text-xs font-extrabold px-2 py-1 rounded-full">Mais escolhido</span>
           </h2>
         </div>
 
@@ -40,7 +40,8 @@ const Testimonials = () => {
               <CardContent className="p-8">
                 <Quote className="w-12 h-12 text-primary mb-6 opacity-50" />
                 
-                <p className="text-lg text-white mb-6 leading-relaxed">
+                <p className="text-3xl font-bold">R$ 900</p>
+<p className="text-sm text-gray-400">(ou R$ 75 por mês)</p>
                   "{testimonial.quote}"
                 </p>
 
