@@ -6,16 +6,18 @@ import testimonialAna from "@/assets/testimonial-ana.jpg";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "João C.",
+      name: "João S.",
       age: 46,
+      location: "Bairro Centro",
       image: testimonialJoao,
-      quote: "Eu não tinha mais disposição pra nada. Na Full Force, perdi 12kg e hoje tenho a energia que não tinha aos 30. Virou minha segunda casa.",
+      quote: "Perdi 8kg em 3 meses e ganhei outra disposição. O acompanhamento aqui é diferente.",
     },
     {
       name: "Ana P.",
-      age: 22,
+      age: 28,
+      location: "Bairro Jardim",
       image: testimonialAna,
-      quote: "Eu tinha vergonha de treinar. A equipe me acolheu e em 6 meses consegui a definição que sempre quis e uma nova confiança.",
+      quote: "A equipe me acolheu desde o primeiro dia. Em 6 meses conquistei a confiança que me faltava. Vale cada dia.",
     },
   ];
 
@@ -50,7 +52,7 @@ const Testimonials = () => {
                   />
                   <div>
                     <p className="font-bold text-white text-lg">{testimonial.name}</p>
-                    <p className="text-gray-400">{testimonial.age} anos</p>
+                    <p className="text-gray-400">{testimonial.age} anos · {testimonial.location}</p>
                   </div>
                 </div>
               </CardContent>

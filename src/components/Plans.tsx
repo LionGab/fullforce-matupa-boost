@@ -28,6 +28,7 @@ const Plans = () => {
       price: "R$ 1.428",
       monthly: "R$ 119/mês",
       dailyCost: "Menos de R$ 4 por dia",
+      savings: "Economize até 40%",
       isPopular: true,
       features: [
         "Acesso completo à academia",
@@ -80,7 +81,7 @@ const Plans = () => {
                 </div>
               )}
 
-              <CardHeader className="pt-8">
+               <CardHeader className="pt-8">
                 <CardTitle className="text-2xl font-black text-foreground">
                   {plan.title}
                 </CardTitle>
@@ -94,6 +95,11 @@ const Plans = () => {
                   <div className="text-muted-foreground text-sm mt-1">ou {plan.monthly}</div>
                   {plan.dailyCost && (
                     <div className="text-primary font-bold text-lg mt-2">🔥 {plan.dailyCost}</div>
+                  )}
+                  {(plan as any).savings && (
+                    <Badge className="bg-primary/20 text-primary border-primary mt-2">
+                      {(plan as any).savings}
+                    </Badge>
                   )}
                 </div>
               </CardHeader>
