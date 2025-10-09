@@ -32,32 +32,14 @@ const handleClose = () => {
   return (
     <div className="fixed top-24 left-1/2 -translate-x-1/2 w-[95%] sm:w-auto z-40 animate-fade-in">
       <div className="container mx-auto px-4">
-        <div className="bg-yellow-400 text-black p-3 sm:p-4 rounded-md shadow-md relative mx-auto text-sm sm:text-base w-full sm:max-w-3xl">
-          <button
-            onClick={handleClose}
-            className="absolute top-2 right-2 text-gym-dark hover:bg-gym-dark/10 rounded-full p-1 transition-smooth"
-            aria-label="Fechar banner"
-          >
-            <X className="w-5 h-5" />
-          </button>
-
-          {!showForm ? (
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pr-8">
-              <div className="flex items-center gap-3 text-gym-dark">
-                <Gift className="w-8 h-8 flex-shrink-0" />
-                <div>
-                  <p className="font-black text-lg">Ex-aluno? Temos um presente para você.</p>
-                  <p className="text-sm font-semibold">Volte a treinar com 1 semana grátis + matrícula por nossa conta</p>
-                </div>
-              </div>
-              <Button
-                onClick={() => setShowForm(true)}
-                variant="secondary"
-                className="bg-gym-dark text-white hover:bg-gym-dark/90 font-bold whitespace-nowrap"
-              >
-                Quero minha vaga
-              </Button>
-            </div>
+        <div className="bg-yellow-400 text-black p-3 rounded-md shadow-md max-w-[90%] mx-auto text-sm md:text-base mb-4">
+  <p className="font-semibold flex items-center gap-2">
+    🎁 Ex-aluno? <span className="font-normal">1 semana grátis + matrícula por nossa conta.</span>
+  </p>
+  <button className="mt-2 bg-black text-yellow-400 text-sm px-3 py-1 rounded-md">
+    Quero minha vaga
+  </button>
+</div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-3 pr-8">
               <p className="font-black text-gym-dark mb-2">Preencha para garantir sua vaga:</p>
