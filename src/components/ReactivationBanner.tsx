@@ -16,7 +16,7 @@ const ReactivationBanner = () => {
   useEffect(() => {
     const seen = localStorage.getItem("seenReactivationBanner");
     if (!seen) {
-      const timer = setTimeout(() => setIsVisible(true), 3000);
+      const timer = setTimeout(() => setIsVisible(true), 8000);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -45,7 +45,7 @@ const ReactivationBanner = () => {
   return (
     <div className="fixed top-24 left-1/2 -translate-x-1/2 w-[95%] sm:w-auto z-40 animate-fade-in">
       <div className="container mx-auto px-4">
-        <div className="bg-yellow-400 text-black p-3 sm:p-4 rounded-md shadow-md relative mx-auto text-sm sm:text-base w-full sm:max-w-3xl">
+        <div className="bg-yellow-400/90 backdrop-blur-md text-black p-3 sm:p-4 rounded-md shadow-md relative mx-auto text-sm sm:text-base w-full sm:max-w-3xl border border-yellow-500/40">
           <button
             onClick={handleClose}
             className="absolute top-2 right-2 text-gym-dark hover:bg-gym-dark/10 rounded-full p-1 transition-smooth"
