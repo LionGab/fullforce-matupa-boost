@@ -14,12 +14,13 @@ const Index = () => {
       <ReactivationBanner />
       <WhatsAppFloat />
       <main>
-        <Hero />
-        <Plans />
-        <Benefits />
-        <Testimonials />
-        <FinalCTA />
-      </main>
+  <Hero />
+  <WhatsAppFloat />   {/* aqui dentro */}
+  <Plans />
+  <Benefits />
+  <Testimonials />
+  <FinalCTA />
+</main>
       
       {/* Footer */}
       <footer className="bg-gym-dark text-white py-8">
