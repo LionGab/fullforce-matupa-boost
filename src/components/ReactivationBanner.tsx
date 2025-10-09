@@ -31,9 +31,9 @@ const ReactivationBanner = () => {
   };
 
   return (
-    <div className="fixed top-20 left-0 right-0 z-40 animate-fade-in">
+    <div className="fixed top-24 left-1/2 -translate-x-1/2 w-[95%] sm:w-auto z-40 animate-fade-in">
       <div className="container mx-auto px-4">
-        <div className="bg-gradient-to-r from-primary via-gym-yellow-glow to-primary p-4 rounded-lg shadow-yellow relative max-w-4xl mx-auto">
+        <div className="bg-yellow-400 text-black p-3 sm:p-4 rounded-md shadow-md relative mx-auto text-sm sm:text-base w-full sm:max-w-3xl">
           <button
             onClick={() => setIsVisible(false)}
             className="absolute top-2 right-2 text-gym-dark hover:bg-gym-dark/10 rounded-full p-1 transition-smooth"
