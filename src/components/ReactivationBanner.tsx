@@ -44,7 +44,7 @@ const ReactivationBanner = () => {
 
   return (
     <div className="fixed bottom-6 right-4 sm:right-8 z-40 animate-fade-in">
-      <div className="bg-yellow-400/95 backdrop-blur-md text-black p-4 rounded-lg shadow-lg w-[90%] sm:w-80 relative border border-yellow-500/40">
+      <div className="bg-yellow-300/95 backdrop-blur-sm text-black p-4 rounded-lg shadow-lg w-[90%] sm:w-80 relative border border-yellow-400">
         <button
           onClick={handleClose}
           className="absolute top-2 right-2 text-gym-dark hover:bg-gym-dark/10 rounded-full p-1 transition-smooth"
