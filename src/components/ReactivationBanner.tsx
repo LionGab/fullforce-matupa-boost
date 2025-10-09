@@ -5,7 +5,12 @@ import { Input } from "@/components/ui/input";
 import { toast } from "@/hooks/use-toast";
 
 const ReactivationBanner = () => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
+
+useEffect(() => {
+  const timer = setTimeout(() => setIsVisible(true), 3000);
+  return () => clearTimeout(timer);
+}, []);
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
     nome: "",
