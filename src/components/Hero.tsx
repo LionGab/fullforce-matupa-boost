@@ -4,11 +4,11 @@ import gymHero from "@/assets/gym-hero.png";
 
 const Hero = () => {
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/5566999999999?text=Olá! Quero minha aula grátis na Full Force Academia", "_blank");
+    window.open("https://wa.me/6699100808?text=Olá! Quero minha aula grátis na Full Force Academia", "_blank");
   };
 
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+   <section className="relative h-[70vh] flex items-center pt-20 overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
