@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 const Plans = () => {
   const handleWhatsAppClick = (plan: string) => {
     const message = `Olá! Tenho interesse no ${plan} da Full Force Academia`;
-    window.open(`https://wa.me/5566999999999?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(`https://wa.me/5566999100808?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   const plans = [
