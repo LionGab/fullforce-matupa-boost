@@ -8,15 +8,18 @@ const ReactivationBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
 
 useEffect(() => {
-  const timer = setTimeout(() => setIsVisible(true), 3000);
-  return () => clearTimeout(timer);
+  const seen = localStorage.getItem("seenReactivationBanner");
+  if (!seen) {
+    const timer = setTimeout(() => setIsVisible(true), 3000);
+    return () => clearTimeout(timer);
+  }
 }, []);
-  const [showForm, setShowForm] = useState(false);
-  const [formData, setFormData] = useState({
-    nome: "",
-    whatsapp: "",
-    ano: "",
-  });
+
+const handleClose = () => {
+  setIsVisible(false);
+  localStorage.setItem("seenReactivationBanner", "true");
+};
+
 
   if (!isVisible) return null;
 
@@ -40,7 +43,7 @@ useEffect(() => {
       <div className="container mx-auto px-4">
         <div className="bg-yellow-400 text-black p-3 sm:p-4 rounded-md shadow-md relative mx-auto text-sm sm:text-base w-full sm:max-w-3xl">
           <button
-            onClick={() => setIsVisible(false)}
+            onClick={handleClose}
             className="absolute top-2 right-2 text-gym-dark hover:bg-gym-dark/10 rounded-full p-1 transition-smooth"
             aria-label="Fechar banner"
           >
