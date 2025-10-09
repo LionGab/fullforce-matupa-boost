@@ -4,7 +4,7 @@ import gymExterior from "@/assets/gym-exterior.jpg";
 
 const FinalCTA = () => {
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/5566999999999?text=Olá! Quero começar minha transformação na Full Force Academia", "_blank");
+    window.open("https://wa.me/5566999100808?text=Olá! Quero começar minha transformação na Full Force Academia", "_blank");
   };
 
   const handleMapClick = () => {
