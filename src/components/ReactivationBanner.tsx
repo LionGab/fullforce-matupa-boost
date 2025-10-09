@@ -26,15 +26,6 @@ const handleClose = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Here you would integrate with Google Sheets API or your backend
-    // For now, we'll just show a success message
-    console.log("Ex-aluno data:", formData);
-    
-    toast({
-      title: "Vaga garantida! 🎉",
-      description: "Nossa equipe entrará em contato em breve via WhatsApp.",
-    });
-    
     setIsVisible(false);
   };
 
@@ -72,13 +63,7 @@ const handleClose = () => {
               <p className="font-black text-gym-dark mb-2">Preencha para garantir sua vaga:</p>
               <div className="grid sm:grid-cols-3 gap-3">
                 <Input
-                  type="text"
-                  placeholder="Seu nome"
-                  value={formData.nome}
-                  onChange={(e) => setFormData({ ...formData, nome: e.target.value })}
-                  required
-                  className="bg-white border-gym-dark"
-                />
+
                 <Input
                   type="tel"
                   placeholder="WhatsApp"
