@@ -5,10 +5,9 @@ const WhatsAppFloat = () => {
   const handleWhatsAppClick = () => {
     // Track event for analytics (Google Tag / GTM)
     if (typeof window !== "undefined" && (window as any).gtag) {
-      (window as any).gtag("event", "click_whatsapp", {
-        event_category: "engagement",
-        event_label: "floating_button",
-      });
+      window.dataLayer?.push({ event: "click_whatsapp", placement: "floating_button" });
+window.open("https://wa.me/556699100808?text=Olá! Quero conhecer a Full Force Academia 💪", "_blank");
+
     }
 
     // Open WhatsApp chat
