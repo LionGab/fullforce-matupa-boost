@@ -26,19 +26,23 @@ const ReactivationBanner = () => {
     localStorage.setItem("seenReactivationBanner", "true");
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+  const msg = encodeURIComponent(
+    `Olá! Sou ex-aluno e quero voltar. 
+Nome: ${formData.nome} 
+WhatsApp: ${formData.whatsapp} 
+Ano que treinei: ${formData.ano}`
+  );
+  window.open(`https://wa.me/5566999100808?text=${msg}`, "_blank");
+  toast({
+    title: "Mensagem enviada via WhatsApp 🎉",
+    description: "Nossa equipe responderá em breve!",
+  });
+  setIsVisible(false);
+  localStorage.setItem("seenReactivationBanner", "true");
+};
 
-    console.log("Ex-aluno data:", formData);
-
-    toast({
-      title: "Vaga garantida! 🎉",
-      description: "Nossa equipe entrará em contato em breve via WhatsApp.",
-    });
-
-    setIsVisible(false);
-    localStorage.setItem("seenReactivationBanner", "true");
-  };
 
   if (!isVisible) return null;
 
