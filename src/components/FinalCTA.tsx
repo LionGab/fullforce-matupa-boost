@@ -91,8 +91,8 @@ const FinalCTA = () => {
               </Button>
             </div>
             <div className="h-64 md:h-auto">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.9!2d-54.9!3d-10.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDEyJzAwLjAiUyA1NMKwNTQnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+             <iframe className="w-full h-64 rounded-xl shadow-md" src="SEU_EMBED_GMAPS" loading="lazy"></iframe>
+<a href="https://www.google.com/maps/dir/?api=1&destination=Full+Force+Academia+Matupá" target="_blank" rel="noopener" className="mt-4 inline-block bg-yellow-400 text-black font-bold px-6 py-3 rounded-lg">Como chegar</a>
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
