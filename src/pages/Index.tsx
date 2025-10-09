@@ -6,6 +6,19 @@ import Testimonials from "@/components/Testimonials";
 import FinalCTA from "@/components/FinalCTA";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import ReactivationBanner from "@/components/ReactivationBanner";
+import InstagramFloat from "@/components/InstagramFloat";
+
+<ReactivationBanner />
+<WhatsAppFloat />
+<InstagramFloat />
+<main>
+  <Hero />
+  <Plans />
+  <Benefits />
+  <Testimonials />
+  <FinalCTA />
+</main>
+
 
 const Index = () => {
   return (
