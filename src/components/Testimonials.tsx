@@ -78,6 +78,11 @@ const Testimonials = () => {
         </div>
       </div>
     </div>
+      <div class="beneficio">
+  <div class="icone">🎯</div>
+  <h3>Acompanhamento Personalizado</h3>
+  <p>Professores que conhecem seu nome, seus objetivos e acompanham sua evolução de perto.</p>
+</div>
   </div>
 </section>
   );
