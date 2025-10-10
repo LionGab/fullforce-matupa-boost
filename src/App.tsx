@@ -8,16 +8,14 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import ReactivationBanner from "@/components/ReactivationBanner";
 import InstagramFloat from "@/components/InstagramFloat";
 
-<ReactivationBanner />
-<WhatsAppFloat />
-<InstagramFloat />
-<main>
-  <Hero />
-  <Plans />
-  <Benefits />
-  <Testimonials />
-  <FinalCTA />
-</main>
+return (
+  <>
+    <ReactivationBanner />
+    <WhatsAppFloat />
+    <InstagramFloat />
+    <main>...</main>
+  </>
+)
 
 
 const Index = () => {
