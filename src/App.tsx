@@ -1,35 +1,53 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Plans from "@/components/Plans";
+import Benefits from "@/components/Benefits";
+import Testimonials from "@/components/Testimonials";
+import FinalCTA from "@/components/FinalCTA";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import ReactivationBanner from "@/components/ReactivationBanner";
+import InstagramFloat from "@/components/InstagramFloat";
 
-const queryClient = new QueryClient();
+<ReactivationBanner />
+<WhatsAppFloat />
+<InstagramFloat />
+<main>
+  <Hero />
+  <Plans />
+  <Benefits />
+  <Testimonials />
+  <FinalCTA />
+</main>
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        {/* Banner global (ex-aluno) */}
-        <ReactivationBanner />
 
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+const Index = () => {
+  return (
+    <div className="min-h-screen">
+      <Header />
+      <ReactivationBanner />
+      <WhatsAppFloat />
+      <main>
+  <Hero />
+  <WhatsAppFloat />   {/* aqui dentro */}
+  <Plans />
+  <Benefits />
+  <Testimonials />
+  <FinalCTA />
+</main>
+      
+      {/* Footer */}
+      <footer className="bg-gym-dark text-white py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-gray-400">
+            © 2025 Full Force Academia. Todos os direitos reservados.
+          </p>
+          <p className="text-sm text-gray-500 mt-2">
+            Matupá, Mato Grosso
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+};
 
-        {/* Botão flutuante do WhatsApp (fixo em todas as páginas) */}
-        <WhatsAppFloat />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
-
-export default App;
+export default Index;
