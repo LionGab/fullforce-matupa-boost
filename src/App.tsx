@@ -4,34 +4,21 @@ import Plans from "@/components/Plans";
 import Benefits from "@/components/Benefits";
 import Testimonials from "@/components/Testimonials";
 import FinalCTA from "@/components/FinalCTA";
-import WhatsAppFloat from "@/components/WhatsAppFloat";
-import ReactivationBanner from "@/components/ReactivationBanner";
 import InstagramFloat from "@/components/InstagramFloat";
-
-return (
-  <>
-    <ReactivationBanner />
-    <WhatsAppFloat />
-    <InstagramFloat />
-    <main>...</main>
-  </>
-)
-
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
-      <ReactivationBanner />
-      <WhatsAppFloat />
+      <InstagramFloat />
+      
       <main>
-  <Hero />
-  <WhatsAppFloat />   {/* aqui dentro */}
-  <Plans />
-  <Benefits />
-  <Testimonials />
-  <FinalCTA />
-</main>
+        <Hero />
+        <Plans />
+        <Benefits />
+        <Testimonials />
+        <FinalCTA />
+      </main>
       
       {/* Footer */}
       <footer className="bg-gym-dark text-white py-8">
