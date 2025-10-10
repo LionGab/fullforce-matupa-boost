@@ -22,46 +22,64 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-24 bg-gym-dark relative overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-            Quem treina na Full Force{" "}
-            <span className="absolute -top-3 right-3 bg-yellow-400 text-black text-xs font-extrabold px-2 py-1 rounded-full">Mais escolhido</span>
-          </h2>
-        </div>
+<section class="depoimentos">
+  <h2>Quem Treina na Full Force Transforma Resultados</h2>
+  
+  <!-- Stats visuais do Site A -->
+  <div class="stats-depoimentos">
+    <div class="stat">
+      <span class="numero">4.9</span>
+      <span class="label">⭐ Avaliação média</span>
+    </div>
+    <div class="stat">
+      <span class="numero">700+</span>
+      <span class="label">👥 Alunos ativos</span>
+    </div>
+    <div class="stat">
+      <span class="numero">96.5%</span>
+      <span class="label">😊 Taxa de satisfação</span>
+    </div>
+  </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <Card 
-              key={index}
-              className="bg-gym-gray border-gym-gray hover:border-primary transition-smooth group"
-            >
-              <CardContent className="p-8">
-                <Quote className="w-12 h-12 text-primary mb-6 opacity-50" />
-                
-                <p className="text-3xl font-bold">R$ 900</p>
-<p className="text-sm text-gray-400">(ou R$ 75 por mês)</p>
-                  "{testimonial.quote}"
-                </p>
-
-                <div className="flex items-center gap-4">
-                  <img 
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-16 h-16 rounded-full object-cover border-2 border-primary"
-                  />
-                  <div>
-                    <p className="font-bold text-white text-lg">{testimonial.name}</p>
-                    <p className="text-gray-400">{testimonial.age} anos · {testimonial.location}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+  <div class="cards-depoimentos">
+    <div class="card-depoimento">
+      <div class="estrelas">⭐⭐⭐⭐⭐</div>
+      <p>"Perdi 15kg em 6 meses! A equipe da Full Force me acompanhou de perto todos os dias."</p>
+      <div class="autor">
+        <img src="joao.webp" alt="João">
+        <div>
+          <strong>João Silva</strong>
+          <span>Aluno há 8 meses</span>
         </div>
       </div>
-    </section>
+    </div>
+
+    <div class="card-depoimento">
+      <div class="estrelas">⭐⭐⭐⭐⭐</div>
+      <p>"Melhor academia de Matupá! Professores atenciosos e equipamentos sempre novos."</p>
+      <div class="autor">
+        <img src="ana.webp" alt="Ana">
+        <div>
+          <strong>Ana Paula</strong>
+          <span>Aluna há 1 ano</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3º depoimento do Site A -->
+    <div class="card-depoimento">
+      <div class="estrelas">⭐⭐⭐⭐⭐</div>
+      <p>"Finalmente uma academia que conhece meus objetivos e me ajuda a alcançá-los. Vale cada centavo!"</p>
+      <div class="autor">
+        <img src="carlos.webp" alt="Carlos">
+        <div>
+          <strong>Carlos Eduardo</strong>
+          <span>Aluno há 5 meses</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
   );
 };
 
