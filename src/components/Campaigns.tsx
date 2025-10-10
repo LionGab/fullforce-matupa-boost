@@ -33,6 +33,7 @@ const Campaigns = () => {
 
   return (
     <section className="py-24 bg-brand-gray relative overflow-hidden">
+      
       {/* Background pattern */}
       <div className="absolute inset-0 hero-pattern opacity-20" />
 
@@ -88,7 +89,7 @@ const Campaigns = () => {
                   rel="noopener noreferrer"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  Quero Participar
+                 💬 Quero essa oferta
                 </a>
               </Button>
             </div>
