@@ -1,102 +1,67 @@
-import { Button } from "@/components/ui/button";
-import { Calendar, Target, Trophy, MessageCircle } from "lucide-react";
-
-const campaigns = [
-  {
-    icon: Target,
-    tag: "DESAFIO",
-    title: "90 Dias de Transformação",
-    description: "Se em 90 dias você não tiver resultado, devolvemos seu dinheiro.",
-    highlight: "Garantia Total",
-    color: "from-orange-500 to-red-500",
-  },
-  {
-    icon: Calendar,
-    tag: "PROJETO VERÃO",
-    title: "Faltam 70 Dias",
-    description: "Quer entrar em forma e surpreender até você mesmo no verão?",
-    highlight: "Tempo Limitado",
-    color: "from-blue-500 to-cyan-500",
-  },
-  {
-    icon: Trophy,
-    tag: "VIRADA DE ANO",
-    title: "Como Você Quer Chegar em 2026?",
-    description: "Igual a hoje ou melhor que começou 2025? A escolha é sua.",
-    highlight: "Novo Começo",
-    color: "from-purple-500 to-pink-500",
-  },
-];
-
-const Campaigns = () => {
-  const whatsappNumber = "5566991100808";
-
-  return (
-    <section className="py-24 bg-brand-gray relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 hero-pattern opacity-20" />
-
-      <div className="container px-4 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-4xl md:text-6xl font-black mb-6">
-            Campanhas <span className="text-gradient">Ativas</span>
-          </h2>
-          <p className="text-xl text-gray-300">
-            Escolha o desafio perfeito para sua transformação. Cada campanha foi criada para resultados reais.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {campaigns.map((campaign, index) => (
-            <div
-              key={index}
-              className="group relative bg-brand-black border border-gray-700 rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 overflow-hidden"
-            >
-              {/* Gradient accent */}
-              <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${campaign.color}`} />
-
-              {/* Tag */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 border border-primary/40 mb-6">
-                <campaign.icon className="w-4 h-4 text-primary" />
-                <span className="text-primary font-bold text-xs">{campaign.tag}</span>
-              </div>
-
-              {/* Content */}
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
-                {campaign.title}
-              </h3>
-              <p className="text-gray-400 mb-6 leading-relaxed">
-                {campaign.description}
-              </p>
-
-              {/* Highlight */}
-              <div className="mb-6 pb-6 border-b border-gray-700">
-                <div className="text-primary font-bold text-sm mb-1">Destaque:</div>
-                <div className="text-lg font-semibold">{campaign.highlight}</div>
-              </div>
-
-              {/* CTA */}
-              <Button
-                variant="hero"
-                size="lg"
-                className="w-full"
-                asChild
-              >
-                <a
-                  href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Olá! Quero participar da campanha: ${campaign.title}`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  Quero Participar
-                </a>
-              </Button>
-            </div>
-          ))}
-        </div>
+<section class="campanhas">
+  <h2>Ofertas Especiais — Escolha a Sua</h2>
+  
+  <div class="grid-campanhas">
+    <!-- Card 1: 10 Dias -->
+    <div class="card-campanha">
+      <span class="badge-campanha">🔥 NOVIDADE</span>
+      <h3>10 Dias de Transformação</h3>
+      <p class="descricao-campanha">Experimente nosso método completo</p>
+      <div class="preco-campanha">
+        <span class="valor">R$ 70</span>
       </div>
-    </section>
-  );
-};
+      <ul class="lista-beneficios">
+        <li>✓ Plano de treino personalizado</li>
+        <li>✓ Avaliação física completa</li>
+        <li>✓ 10 dias de acesso total</li>
+      </ul>
+      <a href="https://wa.me/556699909999?text=Olá! Quero o plano 10 Dias de Transformação por R$ 70." 
+         class="btn-campanha" 
+         target="_blank">
+        💬 Quero essa oferta
+      </a>
+    </div>
 
-export default Campaigns;
+    <!-- Card 2: Melhor Idade -->
+    <div class="card-campanha destaque-campanha">
+      <span class="badge-campanha badge-premium">⭐ MELHOR IDADE</span>
+      <h3>Plano 70 Anos+</h3>
+      <p class="descricao-campanha">Cuidado especial para você</p>
+      <div class="preco-campanha">
+        <span class="valor">GRÁTIS</span>
+        <span class="condicao">Para sempre</span>
+      </div>
+      <ul class="lista-beneficios">
+        <li>✓ Treinos adaptados</li>
+        <li>✓ Professor especializado</li>
+        <li>✓ Horários exclusivos</li>
+      </ul>
+      <a href="https://wa.me/556699909999?text=Olá! Tenho 70 anos ou mais e quero conhecer o plano gratuito." 
+         class="btn-campanha btn-premium" 
+         target="_blank">
+        💬 Garantir minha vaga
+      </a>
+    </div>
+
+    <!-- Card 3: Mulher -->
+    <div class="card-campanha">
+      <span class="badge-campanha">💪 EXCLUSIVO</span>
+      <h3>Mulher Full Force</h3>
+      <p class="descricao-campanha">Treino focado em resultados femininos</p>
+      <div class="preco-campanha">
+        <span class="preco-antigo">R$ 198</span>
+        <span class="valor">R$ 170/mês</span>
+      </div>
+      <ul class="lista-beneficios">
+        <li>✓ Ambiente acolhedor</li>
+        <li>✓ Treino funcional incluso</li>
+        <li>✓ Grupo de apoio</li>
+      </ul>
+      <a href="https://wa.me/556699909999?text=Olá! Quero saber mais sobre o plano Mulher Full Force." 
+         class="btn-campanha" 
+         target="_blank">
+        💬 Quero esse plano
+      </a>
+    </div>
+  </div>
+</section>
