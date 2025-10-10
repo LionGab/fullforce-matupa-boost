@@ -7,8 +7,8 @@ const Hero = () => {
     window.open("https://wa.me/556699100808?text=Olá! Quero minha aula grátis na Full Force Academia", "_blank");
   };
 
-  return (
-   <section className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center pt-28 pb-32 overflow-hidden">
+  return
+    (<section className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center pt-28 pb-32 overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
