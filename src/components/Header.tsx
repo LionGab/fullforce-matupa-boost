@@ -4,7 +4,7 @@ import logo from "@/assets/logo.jpg";
 
 const Header = () => {
   const handleWhatsAppClick = () => {
-    window.open("https://wa.me/5566999999999?text=Olá! Quero conhecer os planos da Full Force Academia", "_blank");
+    window.open("https://wa.me/5566999100808?text=Olá! Quero conhecer os planos da Full Force Academia", "_blank");
   };
 
   return (
