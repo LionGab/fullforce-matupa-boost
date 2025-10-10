@@ -27,9 +27,12 @@ const About = () => {
   return (
     <section className="py-16 md:py-24 bg-gradient-to-b from-background to-brand-gray/20">
       <div className="container px-4">
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6">
-            Mais Que Uma Academia, <span className="text-gradient">Um Lugar Para Você se Sentir em Casa</span>
+        <div className="max-w-3xl mx-auto mb-12 md:mb-16">
+  <h2 className="text-left text-3xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6">
+    Mais Que Uma Academia, <span className="text-gradient">Um Lugar Para Você se Sentir em Casa</span>
+  </h2>  
+          ...
+</div>  
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground px-4">
             Na Full Force, você encontra a estrutura moderna que merece, com o acolhimento de quem se importa com seu resultado.
