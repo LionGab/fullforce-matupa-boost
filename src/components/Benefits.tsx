@@ -22,7 +22,24 @@ const Benefits = () => {
   ];
 
   return (
-    <section className="py-24 bg-background">
+    /* Background hero mais impactante */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
+              url('equipamentos-background.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Aumentar contraste dos títulos */
+h1, h2, h3 {
+  font-weight: 800; /* Mais bold */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+/* Amarelo mais vibrante */
+:root {
+  --primary-yellow: #F9A825; /* Do Site A */
+}
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-black text-foreground mb-4">
