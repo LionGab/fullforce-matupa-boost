@@ -150,12 +150,16 @@ All colors MUST be HSL.
 .animate-float-in {
   animation: float-in 0.8s ease-out forwards;
 }
+<div class="absolute inset-0 overlay-dark"></div>
 
   
   .gradient-hero {
     background: var(--gradient-hero);
   }
   
+  <div class="absolute inset-0 bg-black/60 mix-blend-multiply"></div>
+
+
   .gradient-cta {
     background: var(--gradient-cta);
   }
