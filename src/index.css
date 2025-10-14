@@ -8,7 +8,21 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    /* ==========================================
+       COLOR LAYERING SYSTEM - 4 Níveis de Elevação
+       ========================================== */
+    --layer-0: 0 0% 96%;
+    /* Background base */
+    --layer-1: 0 0% 100%;
+    /* Surface (cards padrão) */
+    --layer-2: 0 0% 100%;
+    /* Elevated (cards em destaque) */
+    --layer-3: 0 0% 100%;
+    /* Overlay (modais, dropdowns) */
+    --layer-4: 0 0% 100%;
+    /* Floating (tooltips, CTAs fixos) */
+
+    --background: 0 0% 96%;
     --foreground: 0 0% 10%;
 
     --card: 0 0% 100%;
@@ -17,9 +31,66 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
 
-    /* Vibrant yellow as primary */
+    /* ==========================================
+       PRIMARY COLOR - Yellow (CTA Principal)
+       ========================================== */
     --primary: 45 100% 50%;
+    /* #FFCC00 */
+    --primary-hover: 45 100% 45%;
+    /* Hover state */
+    --primary-active: 45 100% 40%;
+    /* Active state */
+    --primary-subtle: 45 100% 95%;
+    /* Background sutil */
+    --primary-glow: 45 100% 50%;
+    /* Base para glow */
     --primary-foreground: 0 0% 0%;
+
+    /* ==========================================
+       SEMANTIC COLORS - Cores Funcionais
+       ========================================== */
+    /* SUCCESS - Green */
+    --success: 142 71% 45%;
+    /* #22C55E */
+    --success-hover: 142 71% 40%;
+    --success-subtle: 142 71% 95%;
+    --success-foreground: 0 0% 100%;
+
+    /* WARNING - Orange */
+    --warning: 25 95% 53%;
+    /* #FB923C */
+    --warning-hover: 25 95% 48%;
+    --warning-subtle: 25 95% 95%;
+    --warning-foreground: 0 0% 100%;
+
+    /* ERROR - Red */
+    --error: 0 72% 51%;
+    /* #DC2626 */
+    --error-hover: 0 72% 46%;
+    --error-subtle: 0 72% 95%;
+    --error-foreground: 0 0% 100%;
+
+    /* INFO - Blue */
+    --info: 217 91% 60%;
+    /* #3B82F6 */
+    --info-hover: 217 91% 55%;
+    --info-subtle: 217 91% 95%;
+    --info-foreground: 0 0% 100%;
+
+    /* ==========================================
+       NEUTRAL SCALE - Gray Scale Completo
+       ========================================== */
+    --neutral-50: 0 0% 98%;
+    --neutral-100: 0 0% 96%;
+    --neutral-200: 0 0% 90%;
+    --neutral-300: 0 0% 83%;
+    --neutral-400: 0 0% 64%;
+    --neutral-500: 0 0% 45%;
+    --neutral-600: 0 0% 32%;
+    --neutral-700: 0 0% 25%;
+    --neutral-800: 0 0% 15%;
+    --neutral-900: 0 0% 9%;
+    --neutral-950: 0 0% 4%;
 
     /* Dark gray secondary */
     --secondary: 0 0% 15%;
@@ -32,7 +103,7 @@ All colors MUST be HSL.
     --accent: 45 100% 50%;
     --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 90%;
@@ -41,56 +112,147 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    /* Custom gym theme colors */
+    /* ==========================================
+       LEGACY GYM COLORS (Mantido para compatibilidade)
+       ========================================== */
     --gym-yellow: 45 100% 50%;
     --gym-yellow-glow: 45 100% 60%;
     --gym-dark: 0 0% 8%;
     --gym-gray: 0 0% 20%;
     --gym-light-gray: 0 0% 95%;
 
-    /* Gradient definitions */
+    /* ==========================================
+       GRADIENT DEFINITIONS
+       ========================================== */
     --gradient-hero: linear-gradient(135deg, hsl(var(--gym-dark)) 0%, hsl(var(--gym-gray)) 100%);
-    --gradient-cta: linear-gradient(135deg, hsl(var(--gym-yellow)) 0%, hsl(45 100% 45%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-hover)) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(45 100% 55%) 50%, hsl(var(--primary)) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(var(--layer-1)) 0%, hsl(var(--layer-2)) 100%);
 
-    /* Shadows with two-layer system for depth */
-    --shadow-yellow: 0 10px 40px -10px hsl(var(--gym-yellow) / 0.4);
-    --shadow-card: 0 2px 8px -2px hsl(0 0% 0% / 0.08), 0 4px 20px -4px hsl(0 0% 0% / 0.12);
-    --shadow-elevated: 0 4px 16px -4px hsl(0 0% 0% / 0.12), 0 8px 32px -8px hsl(0 0% 0% / 0.16);
-    --shadow-focus: 0 0 0 3px hsl(var(--gym-yellow) / 0.3);
+    /* ==========================================
+       THREE-LAYER SHADOW SYSTEM - Elevation
+       ========================================== */
+    /* FLAT - Sem elevação (0dp) */
+    --shadow-flat: none;
 
-    /* Transitions */
+    /* SUBTLE - Elevação mínima (2dp) */
+    --shadow-subtle: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+
+    /* CARD - Elevação padrão de cards (4dp) */
+    --shadow-card:
+      0 1px 3px 0 rgb(0 0 0 / 0.05),
+      0 2px 8px -1px rgb(0 0 0 / 0.08);
+
+    /* ELEVATED - Cards em destaque (8dp) */
+    --shadow-elevated:
+      0 2px 6px 0 rgb(0 0 0 / 0.06),
+      0 4px 16px -2px rgb(0 0 0 / 0.12);
+
+    /* OVERLAY - Modais e dropdowns (16dp) */
+    --shadow-overlay:
+      0 4px 12px 0 rgb(0 0 0 / 0.08),
+      0 8px 32px -4px rgb(0 0 0 / 0.16);
+
+    /* FLOATING - CTAs fixos e tooltips (24dp) */
+    --shadow-floating:
+      0 8px 24px 0 rgb(0 0 0 / 0.12),
+      0 16px 48px -8px rgb(0 0 0 / 0.20);
+
+    /* GLOW EFFECTS - Para elementos primários */
+    --shadow-glow-primary:
+      0 0 20px 0 hsl(var(--primary-glow) / 0.4),
+      0 0 40px -10px hsl(var(--primary-glow) / 0.5);
+
+    --shadow-glow-success:
+      0 0 20px 0 hsl(var(--success) / 0.3),
+      0 0 40px -10px hsl(var(--success) / 0.4);
+
+    --shadow-glow-warning:
+      0 0 20px 0 hsl(var(--warning) / 0.3),
+      0 0 40px -10px hsl(var(--warning) / 0.4);
+
+    /* Legacy shadow (mantido para compatibilidade) */
+    --shadow-yellow: var(--shadow-glow-primary);
+    --shadow-focus: 0 0 0 3px hsl(var(--primary) / 0.3);
+
+    /* ==========================================
+       TRANSITIONS
+       ========================================== */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-snap: all 0.2s cubic-bezier(0.4, 0, 1, 1);
 
+    /* Sidebar colors */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 0 0% 8%;
+    /* ==========================================
+       DARK MODE - COLOR LAYERING SYSTEM
+       ========================================== */
+    --layer-0: 0 0% 5%;
+    /* Background base - preto profundo */
+    --layer-1: 0 0% 10%;
+    /* Surface (cards padrão) */
+    --layer-2: 0 0% 14%;
+    /* Elevated (cards em destaque) */
+    --layer-3: 0 0% 18%;
+    /* Overlay (modais, dropdowns) */
+    --layer-4: 0 0% 22%;
+    /* Floating (tooltips, CTAs fixos) */
+
+    --background: 0 0% 5%;
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 12%;
+    --card: 0 0% 10%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 12%;
+    --popover: 0 0% 10%;
     --popover-foreground: 0 0% 98%;
 
+    /* Primary colors (mantém brilho) */
     --primary: 45 100% 50%;
+    --primary-hover: 45 100% 55%;
+    --primary-active: 45 100% 45%;
+    --primary-subtle: 45 100% 15%;
     --primary-foreground: 0 0% 0%;
+
+    /* Semantic colors (ajustados para dark) */
+    --success: 142 71% 50%;
+    --success-hover: 142 71% 55%;
+    --success-subtle: 142 71% 15%;
+
+    --warning: 25 95% 58%;
+    --warning-hover: 25 95% 63%;
+    --warning-subtle: 25 95% 15%;
+
+    --error: 0 72% 56%;
+    --error-hover: 0 72% 61%;
+    --error-subtle: 0 72% 15%;
+
+    --info: 217 91% 65%;
+    --info-hover: 217 91% 70%;
+    --info-subtle: 217 91% 15%;
+
+    /* Neutrals (inverted for dark mode) */
+    --neutral-50: 0 0% 4%;
+    --neutral-100: 0 0% 9%;
+    --neutral-200: 0 0% 15%;
+    --neutral-300: 0 0% 25%;
+    --neutral-400: 0 0% 45%;
+    --neutral-500: 0 0% 64%;
+    --neutral-600: 0 0% 83%;
+    --neutral-700: 0 0% 90%;
+    --neutral-800: 0 0% 96%;
+    --neutral-900: 0 0% 98%;
+    --neutral-950: 0 0% 99%;
 
     --secondary: 0 0% 20%;
     --secondary-foreground: 0 0% 100%;
@@ -101,18 +263,51 @@ All colors MUST be HSL.
     --accent: 45 100% 50%;
     --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 62.8% 50%;
+    --destructive: 0 72% 56%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 20%;
     --input: 0 0% 20%;
     --ring: 45 100% 50%;
 
-    /* Enhanced dark mode shadows */
-    --shadow-yellow: 0 10px 40px -10px hsl(var(--gym-yellow) / 0.5);
-    --shadow-card: 0 2px 8px -2px hsl(0 0% 0% / 0.4), 0 4px 20px -4px hsl(0 0% 0% / 0.5);
-    --shadow-elevated: 0 4px 16px -4px hsl(0 0% 0% / 0.5), 0 8px 32px -8px hsl(0 0% 0% / 0.6);
+    /* ==========================================
+       DARK MODE - ENHANCED SHADOWS (mais intensas)
+       ========================================== */
+    --shadow-subtle: 0 1px 2px 0 rgb(0 0 0 / 0.3);
 
+    --shadow-card:
+      0 2px 6px 0 rgb(0 0 0 / 0.25),
+      0 4px 16px -2px rgb(0 0 0 / 0.35);
+
+    --shadow-elevated:
+      0 4px 12px 0 rgb(0 0 0 / 0.30),
+      0 8px 32px -4px rgb(0 0 0 / 0.40);
+
+    --shadow-overlay:
+      0 8px 24px 0 rgb(0 0 0 / 0.35),
+      0 16px 48px -8px rgb(0 0 0 / 0.45);
+
+    --shadow-floating:
+      0 12px 32px 0 rgb(0 0 0 / 0.40),
+      0 24px 64px -12px rgb(0 0 0 / 0.50);
+
+    /* Glow effects (mais intensos no dark) */
+    --shadow-glow-primary:
+      0 0 24px 0 hsl(var(--primary-glow) / 0.5),
+      0 0 48px -10px hsl(var(--primary-glow) / 0.6);
+
+    --shadow-glow-success:
+      0 0 24px 0 hsl(var(--success) / 0.4),
+      0 0 48px -10px hsl(var(--success) / 0.5);
+
+    --shadow-glow-warning:
+      0 0 24px 0 hsl(var(--warning) / 0.4),
+      0 0 48px -10px hsl(var(--warning) / 0.5);
+
+    /* Legacy */
+    --shadow-yellow: var(--shadow-glow-primary);
+
+    /* Sidebar */
     --sidebar-background: 0 0% 8%;
     --sidebar-foreground: 0 0% 95%;
     --sidebar-primary: 45 100% 50%;
@@ -160,9 +355,12 @@ All colors MUST be HSL.
     text-wrap: balance;
   }
 
+  /* ==========================================
+     ANIMATIONS - Entrada e Efeitos
+     ========================================== */
   @keyframes float-in {
     from {
-      transform: translateY(40px);
+      transform: translateY(30px);
       opacity: 0;
     }
 
@@ -173,15 +371,136 @@ All colors MUST be HSL.
   }
 
   .animate-float-in {
-    animation: float-in 0.8s ease-out forwards;
+    animation: float-in 0.7s ease-out forwards;
   }
 
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 100%);
+    background-size: 1000px 100%;
+  }
+
+  @keyframes bounce-subtle {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  .animate-bounce-subtle {
+    animation: bounce-subtle 2.5s ease-in-out infinite;
+  }
+
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-left 0.6s ease-out forwards;
+  }
+
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.6s ease-out forwards;
+  }
+
+  /* ==========================================
+     GRADIENTS - Aplicação Rápida
+     ========================================== */
   .gradient-hero {
     background: var(--gradient-hero);
   }
 
   .gradient-cta {
     background: var(--gradient-cta);
+  }
+
+  .gradient-premium {
+    background: var(--gradient-premium);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  /* ==========================================
+     SHADOWS - Sistema de Elevação
+     ========================================== */
+  .shadow-flat {
+    box-shadow: var(--shadow-flat);
+  }
+
+  .shadow-subtle {
+    box-shadow: var(--shadow-subtle);
   }
 
   .shadow-yellow {
@@ -196,6 +515,29 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-elevated);
   }
 
+  .shadow-overlay {
+    box-shadow: var(--shadow-overlay);
+  }
+
+  .shadow-floating {
+    box-shadow: var(--shadow-floating);
+  }
+
+  .shadow-glow-primary {
+    box-shadow: var(--shadow-glow-primary);
+  }
+
+  .shadow-glow-success {
+    box-shadow: var(--shadow-glow-success);
+  }
+
+  .shadow-glow-warning {
+    box-shadow: var(--shadow-glow-warning);
+  }
+
+  /* ==========================================
+     TRANSITIONS - Aplicação Rápida
+     ========================================== */
   .transition-smooth {
     transition: var(--transition-smooth);
   }
@@ -204,7 +546,13 @@ All colors MUST be HSL.
     transition: var(--transition-bounce);
   }
 
-  /* Skip to content link for accessibility */
+  .transition-snap {
+    transition: var(--transition-snap);
+  }
+
+  /* ==========================================
+     ACCESSIBILITY - Skip to Content
+     ========================================== */
   .skip-to-content {
     position: absolute;
     top: -100%;
@@ -229,7 +577,6 @@ All colors MUST be HSL.
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
-    /* Offset for sticky header */
   }
 
   /* Link hover animation - Underline from left to right */
@@ -246,7 +593,7 @@ All colors MUST be HSL.
     left: 0;
     width: 0;
     height: 2px;
-    background: hsl(var(--gym-yellow));
+    background: hsl(var(--primary));
     transition: width 0.3s ease-out;
   }
 
@@ -255,7 +602,7 @@ All colors MUST be HSL.
   }
 
   .link-animated:hover {
-    color: hsl(var(--gym-yellow));
+    color: hsl(var(--primary));
   }
 
   /* Number count-up animation trigger (use with IntersectionObserver) */
@@ -349,5 +696,46 @@ All colors MUST be HSL.
 
   .animate-pulse-glow {
     animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  /* ==========================================
+     HOVER EFFECTS - Lift & Scale
+     ========================================== */
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+
+  .hover-scale {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  .hover-scale-sm:hover {
+    transform: scale(1.02);
+  }
+
+  /* ==========================================
+     BACKDROP BLUR - Para overlays
+     ========================================== */
+  .backdrop-blur-subtle {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .backdrop-blur-medium {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .backdrop-blur-strong {
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
   }
 }

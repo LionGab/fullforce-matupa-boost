@@ -64,7 +64,7 @@ const Hero = () => {
 
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center pt-20 pb-16 md:pt-28 md:pb-32 overflow-hidden"
+      className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center pt-24 pb-20 md:pt-28 md:pb-32 overflow-hidden"
       aria-label="Hero - Full Force Academia"
     >
       {/* Background Image with Overlay - Optimized for LCP */}
@@ -74,7 +74,7 @@ const Hero = () => {
           alt="Academia Full Force em Matupá MT - Fachada iluminada com equipamentos modernos e ambiente profissional para treino"
           className="w-full h-full object-cover object-center"
           loading="eager"
-          fetchpriority="high"
+          fetchPriority="high"
         />
         {/* Two-layer gradient overlay for depth and readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-gym-dark/90 via-gym-dark/80 to-gym-dark/85 md:bg-gradient-to-r md:from-gym-dark/95 md:via-gym-dark/85 md:to-gym-dark/60" />
@@ -83,61 +83,52 @@ const Hero = () => {
       {/* Content - Optimized for conversion */}
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="max-w-3xl animate-fade-in">
-          {/* Headline - Autoridade e pertencimento local */}
+          {/* Headline - Conversacional e direto */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-5 md:mb-6 leading-[1.1] sm:leading-tight">
-            <span className="block mb-1">Full Force — A academia onde</span>
-            <span className="text-primary block drop-shadow-[0_0_30px_rgba(255,204,0,0.5)]">
-              Matupá Treina Aqui.
+            <span className="text-primary block drop-shadow-[0_0_30px_rgba(255,204,0,0.5)] mb-2">
+              Matupá treina na Full Force 💪
             </span>
           </h1>
 
-          {/* Subtítulo - Prova Social + Diferencial + Info Chave */}
-          <p className="text-xl sm:text-2xl md:text-3xl text-gray-100 mb-8 md:mb-10 font-bold leading-tight">
-            Mais de <span className="text-primary font-black">650 alunos</span>.
-            <span className="block sm:inline sm:ml-1 mt-2 sm:mt-0">
-              Acompanhamento de verdade e treinos das <span className="text-white font-black">04h30 às 21h</span>.
+          {/* Subtítulo - Benefício claro e direto */}
+          <p className="text-xl sm:text-2xl md:text-3xl text-gray-100 mb-4 md:mb-5 font-bold leading-tight">
+            A academia com <span className="text-white">acompanhamento real</span> e treinos todos os dias das <span className="text-primary font-black">04h30 às 21h</span>.
+          </p>
+
+          {/* Prova Social */}
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-6 md:mb-8 leading-relaxed flex items-start gap-2 sm:gap-3">
+            <span className="text-2xl sm:text-3xl flex-shrink-0">🏋️‍♂️</span>
+            <span>
+              Mais de <span className="text-primary font-black">650 alunos satisfeitos</span> já transformaram seus resultados aqui.
             </span>
           </p>
 
           {/* CTA Principal Único - Máxima Conversão */}
-          <div className="mb-5">
+          <div className="mb-4 md:mb-5">
             <Button
               onClick={handleWhatsAppClick}
-              size="lg"
-              aria-label="Agendar aula grátis via WhatsApp - Sem compromisso"
-              className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-black text-lg sm:text-xl px-8 py-7 sm:px-10 sm:py-8 h-auto transition-smooth shadow-yellow hover:scale-105 active:scale-95 animate-pulse-glow group relative overflow-hidden rounded-xl"
+              size="xl"
+              variant="premium"
+              aria-label="Falar no WhatsApp - Primeira aula grátis"
+              className="w-full sm:w-auto group relative overflow-hidden rounded-xl"
             >
               {/* Ripple effect on hover */}
               <span className="absolute inset-0 bg-white/20 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-500 ease-out" />
 
               <MessageCircle className="mr-3 h-6 w-6 sm:h-7 sm:w-7 relative z-10 group-hover:rotate-12 transition-transform" />
-              <span className="relative z-10">🎁 Aula Grátis — Reserve Agora</span>
+              <span className="relative z-10">💬 Fale no WhatsApp</span>
             </Button>
           </div>
 
           {/* Trust Badge - Redução de fricção */}
-          <p className="text-sm sm:text-base text-gray-300 flex items-center gap-2 justify-center sm:justify-start">
-            <span className="text-green-400 text-lg">✓</span>
-            <span className="font-medium">Sem compromisso • Alto valor, zero risco</span>
+          <p className="text-sm sm:text-base text-gray-300 text-center sm:text-left leading-relaxed">
+            <span className="font-bold text-white">Sem compromisso</span> — primeira aula <span className="text-success font-bold">100% gratuita!</span>
           </p>
         </div>
       </div>
 
-      {/* CTA Fixo Mobile - Conversão sempre visível */}
-      <div className="fixed bottom-0 left-0 right-0 z-[60] md:hidden bg-gradient-to-t from-gym-dark via-gym-dark/95 to-transparent pt-6 pb-4 px-4 pointer-events-none">
-        <Button
-          onClick={handleWhatsAppClick}
-          size="lg"
-          aria-label="Agendar aula grátis via WhatsApp"
-          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-black text-base px-6 py-6 h-auto shadow-yellow hover:scale-[1.02] active:scale-95 transition-smooth animate-pulse-glow pointer-events-auto"
-        >
-          <MessageCircle className="mr-2 h-5 w-5" />
-          🎁 Quero Minha Aula Grátis
-        </Button>
-      </div>
-
       {/* Decorative Gradient - Smooth transition to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-24 md:h-32 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-12 sm:h-16 md:h-24 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none" />
     </section>
   );
 };

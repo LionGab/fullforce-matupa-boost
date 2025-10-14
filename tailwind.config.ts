@@ -22,10 +22,78 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+
+        /* ==========================================
+           PRIMARY COLOR SCALE
+           ========================================== */
         primary: {
           DEFAULT: "hsl(var(--primary))",
+          hover: "hsl(var(--primary-hover))",
+          active: "hsl(var(--primary-active))",
+          subtle: "hsl(var(--primary-subtle))",
+          glow: "hsl(var(--primary-glow))",
           foreground: "hsl(var(--primary-foreground))",
         },
+
+        /* ==========================================
+           SEMANTIC COLORS
+           ========================================== */
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          hover: "hsl(var(--success-hover))",
+          subtle: "hsl(var(--success-subtle))",
+          foreground: "hsl(var(--success-foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          hover: "hsl(var(--warning-hover))",
+          subtle: "hsl(var(--warning-subtle))",
+          foreground: "hsl(var(--warning-foreground))",
+        },
+        error: {
+          DEFAULT: "hsl(var(--error))",
+          hover: "hsl(var(--error-hover))",
+          subtle: "hsl(var(--error-subtle))",
+          foreground: "hsl(var(--error-foreground))",
+        },
+        info: {
+          DEFAULT: "hsl(var(--info))",
+          hover: "hsl(var(--info-hover))",
+          subtle: "hsl(var(--info-subtle))",
+          foreground: "hsl(var(--info-foreground))",
+        },
+
+        /* ==========================================
+           NEUTRAL SCALE (Gray)
+           ========================================== */
+        neutral: {
+          50: "hsl(var(--neutral-50))",
+          100: "hsl(var(--neutral-100))",
+          200: "hsl(var(--neutral-200))",
+          300: "hsl(var(--neutral-300))",
+          400: "hsl(var(--neutral-400))",
+          500: "hsl(var(--neutral-500))",
+          600: "hsl(var(--neutral-600))",
+          700: "hsl(var(--neutral-700))",
+          800: "hsl(var(--neutral-800))",
+          900: "hsl(var(--neutral-900))",
+          950: "hsl(var(--neutral-950))",
+        },
+
+        /* ==========================================
+           LAYER SYSTEM (Color Layering)
+           ========================================== */
+        layer: {
+          0: "hsl(var(--layer-0))",
+          1: "hsl(var(--layer-1))",
+          2: "hsl(var(--layer-2))",
+          3: "hsl(var(--layer-3))",
+          4: "hsl(var(--layer-4))",
+        },
+
+        /* ==========================================
+           LEGACY COLORS (shadcn/ui default)
+           ========================================== */
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -60,6 +128,10 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+
+        /* ==========================================
+           CUSTOM GYM COLORS (Legacy - mantido para compatibilidade)
+           ========================================== */
         gym: {
           yellow: "hsl(var(--gym-yellow))",
           "yellow-glow": "hsl(var(--gym-yellow-glow))",
@@ -72,6 +144,21 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      /* ==========================================
+         BOX SHADOW - Elevation System
+         ========================================== */
+      boxShadow: {
+        flat: "var(--shadow-flat)",
+        subtle: "var(--shadow-subtle)",
+        card: "var(--shadow-card)",
+        elevated: "var(--shadow-elevated)",
+        overlay: "var(--shadow-overlay)",
+        floating: "var(--shadow-floating)",
+        "glow-primary": "var(--shadow-glow-primary)",
+        "glow-success": "var(--shadow-glow-success)",
+        "glow-warning": "var(--shadow-glow-warning)",
+        yellow: "var(--shadow-yellow)", // Legacy
       },
       keyframes: {
         "accordion-down": {

@@ -88,7 +88,7 @@ const Plans = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16 animate-fade-in">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-subtle border border-primary/20 mb-6 shadow-subtle">
             <Star className="w-4 h-4 text-primary" />
             <span className="text-sm font-bold text-primary">680+ Alunos</span>
           </div>
@@ -97,10 +97,10 @@ const Plans = () => {
             Escolha Seu <span className="text-primary">Plano</span>
           </h2>
 
-          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto leading-relaxed">
             Invista na sua saúde. Quanto mais tempo você se compromete,
             <br className="hidden sm:block" />
-            <span className="text-gray-300 font-semibold">mais economia e resultados.</span>
+            <span className="text-neutral-200 font-semibold">mais economia e resultados.</span>
           </p>
         </div>
 
@@ -109,18 +109,23 @@ const Plans = () => {
           {plans.map((plan, index) => (
             <Card
               key={index}
-              className={`relative transition-smooth overflow-hidden group ${plan.isPopular
-                ? "border-2 border-primary bg-gradient-to-b from-gym-dark to-black shadow-elevated md:scale-105 hover:scale-110"
-                : "border border-gray-800 bg-gradient-to-b from-gray-900/50 to-black hover:border-gray-700 hover:scale-105"
+              variant={plan.isPopular ? "glow" : "elevated"}
+              className={`relative overflow-hidden group ${plan.isPopular
+                ? "md:scale-105 hover:scale-110"
+                : "hover:scale-105"
                 }`}
             >
               {/* Badge "MAIS ESCOLHIDO" */}
               {plan.badge && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20">
-                  <div className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-black font-black px-6 py-2 rounded-full shadow-yellow text-sm flex items-center gap-2 animate-pulse-subtle">
-                    <Star className="w-4 h-4 fill-current" />
+                  <Badge
+                    variant="primary"
+                    size="lg"
+                    className="animate-bounce-subtle"
+                  >
+                    <Star className="w-4 h-4 fill-current mr-1" />
                     {plan.badge}
-                  </div>
+                  </Badge>
                 </div>
               )}
 
@@ -216,10 +221,8 @@ const Plans = () => {
                 <Button
                   onClick={() => handleWhatsAppClick(plan.title)}
                   size="lg"
-                  className={`w-full font-black text-base transition-smooth h-14 ${plan.isPopular
-                    ? "bg-primary hover:bg-primary/90 text-black shadow-yellow hover:scale-105 animate-pulse-glow"
-                    : "bg-green-600 hover:bg-green-700 text-white shadow-lg hover:scale-105"
-                    }`}
+                  variant={plan.isPopular ? "premium" : "success"}
+                  className="w-full"
                 >
                   <MessageCircle className="mr-2 h-5 w-5" />
                   {plan.buttonText}
@@ -227,7 +230,7 @@ const Plans = () => {
 
                 {/* Guarantee (apenas Anual) */}
                 {plan.guarantee && (
-                  <p className="text-xs text-gray-400 text-center mt-3 font-medium">
+                  <p className="text-xs text-neutral-400 text-center mt-3 font-medium">
                     {plan.guarantee}
                   </p>
                 )}
@@ -238,13 +241,13 @@ const Plans = () => {
 
         {/* Why Annual Plan - Persuasion Section */}
         <div className="max-w-4xl mx-auto animate-slide-up">
-          <Card className="bg-gradient-to-br from-gym-dark via-black to-gym-dark border-2 border-primary/30 shadow-yellow overflow-hidden">
+          <Card variant="glow" className="overflow-hidden">
             <CardContent className="p-8 md:p-12">
               <div className="text-center mb-8">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-4">
-                  <Crown className="w-5 h-5 text-primary" />
-                  <span className="text-sm font-bold text-primary">Por que escolher o Anual?</span>
-                </div>
+                <Badge variant="primary" size="lg" className="mb-4">
+                  <Crown className="w-5 h-5 mr-2" />
+                  Por que escolher o Anual?
+                </Badge>
 
                 <h3 className="text-2xl md:text-3xl font-black text-white mb-4 leading-tight">
                   💡 Por Que a Maioria Escolhe o Plano Anual?
@@ -252,13 +255,13 @@ const Plans = () => {
               </div>
 
               <div className="space-y-6 text-center">
-                <p className="text-lg text-gray-300 leading-relaxed">
+                <p className="text-lg text-neutral-300 leading-relaxed">
                   Porque <span className="text-white font-bold">resultado não acontece em 30 dias</span>.
                   Acontece quando você cria o <span className="text-primary font-black">HÁBITO</span>,
                   quando você não desiste, quando você tem uma equipe ao seu lado empurrando você para frente.
                 </p>
 
-                <div className="py-6 px-6 bg-gym-dark/50 rounded-xl border border-primary/20">
+                <div className="py-6 px-6 bg-layer-1 rounded-xl border border-primary/20 shadow-card">
                   <p className="text-xl md:text-2xl text-white font-bold mb-2">
                     O plano anual é o compromisso que <span className="text-primary font-black">650+ alunos</span> fizeram com eles mesmos.
                   </p>
@@ -272,18 +275,18 @@ const Plans = () => {
                 </p>
 
                 {/* Social Proof Mini */}
-                <div className="flex items-center justify-center gap-8 pt-6 border-t border-gray-800">
+                <div className="flex items-center justify-center gap-8 pt-6 border-t border-neutral-800">
                   <div className="text-center">
                     <div className="text-3xl font-black text-primary">4.9★</div>
-                    <div className="text-xs text-gray-400 font-medium">Avaliação</div>
+                    <div className="text-xs text-neutral-400 font-medium">Avaliação</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-black text-primary">650+</div>
-                    <div className="text-xs text-gray-400 font-medium">Alunos</div>
+                    <div className="text-xs text-neutral-400 font-medium">Alunos</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-black text-primary">37%</div>
-                    <div className="text-xs text-gray-400 font-medium">Economia</div>
+                    <div className="text-xs text-neutral-400 font-medium">Economia</div>
                   </div>
                 </div>
               </div>

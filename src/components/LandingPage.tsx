@@ -3,8 +3,10 @@ import Hero from './Hero';
 import ReactivationBanner from './ReactivationBanner'; // optional
 import About from './About';
 import Benefits from './Benefits';
+import Facilities from './Facilities';
 import Campaigns from './Campaigns';
 import Plans from './Plans';
+import Team from './Team';
 import Testimonials from './Testimonials';
 import Gallery from './Gallery';
 import FinalCTA from './FinalCTA';
@@ -20,8 +22,10 @@ const LandingPage = () => (
     <ReactivationBanner /> {/* Remove if not needed */}
     <About />
     <Benefits />
+    <Facilities />
     <Campaigns />
     <Plans />
+    <Team />
     <Testimonials />
     <Gallery /> {/* Remove if not needed */}
     <FinalCTA />
