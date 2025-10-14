@@ -3,23 +3,23 @@ import { Dumbbell, Users, Clock, Heart } from "lucide-react";
 const features = [
   {
     icon: Heart,
-    title: "Ambiente Acolhedor",
-    description: "Aqui, todo mundo te conhece pelo nome, não importa se você é iniciante ou avançado.",
+    title: "Sem Julgamento. Só Apoio Real.",
+    description: "Do primeiro dia ao seu melhor shape, você vai sentir que pertence. Nossa equipe conhece cada aluno, cada meta, cada conquista.",
   },
   {
     icon: Dumbbell,
-    title: "Equipamentos Modernos",
-    description: "Uma estrutura completa para você treinar com segurança e conforto.",
+    title: "Estrutura Que Você Merece",
+    description: "Aparelhos modernos, espaço amplo e ambiente climatizado. Treine com segurança, conforto e a certeza de ter o melhor.",
   },
   {
     icon: Clock,
-    title: "Horário Flexível",
-    description: "A gente se adapta à sua rotina, funcionando das 04h30 às 21h sem parar.",
+    title: "A Gente Se Adapta à Sua Rotina",
+    description: "Das 04h30 às 21h sem fechar no almoço. Seja de manhã cedo ou depois do trabalho, a Full Force está aberta pra você.",
   },
   {
     icon: Users,
-    title: "Acompanhamento Próximo",
-    description: "Suporte real da equipe para você atingir suas metas com a metodologia de treino certa.",
+    title: "Você Não Treina Sozinho Aqui",
+    description: "Metodologia individualizada + Suporte constante da equipe. Cada treino é pensado para o SEU corpo e o SEU objetivo.",
   },
 ];
 
@@ -29,10 +29,14 @@ const About = () => {
       <div className="container px-4">
         <div className="max-w-3xl mx-auto mb-12 md:mb-16">
           <h2 className="text-left text-3xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6">
-            Mais Que Uma Academia, <span className="text-primary">Um Lugar Para Você se Sentir em Casa</span>
+            Mais Que Uma Academia: <span className="text-primary">O Lugar Onde Sua Transformação Começa de Verdade</span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground px-4">
-            Na Full Force, você encontra a estrutura moderna que merece, com o acolhimento de quem se importa com seu resultado.
+          <p className="text-lg md:text-xl text-muted-foreground px-4 leading-relaxed">
+            A Full Force não é só sobre equipamentos modernos ou estrutura impecável. É sobre <strong className="text-foreground">PESSOAS</strong>.
+            <br /><br />
+            Somos a única academia de Matupá onde você é tratado pelo nome, acompanhado de perto e motivado todos os dias por uma equipe que realmente liga para o SEU progresso.
+            <br /><br />
+            Aqui, iniciantes se sentem seguros. Avançados encontram o desafio que precisam. E todos fazem parte de uma comunidade que empurra você para frente.
           </p>
         </div>
 

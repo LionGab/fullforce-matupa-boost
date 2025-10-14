@@ -1,143 +1,294 @@
-import { Check, Crown, MessageCircle } from "lucide-react";
+import { Check, Crown, MessageCircle, Star, TrendingDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+
+/**
+ * Plans Section - Conversão de vendas
+ * 
+ * Design inspirado em: Profissional com acolhimento
+ * - Cards com profundidade (bordas sutis + sombras duplas)
+ * - Hierarquia clara (preço em destaque, benefícios organizados)
+ * - Sistema de cores funcional (amarelo = CTA, verde = sucesso)
+ * - Microinterações e garantias para reduzir fricção
+ */
 
 const Plans = () => {
   const handleWhatsAppClick = (plan: string) => {
+    // Track conversion event
+    if (typeof window !== "undefined" && window.gtag) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "click_plan",
+        plan_type: plan,
+        placement: "plans_section"
+      });
+    }
+
     const message = `Olá! Tenho interesse no ${plan} da Full Force Academia`;
-    window.open(`https://wa.me/5566999100808?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(
+      `https://wa.me/5566999100808?text=${encodeURIComponent(message)}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   const plans = [
     {
-      title: "Plano Trimestral",
-      price: "R$ 594",
-      monthly: "R$ 198/mês",
+      title: "Mensal",
+      subtitle: "Flexibilidade total",
+      price: "189",
+      period: "/mês",
+      installment: "Pago mensalmente",
       isPopular: false,
+      isBestValue: false,
       features: [
-        "Acesso completo à academia",
-        "Avaliação física inclusa",
-        "Horário flexível (04h30 às 21h)",
-        "Equipamentos modernos",
+        "Musculação completa",
+        "CrossFit e Funcional",
+        "Avaliação física",
+        "Acesso 7 dias/semana",
+        "Sem fidelidade",
       ],
+      buttonText: "Começar Agora",
+      badge: null,
     },
     {
-      title: "Plano Anual",
-      subtitle: "O mais escolhido em Matupá",
-      price: "R$ 1.428",
-      monthly: "R$ 119/mês",
-      dailyCost: "Menos de R$ 4 por dia",
-      savings: "Economize até 40%",
+      title: "Anual",
+      subtitle: "Máxima economia e resultados",
+      price: "119",
+      period: "/mês",
+      installment: "12x de R$119 (Total: R$1428)",
+      originalPrice: "189",
+      discount: "37% OFF",
+      savings: "Você paga R$1428 em vez de R$2268",
       isPopular: true,
+      isBestValue: true,
+      urgency: "Oferta Especial Plano Anual com 37% OFF válido até 31 de Outubro",
       features: [
-        "Acesso completo à academia",
-        "Matrícula grátis",
-        "Avaliação física inclusa",
-        "Acompanhamento próximo da equipe",
-        "Horário flexível (04h30 às 21h)",
-        "Melhor custo-benefício",
+        "Tudo do Semestral",
+        "+ Avaliações mensais",
+        "+ Acompanhamento nutricional",
+        "+ 2 convidados grátis/mês",
+        "+ Prioridade em eventos",
+        "20% OFF em produtos",
       ],
-    },
-    {
-      title: "Plano Semestral",
-      price: "R$ 948",
-      monthly: "R$ 158/mês",
-      isPopular: false,
-      features: [
-        "Acesso completo à academia",
-        "Avaliação física inclusa",
-        "Horário flexível (04h30 às 21h)",
-        "Equipamentos modernos",
-      ],
+      buttonText: "🔥 Garantir Desconto de 37%",
+      badge: "MAIS ESCOLHIDO",
+      guarantee: "✓ Garantia de 7 dias | ✓ Cancele quando quiser",
     },
   ];
 
   return (
-    <section className="py-24 bg-gym-light-gray relative overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-black text-foreground mb-4">
-            Escolha o plano certo para o seu resultado
+    <section className="relative py-20 md:py-32 bg-gradient-to-b from-background via-gym-dark/30 to-background overflow-hidden">
+      {/* Background Pattern - Subtle depth */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(255,204,0,0.1),transparent_50%)]" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-12 md:mb-16 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+            <Star className="w-4 h-4 text-primary" />
+            <span className="text-sm font-bold text-primary">680+ Alunos</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+            Escolha Seu <span className="text-primary">Plano</span>
           </h2>
+
+          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            Invista na sua saúde. Quanto mais tempo você se compromete,
+            <br className="hidden sm:block" />
+            <span className="text-gray-300 font-semibold">mais economia e resultados.</span>
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
+        {/* Plans Grid - Mobile First, 2 cards only */}
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto mb-16">
           {plans.map((plan, index) => (
             <Card
               key={index}
-              className={`relative transition-smooth hover:scale-105 ${
-                plan.isPopular
-                  ? "shadow-yellow border-primary border-2 md:scale-110 animate-pulse-glow"
-                  : "shadow-card border-border"
-              }`}
+              className={`relative transition-smooth overflow-hidden group ${plan.isPopular
+                ? "border-2 border-primary bg-gradient-to-b from-gym-dark to-black shadow-elevated md:scale-105 hover:scale-110"
+                : "border border-gray-800 bg-gradient-to-b from-gray-900/50 to-black hover:border-gray-700 hover:scale-105"
+                }`}
             >
-              {plan.isPopular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-                  <Badge className="bg-primary text-primary-foreground font-bold px-6 py-3 text-base shadow-yellow animate-pulse">
-                    <Crown className="w-5 h-5 mr-2 animate-spin" style={{ animationDuration: '3s' }} />
-                    ⚡ MAIS ESCOLHIDO ⚡
-                  </Badge>
+              {/* Badge "MAIS ESCOLHIDO" */}
+              {plan.badge && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20">
+                  <div className="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-black font-black px-6 py-2 rounded-full shadow-yellow text-sm flex items-center gap-2 animate-pulse-subtle">
+                    <Star className="w-4 h-4 fill-current" />
+                    {plan.badge}
+                  </div>
                 </div>
               )}
 
-               <CardHeader className="pt-8">
-                <CardTitle className="text-2xl font-black text-foreground">
-                  {plan.title}
-                </CardTitle>
-                {plan.subtitle && (
-                  <CardDescription className="text-primary font-semibold text-base mt-1">
+              {/* Urgency Banner (apenas no Anual) */}
+              {plan.urgency && (
+                <div className="bg-gradient-to-r from-red-600/90 to-orange-600/90 px-4 py-3 text-center">
+                  <p className="text-white text-sm font-bold flex items-center justify-center gap-2">
+                    <span className="animate-pulse">🔥</span>
+                    {plan.urgency}
+                  </p>
+                </div>
+              )}
+
+              <CardHeader className="pt-10 pb-6 space-y-4">
+                {/* Plan Title */}
+                <div className="text-center">
+                  <h3 className="text-3xl font-black text-white mb-2">
+                    {plan.title}
+                  </h3>
+                  <p className="text-gray-400 font-medium">
                     {plan.subtitle}
-                  </CardDescription>
-                )}
-                <div className="mt-4">
-                  <div className="text-4xl font-black text-foreground">{plan.price}</div>
-                  <div className="text-muted-foreground text-sm mt-1">ou {plan.monthly}</div>
-                  {plan.dailyCost && (
-                    <div className="text-primary font-bold text-lg mt-2">🔥 {plan.dailyCost}</div>
+                  </p>
+                </div>
+
+                {/* Price Display */}
+                <div className="text-center py-6">
+                  {/* Original Price (tachado) */}
+                  {plan.originalPrice && (
+                    <div className="flex items-center justify-center gap-3 mb-2">
+                      <span className="text-2xl text-gray-500 line-through font-bold">
+                        R$ {plan.originalPrice}
+                      </span>
+                      <TrendingDown className="w-5 h-5 text-red-500" />
+                    </div>
                   )}
+
+                  {/* Discount Badge */}
+                  {plan.discount && (
+                    <div className="inline-block mb-3">
+                      <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white font-black px-4 py-2 rounded-lg text-sm shadow-lg">
+                        🔥 {plan.discount}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Main Price */}
+                  <div className="flex items-baseline justify-center gap-1">
+                    <span className="text-2xl text-gray-400 font-bold">R$</span>
+                    <span className={`font-black leading-none ${plan.isPopular
+                      ? "text-7xl md:text-8xl text-primary drop-shadow-[0_0_30px_rgba(255,204,0,0.5)]"
+                      : "text-6xl md:text-7xl text-white"
+                      }`}>
+                      {plan.price}
+                    </span>
+                    <span className="text-xl text-gray-400 font-medium">
+                      {plan.period}
+                    </span>
+                  </div>
+
+                  {/* Installment Info */}
+                  <p className="text-gray-400 text-sm mt-3 font-medium">
+                    {plan.installment}
+                  </p>
+
+                  {/* Savings Info (apenas Anual) */}
                   {plan.savings && (
-                    <Badge className="bg-primary/20 text-primary border-primary mt-2 animate-pulse shadow-yellow">
-                      💰 {plan.savings}
-                    </Badge>
+                    <div className="mt-4 pt-4 border-t border-primary/20">
+                      <p className="text-primary font-bold text-base">
+                        💰 {plan.savings}
+                      </p>
+                    </div>
                   )}
                 </div>
               </CardHeader>
 
-              <CardContent>
+              {/* Features List */}
+              <CardContent className="px-6 pb-6">
                 <ul className="space-y-3">
                   {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-sm text-foreground">{feature}</span>
+                    <li key={i} className="flex items-start gap-3 group/item">
+                      <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.isPopular ? "text-primary" : "text-green-500"
+                        }`} />
+                      <span className="text-sm text-gray-300 font-medium leading-relaxed group-hover/item:text-white transition-colors">
+                        {feature}
+                      </span>
                     </li>
                   ))}
                 </ul>
               </CardContent>
 
-              <CardFooter>
+              {/* CTA Button */}
+              <CardFooter className="px-6 pb-6">
                 <Button
                   onClick={() => handleWhatsAppClick(plan.title)}
-                  className={`w-full font-bold transition-smooth ${
-                    plan.isPopular
-                      ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-yellow hover:animate-shake"
-                      : "bg-secondary hover:bg-secondary/90 text-secondary-foreground"
-                  }`}
                   size="lg"
+                  className={`w-full font-black text-base transition-smooth h-14 ${plan.isPopular
+                    ? "bg-primary hover:bg-primary/90 text-black shadow-yellow hover:scale-105 animate-pulse-glow"
+                    : "bg-green-600 hover:bg-green-700 text-white shadow-lg hover:scale-105"
+                    }`}
                 >
                   <MessageCircle className="mr-2 h-5 w-5" />
-                  {plan.isPopular ? "🔥 Quero o plano anual 💪" : "Quero este plano"}
+                  {plan.buttonText}
                 </Button>
+
+                {/* Guarantee (apenas Anual) */}
+                {plan.guarantee && (
+                  <p className="text-xs text-gray-400 text-center mt-3 font-medium">
+                    {plan.guarantee}
+                  </p>
+                )}
               </CardFooter>
             </Card>
           ))}
         </div>
 
-        <div className="text-center max-w-2xl mx-auto animate-slide-up">
-          <p className="text-lg text-muted-foreground">
-            A maioria dos nossos alunos escolhe o <strong className="text-primary">plano anual</strong> porque ele garante{" "}
-            <strong className="text-foreground">constância e resultado</strong>. Manter o ritmo é o que transforma.
-          </p>
+        {/* Why Annual Plan - Persuasion Section */}
+        <div className="max-w-4xl mx-auto animate-slide-up">
+          <Card className="bg-gradient-to-br from-gym-dark via-black to-gym-dark border-2 border-primary/30 shadow-yellow overflow-hidden">
+            <CardContent className="p-8 md:p-12">
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 mb-4">
+                  <Crown className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-bold text-primary">Por que escolher o Anual?</span>
+                </div>
+
+                <h3 className="text-2xl md:text-3xl font-black text-white mb-4 leading-tight">
+                  💡 Por Que a Maioria Escolhe o Plano Anual?
+                </h3>
+              </div>
+
+              <div className="space-y-6 text-center">
+                <p className="text-lg text-gray-300 leading-relaxed">
+                  Porque <span className="text-white font-bold">resultado não acontece em 30 dias</span>.
+                  Acontece quando você cria o <span className="text-primary font-black">HÁBITO</span>,
+                  quando você não desiste, quando você tem uma equipe ao seu lado empurrando você para frente.
+                </p>
+
+                <div className="py-6 px-6 bg-gym-dark/50 rounded-xl border border-primary/20">
+                  <p className="text-xl md:text-2xl text-white font-bold mb-2">
+                    O plano anual é o compromisso que <span className="text-primary font-black">650+ alunos</span> fizeram com eles mesmos.
+                  </p>
+                  <p className="text-2xl md:text-3xl font-black text-primary mt-4">
+                    E funcionou. ✓
+                  </p>
+                </div>
+
+                <p className="text-2xl md:text-3xl font-black text-white pt-4">
+                  Agora é sua vez. 💪
+                </p>
+
+                {/* Social Proof Mini */}
+                <div className="flex items-center justify-center gap-8 pt-6 border-t border-gray-800">
+                  <div className="text-center">
+                    <div className="text-3xl font-black text-primary">4.9★</div>
+                    <div className="text-xs text-gray-400 font-medium">Avaliação</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-black text-primary">650+</div>
+                    <div className="text-xs text-gray-400 font-medium">Alunos</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-3xl font-black text-primary">37%</div>
+                    <div className="text-xs text-gray-400 font-medium">Economia</div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

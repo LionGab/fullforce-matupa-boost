@@ -25,45 +25,54 @@ const FinalCTA = () => {
             <div className="grid md:grid-cols-2">
               <div className="p-8 md:p-12 flex flex-col justify-center">
                 <h2 className="text-3xl md:text-4xl font-black text-white mb-4 leading-tight">
-                  Pronta para começar sua transformação em{" "}
-                  <span className="text-primary">Matupá</span>?
+                  Mais de{" "}
+                  <span className="text-primary">700 Alunos Já Começaram.</span>
+                  <br />
+                  Falta Só Você.
                 </h2>
 
-                <p className="text-xl text-gray-300 mb-8">
-                  Junte-se aos mais de{" "}
-                  <strong className="text-primary">700 alunos</strong> que já
-                  deram o primeiro passo. Nossa equipe está pronta para te
-                  receber.
+                <p className="text-xl text-gray-300 mb-6 leading-relaxed">
+                  Você chegou até aqui porque algo dentro de você <strong className="text-white">QUER mudar</strong>.
+                </p>
+
+                <p className="text-lg text-gray-400 mb-8 leading-relaxed">
+                  Não é sobre ter o corpo perfeito. É sobre se sentir bem na própria pele. É sobre ter energia pra viver melhor. É sobre conquistar a confiança que você merece.
+                  <br /><br />
+                  A Full Force não é só uma academia. É o lugar onde você vai <strong className="text-primary">PARAR DE ADIAR</strong> e <strong className="text-primary">COMEÇAR A AGIR</strong>.
+                  <br /><br />
+                  <span className="text-white font-semibold">O primeiro passo é sempre o mais difícil. Mas depois dele, tudo muda.</span>
                 </p>
 
                 <Button
                   onClick={handleWhatsAppClick}
                   size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg px-8 py-6 h-auto transition-smooth shadow-yellow hover:scale-105 mb-8 w-full md:w-auto"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg px-8 py-6 h-auto transition-smooth shadow-yellow hover:scale-105 mb-8 w-full md:w-auto btn-ripple"
                 >
                   <MessageCircle className="mr-3 h-6 w-6" />
-                  Falar com o time no WhatsApp
+                  🔥 Falar com o Time no WhatsApp Agora
                 </Button>
 
                 <div className="space-y-4 text-gray-300">
                   <div className="flex items-start gap-3">
                     <Clock className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <p className="font-bold text-white">Nosso horário:</p>
+                      <p className="font-bold text-white">⏰ Quando Você Pode Treinar:</p>
                       <p className="text-sm">
-                        Segunda a Sexta, das 04h30 às 21h (sem fechar no almoço)
+                        Segunda a Sexta: 04h30 às 21h (sem fechar no almoço)
                       </p>
                       <p className="text-sm">Sábado: 06h às 12h</p>
+                      <p className="text-sm text-primary font-semibold mt-1">A gente se adapta à SUA rotina.</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
                     <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
-                      <p className="font-bold text-white">Onde estamos:</p>
+                      <p className="font-bold text-white">📍 Onde Estamos:</p>
                       <p className="text-sm">
                         Rua 09, Nº 203 — Centro — ZC1004, Matupá - MT, 78525-000
                       </p>
+                      <p className="text-sm text-primary font-semibold mt-1">No coração da cidade, fácil de chegar.</p>
                     </div>
                   </div>
                 </div>
@@ -87,20 +96,19 @@ const FinalCTA = () => {
           <div className="grid md:grid-cols-2">
             <div className="p-8 flex flex-col justify-center">
               <h3 className="text-2xl font-black text-foreground mb-4">
-                Visite nossa academia
+                🗺️ Visite Nossa Academia
               </h3>
-              <p className="text-muted-foreground mb-6">
-                Estamos localizados no coração de Matupá. Venha conhecer nossa
-                estrutura e conversar com nossa equipe.
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Estamos localizados no coração de Matupá. Venha conhecer nossa estrutura completa e conversar com nossa equipe. Estamos te esperando!
               </p>
               <Button
                 onClick={handleMapClick}
                 variant="outline"
                 size="lg"
-                className="w-full md:w-auto font-bold"
+                className="w-full md:w-auto font-bold hover:bg-primary hover:text-primary-foreground transition-smooth"
               >
                 <Navigation className="mr-2 h-5 w-5" />
-                Como Chegar
+                📍 Como Chegar
               </Button>
             </div>
 

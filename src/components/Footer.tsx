@@ -14,9 +14,12 @@ const Footer = () => {
             <h3 className="text-2xl font-black mb-4">
               Full<span className="text-primary">Force</span>
             </h3>
-            <p className="text-gray-400 mb-4 max-w-md">
-              A academia mais moderna de Matupá/MT. Transformando vidas através do movimento, 
-              com estrutura de primeira e uma comunidade que te apoia em cada passo.
+            <p className="text-gray-400 mb-4 max-w-md leading-relaxed">
+              💪 <strong className="text-white">Full Force Academia — Matupá, MT</strong>
+              <br /><br />
+              Transformando corpos e vidas. Mais que músculos, construímos confiança.
+              <br /><br />
+              <span className="text-primary font-semibold">Venha fazer parte da nossa comunidade de +700 alunos transformados.</span>
             </p>
             <div className="flex gap-4">
               <a
@@ -24,6 +27,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-brand-gray hover:bg-primary/20 border border-gray-700 hover:border-primary/50 flex items-center justify-center transition-all group"
+                aria-label="Instagram Full Force Academia"
               >
                 <Instagram className="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors" />
               </a>
@@ -32,6 +36,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-brand-gray hover:bg-primary/20 border border-gray-700 hover:border-primary/50 flex items-center justify-center transition-all group"
+                aria-label="WhatsApp Full Force Academia"
               >
                 <MessageCircle className="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors" />
               </a>
@@ -67,12 +72,25 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="font-bold mb-4">Contato</h4>
+            <h4 className="font-bold mb-4">📞 Contato</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>Matupá, Mato Grosso</li>
-              <li>(66) 99999-9999</li>
-              <li className="text-sm">Seg - Sáb: 04:30 - 21:00</li>
-              <li className="text-sm text-primary">Sem intervalo</li>
+              <li className="flex items-start gap-2">
+                <span>📍</span>
+                <span>Rua 09, Nº 203 — Centro<br />Matupá - MT, 78525-000</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span>📱</span>
+                <span>(66) 99910-0808</span>
+              </li>
+              <li className="flex items-center gap-2 text-white font-semibold">
+                <span>⏰</span>
+                <span>Seg-Sex: 04:30 - 21:00</span>
+              </li>
+              <li className="flex items-center gap-2 text-white font-semibold">
+                <span></span>
+                <span>Sáb: 06:00 - 12:00</span>
+              </li>
+              <li className="text-sm text-primary font-bold">✅ Sem fechar no almoço</li>
             </ul>
           </div>
         </div>

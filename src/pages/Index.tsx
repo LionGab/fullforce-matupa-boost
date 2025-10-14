@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Plans from "@/components/Plans";
 import Benefits from "@/components/Benefits";
 import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import ReactivationBanner from "@/components/ReactivationBanner";
@@ -15,15 +16,16 @@ const Index = () => {
       <ReactivationBanner />
       <WhatsAppFloat />
       <InstagramFloat />
-      
+
       <main>
         <Hero />
         <Plans />
         <Benefits />
         <Testimonials />
+        <FAQ />
         <FinalCTA />
       </main>
-      
+
       {/* Footer */}
       <footer className="bg-gym-dark text-white py-8">
         <div className="container mx-auto px-4 text-center">
