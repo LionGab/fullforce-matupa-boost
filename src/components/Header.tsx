@@ -1,5 +1,6 @@
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "@/components/ThemeToggle";
 import logo from "@/assets/logo.jpg";
 
 const Header = () => {
@@ -18,15 +19,18 @@ const Header = () => {
           />
         </div>
         
-        <Button 
-          onClick={handleWhatsAppClick}
-          className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold transition-smooth shadow-yellow hover:scale-105"
-          size="lg"
-        >
-          <MessageCircle className="mr-2 h-5 w-5" />
-          <span className="hidden sm:inline">Falar no WhatsApp</span>
-          <span className="sm:hidden">WhatsApp</span>
-        </Button>
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
+          <Button 
+            onClick={handleWhatsAppClick}
+            className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold transition-smooth shadow-yellow hover:scale-105"
+            size="lg"
+          >
+            <MessageCircle className="mr-2 h-5 w-5" />
+            <span className="hidden sm:inline">Falar no WhatsApp</span>
+            <span className="sm:hidden">WhatsApp</span>
+          </Button>
+        </div>
       </div>
     </header>
   );

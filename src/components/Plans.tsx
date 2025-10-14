@@ -96,9 +96,9 @@ const Plans = () => {
                   {plan.dailyCost && (
                     <div className="text-primary font-bold text-lg mt-2">🔥 {plan.dailyCost}</div>
                   )}
-                  {(plan as any).savings && (
+                  {plan.savings && (
                     <Badge className="bg-primary/20 text-primary border-primary mt-2">
-                      {(plan as any).savings}
+                      {plan.savings}
                     </Badge>
                   )}
                 </div>

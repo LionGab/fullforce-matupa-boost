@@ -7,33 +7,15 @@ const Hero = () => {
     window.open("https://wa.me/556699100808?text=Olá! Quero minha aula grátis na Full Force Academia", "_blank");
   };
 
-  css/* Background hero mais impactante */
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
-              url('equipamentos-background.webp');
-  background-size: cover;
-  background-position: center;
-}
-
-/* Aumentar contraste dos títulos */
-h1, h2, h3 {
-  font-weight: 800; /* Mais bold */
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-}
-
-/* Amarelo mais vibrante */
-:root {
-  --primary-yellow: #F9A825; /* Do Site A */
-}
-
-  return
-    (<section className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center pt-28 pb-32 overflow-hidden">
+  return (
+    <section className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center pt-28 pb-32 overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
           src={gymHero}
           alt="Full Force Academia Equipment"
           className="w-full h-full object-cover"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gym-dark via-gym-dark/90 to-gym-dark/70" />
       </div>

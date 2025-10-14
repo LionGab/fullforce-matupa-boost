@@ -8,32 +8,21 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import ReactivationBanner from "@/components/ReactivationBanner";
 import InstagramFloat from "@/components/InstagramFloat";
 
-<ReactivationBanner />
-<WhatsAppFloat />
-<InstagramFloat />
-<main>
-  <Hero />
-  <Plans />
-  <Benefits />
-  <Testimonials />
-  <FinalCTA />
-</main>
-
-
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
       <ReactivationBanner />
       <WhatsAppFloat />
+      <InstagramFloat />
+      
       <main>
-  <Hero />
-  <WhatsAppFloat />   {/* aqui dentro */}
-  <Plans />
-  <Benefits />
-  <Testimonials />
-  <FinalCTA />
-</main>
+        <Hero />
+        <Plans />
+        <Benefits />
+        <Testimonials />
+        <FinalCTA />
+      </main>
       
       {/* Footer */}
       <footer className="bg-gym-dark text-white py-8">

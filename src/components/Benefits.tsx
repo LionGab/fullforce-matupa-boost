@@ -21,63 +21,8 @@ const Benefits = () => {
     },
   ];
 
-  <section class="galeria">
-  <h2>Conheça Nossa Estrutura</h2>
-  <div class="grid-galeria">
-    <div class="foto-galeria">
-      <img src="musculacao.webp" alt="Área de musculação Full Force Matupá" loading="lazy">
-      <span class="legenda">Equipamentos de musculação novos 2024</span>
-    </div>
-    <div class="foto-galeria">
-      <img src="cardio.webp" alt="Área de cardio" loading="lazy">
-      <span class="legenda">Área de cardio completa</span>
-    </div>
-    <div class="foto-galeria">
-      <img src="espaco-kids.webp" alt="Espaço kids" loading="lazy">
-      <span class="legenda">Espaço kids para seus filhos</span>
-    </div>
-    <div class="foto-galeria">
-      <img src="funcional.webp" alt="Área funcional" loading="lazy">
-      <span class="legenda">Treino funcional</span>
-    </div>
-    <div class="foto-galeria">
-      <img src="halteres.webp" alt="Rack de halteres" loading="lazy">
-      <span class="legenda">Halteres profissionais</span>
-    </div>
-    <div class="foto-galeria">
-      <img src="recepção.webp" alt="Recepção" loading="lazy">
-      <span class="legenda">Recepção e atendimento</span>
-    </div>
-    <div class="foto-galeria">
-      <img src="vestiario.webp" alt="Vestiário" loading="lazy">
-      <span class="legenda">Vestiários limpos</span>
-    </div>
-    <div class="foto-galeria">
-      <img src="logo-3d.webp" alt="Logo Full Force" loading="lazy">
-      <span class="legenda">Full Force - Sua academia em Matupá</span>
-    </div>
-  </div>
-</section>
-
   return (
-    /* Background hero mais impactante */
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
-              url('equipamentos-background.webp');
-  background-size: cover;
-  background-position: center;
-}
-
-/* Aumentar contraste dos títulos */
-h1, h2, h3 {
-  font-weight: 800; /* Mais bold */
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-}
-
-/* Amarelo mais vibrante */
-:root {
-  --primary-yellow: #F9A825; /* Do Site A */
-}
+    <section className="py-24 bg-gym-light-gray">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-black text-foreground mb-4">
@@ -112,6 +57,7 @@ h1, h2, h3 {
               src={gymEquipment}
               alt="Equipamentos Full Force"
               className="w-full h-80 object-cover transition-smooth group-hover:scale-110"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-gym-dark/80 to-transparent flex items-end p-6">
               <p className="text-white font-bold text-xl">Equipamentos de última geração</p>
@@ -123,6 +69,7 @@ h1, h2, h3 {
               src={gymCardio}
               alt="Área de cardio Full Force"
               className="w-full h-80 object-cover transition-smooth group-hover:scale-110"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-gym-dark/80 to-transparent flex items-end p-6">
               <p className="text-white font-bold text-xl">Área de cardio completa</p>

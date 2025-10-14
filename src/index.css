@@ -52,9 +52,11 @@ All colors MUST be HSL.
     --gradient-hero: linear-gradient(135deg, hsl(var(--gym-dark)) 0%, hsl(var(--gym-gray)) 100%);
     --gradient-cta: linear-gradient(135deg, hsl(var(--gym-yellow)) 0%, hsl(45 100% 45%) 100%);
     
-    /* Shadows */
+    /* Shadows with two-layer system for depth */
     --shadow-yellow: 0 10px 40px -10px hsl(var(--gym-yellow) / 0.4);
-    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.1);
+    --shadow-card: 0 2px 8px -2px hsl(0 0% 0% / 0.08), 0 4px 20px -4px hsl(0 0% 0% / 0.12);
+    --shadow-elevated: 0 4px 16px -4px hsl(0 0% 0% / 0.12), 0 8px 32px -8px hsl(0 0% 0% / 0.16);
+    --shadow-focus: 0 0 0 3px hsl(var(--gym-yellow) / 0.3);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -106,6 +108,11 @@ All colors MUST be HSL.
     --input: 0 0% 20%;
     --ring: 45 100% 50%;
     
+    /* Enhanced dark mode shadows */
+    --shadow-yellow: 0 10px 40px -10px hsl(var(--gym-yellow) / 0.5);
+    --shadow-card: 0 2px 8px -2px hsl(0 0% 0% / 0.4), 0 4px 20px -4px hsl(0 0% 0% / 0.5);
+    --shadow-elevated: 0 4px 16px -4px hsl(0 0% 0% / 0.5), 0 8px 32px -8px hsl(0 0% 0% / 0.6);
+    
     --sidebar-background: 0 0% 8%;
     --sidebar-foreground: 0 0% 95%;
     --sidebar-primary: 45 100% 50%;
@@ -130,36 +137,43 @@ All colors MUST be HSL.
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
   }
+  
+  /* Focus indicators for accessibility */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+  }
+  
+  button:focus-visible,
+  a:focus-visible {
+    box-shadow: var(--shadow-focus);
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-@keyframes float-in {
-  from {
-    transform: translateY(40px);
-    opacity: 0;
+  
+  @keyframes float-in {
+    from {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
-  to {
-    transform: translateY(0);
-    opacity: 1;
+
+  .animate-float-in {
+    animation: float-in 0.8s ease-out forwards;
   }
-}
-
-.animate-float-in {
-  animation: float-in 0.8s ease-out forwards;
-}
-<div class="absolute inset-0 overlay-dark"></div>
-
   
   .gradient-hero {
     background: var(--gradient-hero);
   }
   
-  <div class="absolute inset-0 bg-black/60 mix-blend-multiply"></div>
-
-
   .gradient-cta {
     background: var(--gradient-cta);
   }
@@ -172,11 +186,32 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-card);
   }
   
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+  
   .transition-smooth {
     transition: var(--transition-smooth);
   }
   
   .transition-bounce {
     transition: var(--transition-bounce);
+  }
+  
+  /* Skip to content link for accessibility */
+  .skip-to-content {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 100;
+  }
+  
+  .skip-to-content:focus {
+    top: 0;
   }
 }

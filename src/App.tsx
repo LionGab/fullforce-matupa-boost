@@ -9,10 +9,13 @@ import InstagramFloat from "@/components/InstagramFloat";
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <a href="#main-content" className="skip-to-content">
+        Pular para o conteúdo principal
+      </a>
       <Header />
       <InstagramFloat />
       
-      <main>
+      <main id="main-content">
         <Hero />
         <Benefits />
         <Plans />
