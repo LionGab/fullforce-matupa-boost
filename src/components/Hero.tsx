@@ -49,18 +49,19 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center pt-20 pb-16 md:pt-28 md:pb-32 overflow-hidden"
       aria-label="Hero - Full Force Academia"
     >
-      {/* Background Image with Overlay - Optimized for LCP */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/images/Fachada/fullforce-facade-night-main.jpg"
-          alt="Academia Full Force em Matupá MT - Fachada iluminada com equipamentos modernos e ambiente profissional para treino"
-          className="w-full h-full object-cover object-center"
-          loading="eager"
-          fetchpriority="high"
-        />
-        {/* Two-layer gradient overlay for depth and readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-gym-dark/90 via-gym-dark/80 to-gym-dark/85 md:bg-gradient-to-r md:from-gym-dark/95 md:via-gym-dark/85 md:to-gym-dark/60" />
-      </div>
+     {/* Background Image with Overlay - Optimized for LCP */}
+<div
+  className="absolute inset-0 bg-[url('/images/Fachada/fullforce-facade-night-main.jpg')] 
+             bg-cover bg-[center_70%] md:bg-[center_60%] 
+             bg-no-repeat z-0"
+  role="img"
+  aria-label="Academia Full Force em Matupá MT - Fachada iluminada com equipamentos modernos e ambiente profissional para treino"
+/>
+
+{/* Overlay gradient for readability */}
+<div className="absolute inset-0 bg-gradient-to-b from-gym-dark/90 via-gym-dark/80 to-gym-dark/85 
+                md:bg-gradient-to-r md:from-gym-dark/95 md:via-gym-dark/85 md:to-gym-dark/60 z-[1]" />
+
 
       {/* Content - Optimized for conversion */}
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
