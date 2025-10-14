@@ -1,5 +1,6 @@
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
 
 /**
  * Hero Section - Primeira impressão e conversão principal
@@ -9,6 +10,7 @@ import { Button } from "@/components/ui/button";
  * - Prova social integrada ao subtítulo (650+ alunos)
  * - Autoridade local clara ("onde Matupá Treina Aqui")
  * - Mobile-first com CTA fixo na base
+ * - Imagem de background otimizada com fallback
  */
 
 // Constantes de configuração
@@ -24,7 +26,15 @@ const ANALYTICS_CONFIG = {
   action: "aula_gratis"
 } as const;
 
+const HERO_IMAGE = {
+  src: "/images/Fachada/fullforce-facade-night-main.jpg",
+  alt: "Academia Full Force em Matupá MT - Fachada iluminada com equipamentos modernos e ambiente profissional para treino"
+} as const;
+
 const Hero = () => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
+
   /**
    * Handler para conversão via WhatsApp
    * Inclui tracking de analytics e abertura em nova aba
@@ -44,20 +54,48 @@ const Hero = () => {
     window.open(WHATSAPP_CONFIG.url, "_blank", "noopener,noreferrer");
   };
 
+  // Preload da imagem para garantir carregamento
+  useEffect(() => {
+    const img = new Image();
+    img.src = HERO_IMAGE.src;
+    img.onload = () => setImageLoaded(true);
+    img.onerror = () => setImageError(true);
+  }, []);
+
   return (
     <section
       className="relative min-h-screen flex items-center justify-center pt-20 pb-16 md:pt-28 md:pb-32 overflow-hidden"
       aria-label="Hero - Full Force Academia"
     >
       {/* Background Image with Overlay - Optimized for LCP */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/images/Fachada/fullforce-facade-night-main.jpg"
-          alt="Academia Full Force em Matupá MT - Fachada iluminada com equipamentos modernos e ambiente profissional para treino"
-          className="w-full h-full object-cover object-center"
-          loading="eager"
-          fetchpriority="high"
-        />
+      <div className="absolute inset-0 z-0 bg-gym-dark">
+        {/* Fallback background enquanto imagem carrega */}
+        {!imageLoaded && !imageError && (
+          <div className="absolute inset-0 bg-gradient-to-br from-gym-dark via-black to-gym-dark animate-pulse" />
+        )}
+
+        {/* Background Image Principal */}
+        {!imageError && (
+          <img
+            src={HERO_IMAGE.src}
+            alt={HERO_IMAGE.alt}
+            className={`w-full h-full object-cover object-center transition-opacity duration-700 ${imageLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            onLoad={() => setImageLoaded(true)}
+            onError={() => setImageError(true)}
+          />
+        )}
+
+        {/* Fallback caso imagem não carregue */}
+        {imageError && (
+          <div className="absolute inset-0 bg-gradient-to-br from-gym-dark via-black to-gym-dark">
+            <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_50%_50%,_rgba(255,204,0,0.2),transparent_70%)]" />
+          </div>
+        )}
+
         {/* Two-layer gradient overlay for depth and readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-gym-dark/90 via-gym-dark/80 to-gym-dark/85 md:bg-gradient-to-r md:from-gym-dark/95 md:via-gym-dark/85 md:to-gym-dark/60" />
       </div>
