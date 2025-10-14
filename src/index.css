@@ -136,30 +136,26 @@ All colors MUST be HSL.
   .text-balance {
     text-wrap: balance;
   }
-@keyframes float-in {
-  from {
-    transform: translateY(40px);
-    opacity: 0;
+  
+  @keyframes float-in {
+    from {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
-  to {
-    transform: translateY(0);
-    opacity: 1;
+
+  .animate-float-in {
+    animation: float-in 0.8s ease-out forwards;
   }
-}
-
-.animate-float-in {
-  animation: float-in 0.8s ease-out forwards;
-}
-<div class="absolute inset-0 overlay-dark"></div>
-
   
   .gradient-hero {
     background: var(--gradient-hero);
   }
   
-  <div class="absolute inset-0 bg-black/60 mix-blend-multiply"></div>
-
-
   .gradient-cta {
     background: var(--gradient-cta);
   }
