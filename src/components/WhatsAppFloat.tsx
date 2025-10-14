@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 const WhatsAppFloat = () => {
   const handleWhatsAppClick = () => {
     // Track event for analytics (Google Tag / GTM)
-    if (typeof window !== "undefined" && (window as any).gtag) {
+    if (typeof window !== "undefined" && window.gtag) {
       window.dataLayer?.push({ event: "click_whatsapp", placement: "floating_button" });
     }
 

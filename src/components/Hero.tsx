@@ -15,6 +15,7 @@ const Hero = () => {
           src={gymHero}
           alt="Full Force Academia Equipment"
           className="w-full h-full object-cover"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gym-dark via-gym-dark/90 to-gym-dark/70" />
       </div>
