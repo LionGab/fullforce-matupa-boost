@@ -64,19 +64,19 @@ const Plans = () => {
 
         <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-12">
           {plans.map((plan, index) => (
-            <Card 
+            <Card
               key={index}
               className={`relative transition-smooth hover:scale-105 ${
-                plan.isPopular 
-                  ? "shadow-yellow border-primary border-2 md:scale-105" 
+                plan.isPopular
+                  ? "shadow-yellow border-primary border-2 md:scale-110 animate-pulse-glow"
                   : "shadow-card border-border"
               }`}
             >
               {plan.isPopular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <Badge className="bg-primary text-primary-foreground font-bold px-4 py-2 text-sm shadow-yellow">
-                    <Crown className="w-4 h-4 mr-1" />
-                    MAIS ESCOLHIDO
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+                  <Badge className="bg-primary text-primary-foreground font-bold px-6 py-3 text-base shadow-yellow animate-pulse">
+                    <Crown className="w-5 h-5 mr-2 animate-spin" style={{ animationDuration: '3s' }} />
+                    ⚡ MAIS ESCOLHIDO ⚡
                   </Badge>
                 </div>
               )}
@@ -97,8 +97,8 @@ const Plans = () => {
                     <div className="text-primary font-bold text-lg mt-2">🔥 {plan.dailyCost}</div>
                   )}
                   {plan.savings && (
-                    <Badge className="bg-primary/20 text-primary border-primary mt-2">
-                      {plan.savings}
+                    <Badge className="bg-primary/20 text-primary border-primary mt-2 animate-pulse shadow-yellow">
+                      💰 {plan.savings}
                     </Badge>
                   )}
                 </div>
@@ -116,17 +116,17 @@ const Plans = () => {
               </CardContent>
 
               <CardFooter>
-                <Button 
+                <Button
                   onClick={() => handleWhatsAppClick(plan.title)}
                   className={`w-full font-bold transition-smooth ${
                     plan.isPopular
-                      ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-yellow"
+                      ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-yellow hover:animate-shake"
                       : "bg-secondary hover:bg-secondary/90 text-secondary-foreground"
                   }`}
                   size="lg"
                 >
                   <MessageCircle className="mr-2 h-5 w-5" />
-                  {plan.isPopular ? "Quero o plano anual 💪" : "Quero este plano"}
+                  {plan.isPopular ? "🔥 Quero o plano anual 💪" : "Quero este plano"}
                 </Button>
               </CardFooter>
             </Card>

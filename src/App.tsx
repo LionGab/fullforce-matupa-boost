@@ -5,6 +5,7 @@ import Benefits from "@/components/Benefits";
 import Testimonials from "@/components/Testimonials";
 import FinalCTA from "@/components/FinalCTA";
 import InstagramFloat from "@/components/InstagramFloat";
+import ScrollProgress from "@/components/ScrollProgress";
 
 const Index = () => {
   return (
@@ -12,6 +13,7 @@ const Index = () => {
       <a href="#main-content" className="skip-to-content">
         Pular para o conteúdo principal
       </a>
+      <ScrollProgress />
       <Header />
       <InstagramFloat />
       

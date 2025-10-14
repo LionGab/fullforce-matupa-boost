@@ -120,6 +120,25 @@ export default {
             boxShadow: "0 0 40px hsl(var(--gym-yellow) / 0.5)",
           },
         },
+        "shake": {
+          "0%, 100%": {
+            transform: "translateX(0)",
+          },
+          "10%, 30%, 50%, 70%, 90%": {
+            transform: "translateX(-2px)",
+          },
+          "20%, 40%, 60%, 80%": {
+            transform: "translateX(2px)",
+          },
+        },
+        "float": {
+          "0%, 100%": {
+            transform: "translateY(0)",
+          },
+          "50%": {
+            transform: "translateY(-10px)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -127,6 +146,8 @@ export default {
         "fade-in": "fade-in 0.6s ease-out",
         "slide-up": "slide-up 0.8s ease-out",
         "pulse-glow": "pulse-glow 2s ease-in-out infinite",
+        "shake": "shake 0.5s ease-in-out",
+        "float": "float 3s ease-in-out infinite",
       },
     },
   },

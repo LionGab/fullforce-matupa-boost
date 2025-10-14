@@ -21,9 +21,9 @@ const Header = () => {
         
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <Button 
+          <Button
             onClick={handleWhatsAppClick}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold transition-smooth shadow-yellow hover:scale-105"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold transition-smooth shadow-yellow hover:scale-105 btn-ripple"
             size="lg"
           >
             <MessageCircle className="mr-2 h-5 w-5" />
