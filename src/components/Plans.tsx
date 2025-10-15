@@ -129,13 +129,15 @@ const Plans = () => {
 
               {/* Urgency Banner (apenas no Anual) */}
               {plan.urgency && (
-                <div className="bg-gradient-to-r from-primary/20 to-orange-500/20 border-b border-primary/30 px-3 sm:px-4 py-2 sm:py-3 text-center backdrop-blur-sm">
-                  <p className="text-primary text-xs sm:text-sm font-bold flex items-center justify-center gap-1 sm:gap-2 flex-wrap">
-                    <span className="animate-pulse">🔥</span>
-                    <span className="leading-snug">{plan.urgency}</span>
-                  </p>
-                </div>
-              )}
+  <div className="bg-gradient-to-r from-primary/20 to-orange-500/20 
+    border-b border-primary/30 px-3 sm:px-4 py-2 sm:py-3 text-center backdrop-blur-sm">
+    <p className="text-primary text-[11px] sm:text-xs md:text-sm font-bold flex 
+      items-center justify-center gap-1 sm:gap-2 flex-wrap">
+      <span className="animate-pulse"></span>
+      <span className="leading-snug">{plan.urgency}</span>
+    </p>
+  </div>
+)}
 
               <CardHeader className="pt-8 sm:pt-10 pb-4 sm:pb-6 space-y-3 sm:space-y-4">
                 {/* Plan Title */}
