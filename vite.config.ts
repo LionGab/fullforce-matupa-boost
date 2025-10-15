@@ -2,17 +2,14 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
-// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const plugins = [react()];
 
-  // Only use componentTagger in development mode
   if (mode === "development") {
     try {
       const { componentTagger } = require("lovable-tagger");
       plugins.push(componentTagger());
     } catch (e) {
-      // lovable-tagger is optional in production
       console.warn("lovable-tagger not available, skipping...");
     }
   }
@@ -31,14 +28,30 @@ export default defineConfig(({ mode }) => {
     build: {
       outDir: "dist",
       sourcemap: false,
+      minify: 'esbuild',
       rollupOptions: {
         output: {
-          manualChunks: {
-            vendor: ["react", "react-dom", "react-router-dom"],
-            ui: ["@radix-ui/react-accordion", "@radix-ui/react-dialog", "@radix-ui/react-dropdown-menu"],
+          manualChunks: (id) => {
+            if (id.includes('node_modules')) {
+              if (id.includes('react') || id.includes('react-dom')) {
+                return 'vendor';
+              }
+              if (id.includes('@radix-ui')) {
+                return 'ui';
+              }
+            }
           },
         },
       },
+    },
+    optimizeDeps: {
+      include: [
+        'react',
+        'react-dom',
+        'react-router-dom',
+        'lucide-react',
+      ],
+      exclude: ['lovable-tagger'],
     },
   };
 });

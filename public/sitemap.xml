@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://fullforceacademia.com.br/</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://fullforceacademia.com.br/images/Fachada/fullforce-facade-night-main.jpg</image:loc>
+      <image:title>Full Force Academia Matupá - Fachada</image:title>
+      <image:caption>A maior academia de Matupá-MT com mais de 650 alunos ativos</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Planos -->
+  <url>
+    <loc>https://fullforceacademia.com.br/#planos</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Benefícios -->
+  <url>
+    <loc>https://fullforceacademia.com.br/#beneficios</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Depoimentos -->
+  <url>
+    <loc>https://fullforceacademia.com.br/#depoimentos</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Contato -->
+  <url>
+    <loc>https://fullforceacademia.com.br/#contato</loc>
+    <lastmod>2025-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+</urlset>

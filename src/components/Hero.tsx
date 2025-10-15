@@ -16,8 +16,8 @@ import { useState, useEffect } from "react";
 // Constantes de configuração
 const WHATSAPP_CONFIG = {
   number: "556699100808",
-  message: "Olá! Quero minha aula grátis na Full Force Academia 🏋️",
-  url: "https://wa.me/556699100808?text=Olá!%20Quero%20minha%20aula%20grátis%20na%20Full%20Force%20Academia%20🏋️"
+  message: "Olá! Quero GARANTIR minha vaga no Plano Anual com 37% OFF até outubro! 🔥",
+  url: "https://wa.me/556699100808?text=Olá!%20Quero%20GARANTIR%20minha%20vaga%20no%20Plano%20Anual%20com%2037%25%20OFF%20até%20outubro!%20🔥"
 } as const;
 
 const ANALYTICS_CONFIG = {
@@ -40,7 +40,6 @@ const Hero = () => {
    * Inclui tracking de analytics e abertura em nova aba
    */
   const handleWhatsAppClick = () => {
-    // Track conversion event for Google Analytics / GTM
     if (typeof window !== "undefined" && window.gtag) {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
@@ -48,9 +47,20 @@ const Hero = () => {
         placement: ANALYTICS_CONFIG.placement,
         action: ANALYTICS_CONFIG.action
       });
+
+      window.gtag('event', 'click_whatsapp', {
+        event_category: 'engagement',
+        event_label: 'hero_cta',
+        plan_type: 'aula_gratis',
+        value: 1
+      });
+
+      window.gtag('event', 'generate_lead', {
+        currency: 'BRL',
+        value: 189
+      });
     }
 
-    // Open WhatsApp with pre-filled message
     window.open(WHATSAPP_CONFIG.url, "_blank", "noopener,noreferrer");
   };
 
@@ -107,6 +117,10 @@ const Hero = () => {
             <span className="text-primary drop-shadow-[0_0_40px_rgba(255,204,0,0.6)] inline-block">
               Full Force 💪
             </span>
+            <br className="hidden sm:block" />
+            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl block mt-3 sm:mt-4 text-primary font-black">
+              Últimas vagas de outubro! 🔥
+            </span>
           </h1>
 
           {/* Subtítulo - Proposta de Valor Clara */}
@@ -146,7 +160,7 @@ const Hero = () => {
               className="w-full sm:w-auto text-base sm:text-lg md:text-xl px-6 sm:px-10 md:px-12 py-5 sm:py-6 md:py-7 rounded-xl sm:rounded-2xl group relative overflow-hidden shadow-floating hover:shadow-glow-primary transition-all duration-300"
             >
               <MessageCircle className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 relative z-10 group-hover:scale-110 transition-transform" />
-              <span className="relative z-10 font-black">💬 Fale no WhatsApp</span>
+              <span className="relative z-10 font-black">� Quero o Plano Anual Full Force!</span>
             </Button>
           </div>
 

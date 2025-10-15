@@ -9,44 +9,44 @@ import { HelpCircle } from "lucide-react";
 const FAQ = () => {
   const faqs = [
     {
-      question: "Preciso ter experiência prévia para treinar na Full Force?",
+      question: "Posso transferir meu plano anual para outra pessoa?",
       answer:
-        "Não! Atendemos desde iniciantes até atletas avançados. Nossa equipe de profissionais qualificados vai montar um treino personalizado para o seu nível e objetivos, garantindo evolução segura e progressiva.",
+        "Sim! Caso precise transferir seu plano anual, entre em contato com nossa equipe pelo WhatsApp. Analisamos cada caso individualmente para encontrar a melhor solução, sem burocracia.",
+    },
+    {
+      question: "Tem desconto para casal no plano anual?",
+      answer:
+        "Sim! Oferecemos condições especiais para casais que fecham o plano anual juntos. Fale conosco pelo WhatsApp para conhecer as vantagens exclusivas e economizar ainda mais!",
+    },
+    {
+      question: "Como funciona a pausa do plano anual?",
+      answer:
+        "Entendemos que imprevistos acontecem. Você pode solicitar 1 pausa de até 30 dias por ano (mediante apresentação de atestado médico). Entre em contato com nossa equipe para mais detalhes sobre as condições.",
+    },
+    {
+      question: "Posso parcelar o valor do plano anual?",
+      answer:
+        "Sim! O plano anual pode ser parcelado em até 12x de R$119 no cartão de crédito, sem juros. Você também pode optar pelo pagamento à vista com condições especiais. Fale conosco para conhecer todas as opções!",
+    },
+    {
+      question: "O que acontece se eu precisar cancelar o plano anual?",
+      answer:
+        "O plano anual tem fidelidade de 12 meses, mas sempre buscamos a melhor solução para nossos alunos. Em casos específicos (mudança de cidade, problemas de saúde), avaliamos individualmente. Consulte nossos termos completos pelo WhatsApp.",
     },
     {
       question: "Qual a diferença entre o plano mensal e anual?",
       answer:
-        "O plano anual oferece uma economia de até 25% comparado ao mensal, além de garantir seu valor por 12 meses sem reajustes. É a melhor opção para quem quer se comprometer com a transformação e economizar!",
+        "O plano anual oferece economia de 37% (R$119/mês vs R$189/mês), além de benefícios exclusivos: treino personalizado, reavaliações trimestrais, 1 convidado grátis/mês, prioridade em eventos e descontos em produtos. É a escolha de quem quer resultados reais e economizar!",
     },
     {
       question: "Quais são os horários de funcionamento?",
       answer:
-        "Funcionamos de segunda a sexta das 04h30 às 21h, sem fechar no almoço! Aos sábados, estamos abertos das 06h às 12h. Horários flexíveis para se adaptar à sua rotina.",
+        "Funcionamos de segunda a sexta das 04h30 às 21h, sem fechar no almoço! Aos sábados, estamos abertos das 06h às 12h. Horários flexíveis para se adaptar à sua rotina, seja você madrugador ou noturno.",
     },
     {
-      question: "A academia oferece acompanhamento nutricional?",
+      question: "Preciso ter experiência prévia para treinar na Full Force?",
       answer:
-        "Sim! Temos parcerias com nutricionistas especializados em nutrição esportiva. Entre em contato pelo WhatsApp para saber mais sobre nossos pacotes de consultoria nutricional.",
-    },
-    {
-      question: "Posso fazer uma aula experimental antes de me matricular?",
-      answer:
-        "Com certeza! Oferecemos uma aula experimental gratuita para você conhecer nossa estrutura, equipe e metodologia. Entre em contato pelo WhatsApp para agendar sua visita.",
-    },
-    {
-      question: "Quais modalidades estão inclusas nos planos?",
-      answer:
-        "Nossos planos incluem acesso completo à musculação, área de cardio e todas as nossas instalações. Consulte nosso time sobre treinos específicos e serviços extras.",
-    },
-    {
-      question: "Vocês trabalham com treinamento personalizado?",
-      answer:
-        "Sim! Oferecemos treinos personalizados com acompanhamento individual de um profissional dedicado. É ideal para quem busca resultados mais rápidos e atenção exclusiva. Fale conosco para valores e disponibilidade.",
-    },
-    {
-      question: "Posso cancelar meu plano a qualquer momento?",
-      answer:
-        "Os planos mensais podem ser cancelados com 30 dias de antecedência. Para planos anuais, consulte nossos termos de fidelidade. Estamos sempre dispostos a conversar e encontrar a melhor solução para você!",
+        "Não! Atendemos desde iniciantes até atletas avançados. Nossa equipe de profissionais qualificados vai montar um treino personalizado para o seu nível e objetivos, garantindo evolução segura e progressiva. No plano anual, o acompanhamento é ainda mais próximo!",
     },
   ];
 
@@ -55,16 +55,17 @@ const FAQ = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
-              <HelpCircle className="w-8 h-8 text-primary" />
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-primary/10 mb-4 sm:mb-6">
+              <HelpCircle className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
             </div>
-            <h2 className="text-4xl md:text-5xl font-black mb-4">
-              Dúvidas <span className="text-primary">Frequentes</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-3 sm:mb-4">
+              Perguntas sobre o <span className="text-primary">Plano Anual</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Tire suas dúvidas sobre planos, horários e nossa metodologia. Não
-              encontrou a resposta? Fale conosco no WhatsApp! 💬
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+              Dúvidas sobre pagamento, transferência e condições especiais do Plano Anual.
+              <br className="hidden sm:block" />
+              <span className="text-white font-semibold">Não encontrou a resposta? Fale conosco no WhatsApp! 💬</span>
             </p>
           </div>
 
@@ -91,22 +92,21 @@ const FAQ = () => {
           </Accordion>
 
           {/* CTA Footer */}
-          <div className="mt-12 text-center p-8 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-2xl border-2 border-primary/20">
-            <p className="text-lg font-semibold text-foreground mb-2">
-              Ainda com dúvidas? 🤔
+          <div className="mt-10 sm:mt-12 text-center p-6 sm:p-8 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-2xl border-2 border-primary/20">
+            <p className="text-base sm:text-lg font-semibold text-foreground mb-2">
+              Ainda com dúvidas sobre o Plano Anual? 🤔
             </p>
-            <p className="text-muted-foreground">
-              Nossa equipe está pronta para te atender pelo{" "}
-              <a
-                href="https://wa.me/5566999100808?text=Olá! Tenho dúvidas sobre os planos da Full Force"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-animated font-bold text-primary"
-              >
-                WhatsApp
-              </a>
-              !
+            <p className="text-sm sm:text-base text-muted-foreground mb-4">
+              Nossa equipe está pronta para te atender e explicar todas as vantagens!
             </p>
+            <a
+              href="https://wa.me/556699100808?text=Olá! Tenho dúvidas sobre o Plano Anual da Full Force 💪"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-3 bg-primary text-black font-black rounded-lg hover:scale-105 transition-transform shadow-glow-primary"
+            >
+              💬 Tirar Dúvidas no WhatsApp
+            </a>
           </div>
         </div>
       </div>

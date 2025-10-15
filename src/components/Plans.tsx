@@ -15,7 +15,6 @@ import { Badge } from "@/components/ui/badge";
 
 const Plans = () => {
   const handleWhatsAppClick = (plan: string) => {
-    // Track conversion event
     if (typeof window !== "undefined" && window.gtag) {
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
@@ -23,6 +22,31 @@ const Plans = () => {
         plan_type: plan,
         placement: "plans_section"
       });
+
+      window.gtag('event', 'click_whatsapp', {
+        event_category: 'engagement',
+        event_label: 'plans_section',
+        plan_type: plan,
+        value: 1
+      });
+
+      window.gtag('event', 'generate_lead', {
+        currency: 'BRL',
+        value: plan === 'Anual' ? 1428 : 189
+      });
+
+      if (plan === 'Anual') {
+        window.gtag('event', 'begin_checkout', {
+          currency: 'BRL',
+          value: 1428,
+          items: [{
+            item_id: 'plano_anual_2025',
+            item_name: 'Plano Anual Full Force',
+            price: 1428,
+            quantity: 1
+          }]
+        });
+      }
     }
 
     const message = `Olá! Tenho interesse no ${plan} da Full Force Academia`;

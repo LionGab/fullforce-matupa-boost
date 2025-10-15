@@ -6,17 +6,23 @@ import Testimonials from "@/components/Testimonials";
 import FinalCTA from "@/components/FinalCTA";
 import InstagramFloat from "@/components/InstagramFloat";
 import ScrollProgress from "@/components/ScrollProgress";
+import StructuredData from "@/components/StructuredData";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import PerformanceOptimizer from "@/components/PerformanceOptimizer";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <StructuredData />
+      <GoogleAnalytics />
+      <PerformanceOptimizer />
       <a href="#main-content" className="skip-to-content">
         Pular para o conteúdo principal
       </a>
       <ScrollProgress />
       <Header />
       <InstagramFloat />
-      
+
       <main id="main-content">
         <Hero />
         <Benefits />
@@ -24,7 +30,7 @@ const Index = () => {
         <Testimonials />
         <FinalCTA />
       </main>
-      
+
       {/* Footer */}
       <footer className="bg-gym-dark text-white py-8">
         <div className="container mx-auto px-4 text-center">
