@@ -73,7 +73,6 @@ const Plans = () => {
       ],
       buttonText: "🔥 Garantir Desconto de 37%",
       badge: "MAIS ESCOLHIDO",
-      guarantee: "✓ Garantia de 7 dias | ✓ Cancele quando quiser",
     },
   ];
 
