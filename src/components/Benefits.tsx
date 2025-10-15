@@ -46,15 +46,14 @@ const Benefits = () => {
       imageAlt: "Ambiente Acolhedor - Full Force Academia",
       imagePosition: "right" as const,
     },
-    {
-      icon: Dumbbell,
-      title: "🧘 Espaço pensado para o seu conforto",
-      description: "Vestiários amplos, estacionamento gratuito, bebedouros, e tudo que você precisa para treinar com tranquilidade e foco.",
-      image: "/images/interior/Halteres-2.jpg",
-      imageAlt: "Estrutura Completa - Full Force Academia",
-      imagePosition: "left" as const,
-    },
-    {
+   {
+    icon: Dumbbell,
+    title: "Espaço pensado\npara o seu conforto", // quebra de linha
+    description: "Vestiários amplos, estacionamento gratuito, bebedouros e tudo o que você precisa para treinar com tranquilidade e foco.",
+    image: "/images/interior/Halteres-2.jpg",
+    imageAlt: "Estrutura Completa - Full Force Academia",
+    imagePosition: "left" as const,
+  },
       icon: Trophy,
       title: "🎯 Planos flexíveis para o seu ritmo",
       description: "Sem fidelidade, sem taxas escondidas. Você escolhe o plano que cabe no seu bolso e na sua rotina. Cancele quando quiser.",
