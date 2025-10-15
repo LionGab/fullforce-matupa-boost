@@ -64,18 +64,27 @@ const Hero = () => {
 
   return (
     <section
-      className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center pt-20 pb-24 md:pt-28 md:pb-32 overflow-hidden bg-neutral-950"
+      className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center pt-20 pb-24 md:pt-28 md:pb-32 overflow-hidden"
       aria-label="Hero - Full Force Academia"
     >
-      {/* Background Gradient - Dark Theme */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950" />
-
+      {/* Background Image with Dark Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/images/interior/gemini-2.5-flash-image-preview_cross_processing_vintage_film_photography_of_high-end_fitness_gym_interior_photography_modern_arch-0.jpg"
+          alt="Full Force Academia - Interior com equipamentos modernos"
+          className="w-full h-full object-cover object-center"
+          loading="eager"
+          fetchPriority="high"
+        />
+        {/* Dark Overlay - Multiple layers for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/95 via-neutral-950/90 to-neutral-950/95" />
+        <div className="absolute inset-0 bg-neutral-950/40" />
+      </div>
+      
       {/* Subtle Pattern Overlay */}
       <div className="absolute inset-0 z-0 opacity-5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(255,204,0,0.15),transparent_70%)]" />
-      </div>
-
-      {/* Content - Mobile First, Centered */}
+      </div>      {/* Content - Mobile First, Centered */}
       <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
 
