@@ -5,12 +5,17 @@ import path from "path";
 export default defineConfig(({ mode }) => {
   const plugins = [react()];
 
+  // Only load lovable-tagger in development mode
   if (mode === "development") {
     try {
-      const { componentTagger } = require("lovable-tagger");
-      plugins.push(componentTagger());
+      // Dynamic import to avoid build errors
+      const lovableTagger = require("lovable-tagger");
+      if (lovableTagger && lovableTagger.componentTagger) {
+        plugins.push(lovableTagger.componentTagger());
+      }
     } catch (e) {
-      console.warn("lovable-tagger not available, skipping...");
+      // Silently skip if not available
+      console.log("lovable-tagger not available in development");
     }
   }
 
@@ -29,6 +34,7 @@ export default defineConfig(({ mode }) => {
       outDir: "dist",
       sourcemap: false,
       minify: 'esbuild',
+      target: 'es2015',
       rollupOptions: {
         output: {
           manualChunks: (id) => {
@@ -38,6 +44,9 @@ export default defineConfig(({ mode }) => {
               }
               if (id.includes('@radix-ui')) {
                 return 'ui';
+              }
+              if (id.includes('lucide-react')) {
+                return 'icons';
               }
             }
           },

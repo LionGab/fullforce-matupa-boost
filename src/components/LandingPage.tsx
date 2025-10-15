@@ -5,7 +5,7 @@ import About from './About';
 import Benefits from './Benefits';
 import Facilities from './Facilities';
 import Campaigns from './Campaigns';
-import Plans from './Plans';
+import PlansComparison from './PlansComparison';
 import Team from './Team';
 import Testimonials from './Testimonials';
 import Gallery from './Gallery';
@@ -24,7 +24,7 @@ const LandingPage = () => (
     <Benefits />
     <Facilities />
     <Campaigns />
-    <Plans />
+    <PlansComparison />
     <Team />
     <Testimonials />
     <Gallery /> {/* Remove if not needed */}
