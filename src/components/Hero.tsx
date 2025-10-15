@@ -117,7 +117,7 @@ const Hero = () => {
               Full Force 💪
             </span>
             <br className="hidden sm:block" />
-            <span className="text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl block mt-2 sm:mt-2 text-primary font-bold drop-shadow-[0_0_15px_rgba(255,204,0,0.8)]">
+            <span className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl block mt-2 sm:mt-2 text-primary font-bold drop-shadow-[0_0_15px_rgba(255,204,0,0.8)]">
               Últimas vagas de outubro! 🔥
             </span>
           </h1>
@@ -131,7 +131,7 @@ const Hero = () => {
           </p>
 
           {/* Prova Social - Mobile Optimized */}
-          <div className="mb-6 sm:mb-8 md:mb-10 inline-flex items-center justify-center gap-2 sm:gap-3 bg-neutral-900/95 backdrop-blur-md px-3 sm:px-4 md:px-6 py-2.5 sm:py-3 md:py-4 rounded-xl sm:rounded-2xl border-2 border-primary shadow-[0_0_25px_rgba(255,204,0,0.4)]">
+          <div className="mb-6 sm:mb-8 md:mb-10 inline-flex items-center justify-center gap-2 sm:gap-3 bg-neutral-900/95 backdrop-blur-md px-3 sm:px-4 md:px-6 py-2.5 sm:py-3 md:py-4 rounded-xl sm:rounded-2xl border-2 border-primary/70 shadow-[0_0_25px_rgba(255,204,0,0.4)]">
             <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl flex-shrink-0">🏋️‍♂️</span>
             <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white leading-tight text-left font-semibold">
               Mais de{" "}
@@ -156,7 +156,7 @@ const Hero = () => {
               size="xl"
               variant="premium"
               aria-label="Falar no WhatsApp agora"
-              className="w-full sm:w-auto text-base sm:text-base md:text-lg lg:text-xl px-6 sm:px-8 md:px-10 lg:px-12 py-4 sm:py-5 md:py-6 lg:py-7 rounded-xl sm:rounded-xl md:rounded-2xl group relative overflow-hidden shadow-[0_0_30px_rgba(255,204,0,0.5)] hover:shadow-[0_0_40px_rgba(255,204,0,0.7)] transition-all duration-300 animate-pulse-slow active:scale-95"
+              className="w-full sm:w-auto sm:max-w-md text-base sm:text-base md:text-lg lg:text-xl px-6 sm:px-8 md:px-10 lg:px-12 py-4 sm:py-5 md:py-6 lg:py-7 rounded-xl sm:rounded-xl md:rounded-2xl group relative overflow-hidden shadow-[0_0_30px_rgba(255,204,0,0.5)] hover:shadow-[0_0_40px_rgba(255,204,0,0.7)] transition-all duration-300 animate-pulse-slow active:scale-95"
             >
               <MessageCircle className="mr-2 sm:mr-2.5 md:mr-3 h-5 w-5 sm:h-5 sm:w-5 md:h-6 md:w-6 lg:h-7 lg:w-7 relative z-10 group-hover:scale-110 transition-transform" />
               <span className="relative z-10 font-black">💬 Fale no WhatsApp</span>
@@ -164,34 +164,12 @@ const Hero = () => {
           </div>
 
           {/* Trust Badge - Mobile Optimized */}
-          <div className="inline-block bg-neutral-950/80 backdrop-blur-sm px-4 py-2 rounded-lg border border-neutral-800">
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-neutral-300 leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-              <span className="font-bold text-white">Sem compromisso</span> — primeira aula{" "}
-              <span className="text-success font-bold">100% gratuita!</span>
-            </p>
-          </div>
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-neutral-300 leading-relaxed max-w-md mx-auto px-3 sm:px-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
+            <span className="font-bold text-white">Sem compromisso</span> — primeira aula{" "}
+            <span className="text-success font-bold">100% gratuita!</span>
+          </p>
         </div>
-      </div>      {/* Scroll Indicator - Mobile only */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce md:hidden">
-        <div className="flex flex-col items-center gap-1">
-          <svg
-            className="w-6 h-6 text-primary drop-shadow-[0_0_10px_rgba(255,204,0,0.8)]"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="3"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
-          <span className="text-xs text-primary font-semibold drop-shadow-[0_0_8px_rgba(255,204,0,0.8)]">
-            Ver planos
-          </span>
-        </div>
-      </div>
-
-      {/* Decorative Gradient - Smooth transition */}
+      </div>      {/* Decorative Gradient - Smooth transition */}
       <div className="absolute bottom-0 left-0 right-0 h-16 md:h-24 bg-gradient-to-t from-neutral-950 to-transparent z-10 pointer-events-none" />
     </section>
   );
