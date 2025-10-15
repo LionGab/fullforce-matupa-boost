@@ -73,6 +73,7 @@ const Plans = () => {
       ],
       buttonText: "🔥 Garantir Desconto de 37%",
       badge: "MAIS ESCOLHIDO",
+      guarantee: "✓ Garantia de 7 dias | ✓ Cancele quando quiser",
     },
   ];
 
@@ -128,19 +129,18 @@ const Plans = () => {
               )}
 
               {/* Urgency Banner (apenas no Anual) */}
-              <div className="bg-gradient-to-r from-yellow-500/10 to-orange-400/10 
-  border-b border-yellow-400/30 px-3 sm:px-4 py-1 sm:py-2 
-  text-center rounded-t-xl shadow-inner backdrop-blur-sm">
-
-  <p className="text-yellow-400 text-[11px] sm:text-xs md:text-sm 
-    font-semibold flex items-center justify-center gap-2 tracking-wide 
-    drop-shadow-[0_1px_1px_rgba(0,0,0,0.4)]">
-    <span className="animate-pulse">🔥</span>
-    <span>Oferta especial: <b>37% OFF</b> até 31/10</span>
-  </p>
-</div>
-
-)}
+              {plan.urgency && (
+                <div className="bg-gradient-to-r from-yellow-500/10 to-orange-400/10 
+                  border-b border-yellow-400/30 px-3 sm:px-4 py-1 sm:py-2 
+                  text-center rounded-t-xl shadow-inner backdrop-blur-sm">
+                  <p className="text-yellow-400 text-[11px] sm:text-xs md:text-sm 
+                    font-semibold flex items-center justify-center gap-2 tracking-wide 
+                    drop-shadow-[0_1px_1px_rgba(0,0,0,0.4)]">
+                    <span className="animate-pulse">🔥</span>
+                    <span>Oferta especial: <b>37% OFF</b> até 31/10</span>
+                  </p>
+                </div>
+              )}
 
               <CardHeader className="pt-10 sm:pt-12 pb-4 space-y-3">
                 {/* Plan Title */}
