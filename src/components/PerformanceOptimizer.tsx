@@ -2,21 +2,8 @@ import { useEffect } from 'react';
 
 const PerformanceOptimizer = () => {
     useEffect(() => {
-        const preloadCriticalResources = () => {
-            const criticalImages = [
-                '/images/Fachada/fullforce-facade-night-main.jpg',
-                '/images/equipment/fullforce-space.jpg'
-            ];
-
-            criticalImages.forEach(src => {
-                const link = document.createElement('link');
-                link.rel = 'preload';
-                link.as = 'image';
-                link.href = src;
-                link.fetchPriority = 'high';
-                document.head.appendChild(link);
-            });
-        };
+        // Removed preloadCriticalResources to avoid preload warnings
+        // Images will be loaded naturally by React components
 
         const optimizeImages = () => {
             const images = document.querySelectorAll('img[loading="lazy"]');
@@ -141,7 +128,7 @@ const PerformanceOptimizer = () => {
             });
         };
 
-        preloadCriticalResources();
+        // preloadCriticalResources(); // Removed to avoid preload warnings
         optimizeImages();
         deferNonCriticalCSS();
         reportWebVitals();
