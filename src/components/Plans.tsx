@@ -87,9 +87,9 @@ const Plans = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16 animate-fade-in">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-subtle border border-primary/20 mb-6 shadow-subtle">
-            <Star className="w-4 h-4 text-primary" />
-            <span className="text-sm font-bold text-primary">650+ Alunos</span>
+          <div className="inline-flex items-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-full bg-gradient-to-r from-primary/20 via-primary/30 to-primary/20 border-2 border-primary/40 mb-6 shadow-glow-primary backdrop-blur-sm">
+            <Star className="w-4 h-4 sm:w-5 sm:h-5 text-primary fill-primary animate-pulse" />
+            <span className="text-sm sm:text-base font-black text-primary drop-shadow-[0_2px_8px_rgba(255,204,0,0.6)]">650+ Alunos</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
@@ -104,23 +104,23 @@ const Plans = () => {
         </div>
 
         {/* Plans Grid - Mobile First, 2 cards only */}
-        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto mb-12 md:mb-16">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 max-w-5xl mx-auto mb-12 md:mb-16 pt-4 sm:pt-6">
           {plans.map((plan, index) => (
             <Card
               key={index}
               variant={plan.isPopular ? "glow" : "elevated"}
-              className={`relative overflow-hidden group bg-neutral-900 border-neutral-800 ${plan.isPopular
+              className={`relative overflow-visible group bg-neutral-900 border-neutral-800 ${plan.isPopular
                 ? "md:scale-105 hover:scale-110 border-primary/30"
                 : "hover:scale-105"
                 }`}
             >
               {/* Badge "MAIS ESCOLHIDO" */}
               {plan.badge && (
-                <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 z-20">
+                <div className="absolute -top-4 sm:-top-5 left-1/2 -translate-x-1/2 z-20">
                   <Badge
                     variant="primary"
                     size="lg"
-                    className="animate-bounce-subtle text-sm sm:text-base px-4 py-2"
+                    className="animate-bounce-subtle text-sm sm:text-base font-black px-5 py-2.5 shadow-glow-primary"
                   >
                     <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-current mr-1.5" />
                     {plan.badge}
@@ -142,7 +142,7 @@ const Plans = () => {
                 </div>
               )}
 
-              <CardHeader className="pt-10 sm:pt-12 pb-4 space-y-3">
+              <CardHeader className="pt-12 sm:pt-14 pb-4 space-y-3">
                 {/* Plan Title */}
                 <div className="text-center">
                   <h3 className="text-2xl sm:text-3xl font-black text-white mb-1 sm:mb-2">
