@@ -1,9 +1,12 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Plans from "@/components/Plans";
+import PlansComparison from "@/components/PlansComparison";
 import Benefits from "@/components/Benefits";
 import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 import InstagramFloat from "@/components/InstagramFloat";
 import ScrollProgress from "@/components/ScrollProgress";
 import StructuredData from "@/components/StructuredData";
@@ -21,14 +24,17 @@ const Index = () => {
       </a>
       <ScrollProgress />
       <Header />
+      <WhatsAppFloat />
       <InstagramFloat />
 
       <main id="main-content">
         <Hero />
-        <Benefits />
         <Plans />
-        <Testimonials />
+        <PlansComparison />
+        <Benefits />
         <FinalCTA />
+        <Testimonials />
+        <FAQ />
       </main>
 
       {/* Footer */}
