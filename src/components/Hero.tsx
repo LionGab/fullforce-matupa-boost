@@ -104,17 +104,21 @@ const Hero = () => {
             <span className="text-primary font-black">04h30 às 21h</span>.
           </p>
 
-          {/* Prova Social - Destaque para 650+ alunos */}
+          {/* Prova Social - Destaque para 700+ alunos */}
           <div className="mb-8 md:mb-10 inline-flex items-center justify-center gap-2 sm:gap-3 bg-neutral-900/60 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border border-primary/20 shadow-glow-primary">
             <span className="text-2xl sm:text-3xl md:text-4xl flex-shrink-0">🏋️‍♂️</span>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-neutral-200 leading-tight text-left">
               Mais de{" "}
               <span className="text-primary font-black text-lg sm:text-xl md:text-2xl lg:text-3xl block sm:inline">
-                650 alunos satisfeitos
+                700 Alunos
               </span>
-              <br className="hidden sm:block" />
-              <span className="text-xs sm:text-sm md:text-base text-neutral-400 block sm:inline">
-                {" "}já transformaram seus resultados aqui.
+              {" "}
+              <span className="text-white font-bold block sm:inline">
+                Já Começaram.
+              </span>
+              <br />
+              <span className="text-base sm:text-lg md:text-xl text-white font-bold block mt-1">
+                Falta Só Você.
               </span>
             </p>
           </div>

@@ -26,7 +26,7 @@ const FinalCTA = () => {
               <div className="p-8 md:p-12 flex flex-col justify-center">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 md:mb-6 leading-tight">
                   Mais de{" "}
-                  <span className="text-primary">650 Alunos Já Começaram.</span>
+                  <span className="text-primary">700 Alunos Já Começaram.</span>
                   <br />
                   Falta Só Você.
                 </h2>
@@ -113,7 +113,7 @@ const FinalCTA = () => {
               </Button>
             </div>
 
-            <div className="h-64 md:h-auto min-h-[300px] bg-black flex items-center justify-center">
+            <div className="h-64 md:h-auto min-h-[300px] bg-neutral-950 flex items-center justify-center relative overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.130764383648!2d-54.934846400000005!3d-10.1700249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9307230407413685%3A0x34e16236e349495d!2sAcademia%20Full%20Force!5e0!3m2!1spt-BR!2sbr!4v1760051000126!5m2!1spt-BR!2sbr"
                 width="100%"
@@ -122,7 +122,7 @@ const FinalCTA = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full"
+                className="w-full h-full absolute inset-0"
                 title="Localização Full Force Academia"
               />
             </div>

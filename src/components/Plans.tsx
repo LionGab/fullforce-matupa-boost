@@ -130,8 +130,8 @@ const Plans = () => {
 
               {/* Urgency Banner (apenas no Anual) */}
               {plan.urgency && (
-                <div className="bg-gradient-to-r from-red-600/90 to-orange-600/90 px-4 py-3 text-center">
-                  <p className="text-white text-sm font-bold flex items-center justify-center gap-2">
+                <div className="bg-gradient-to-r from-primary/20 to-orange-500/20 border-b border-primary/30 px-4 py-3 text-center backdrop-blur-sm">
+                  <p className="text-primary text-sm font-bold flex items-center justify-center gap-2">
                     <span className="animate-pulse">🔥</span>
                     {plan.urgency}
                   </p>
@@ -164,7 +164,7 @@ const Plans = () => {
                   {/* Discount Badge */}
                   {plan.discount && (
                     <div className="inline-block mb-3">
-                      <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white font-black px-4 py-2 rounded-lg text-sm shadow-lg">
+                      <div className="bg-gradient-to-r from-primary/30 to-orange-500/30 border border-primary/40 text-primary font-black px-4 py-2 rounded-lg text-sm shadow-glow-primary">
                         🔥 {plan.discount}
                       </div>
                     </div>
