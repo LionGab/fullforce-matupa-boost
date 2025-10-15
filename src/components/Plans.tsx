@@ -140,8 +140,6 @@ const Plans = () => {
   </p>
 </div>
 
-    </p>
-  </div>
 )}
 
               <CardHeader className="pt-8 sm:pt-10 pb-4 sm:pb-6 space-y-3 sm:space-y-4">
