@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 
 declare global {
     interface Window {
@@ -11,8 +10,6 @@ declare global {
 const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
 
 const GoogleAnalytics = () => {
-    const location = useLocation();
-
     useEffect(() => {
         const script1 = document.createElement('script');
         script1.async = true;
@@ -51,20 +48,6 @@ const GoogleAnalytics = () => {
             document.head.removeChild(script2);
         };
     }, []);
-
-    useEffect(() => {
-        if (window.gtag) {
-            window.gtag('config', GA_MEASUREMENT_ID, {
-                page_path: location.pathname + location.search,
-                page_title: document.title,
-            });
-
-            window.gtag('event', 'page_view', {
-                page_path: location.pathname + location.search,
-                page_title: document.title,
-            });
-        }
-    }, [location]);
 
     return null;
 };
