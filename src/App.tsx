@@ -2,7 +2,6 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import PlansComparison from "@/components/PlansComparison";
 import Benefits from "@/components/Benefits";
-import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import FinalCTA from "@/components/FinalCTA";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
@@ -31,7 +30,6 @@ const Index = () => {
         <PlansComparison />
         <Benefits />
         <FinalCTA />
-        <Testimonials />
         <FAQ />
       </main>
 

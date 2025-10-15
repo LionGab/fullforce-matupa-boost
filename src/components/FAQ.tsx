@@ -51,7 +51,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-24 bg-neutral-950">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
@@ -59,11 +59,11 @@ const FAQ = () => {
             <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-primary/10 mb-4 sm:mb-6">
               <HelpCircle className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-3 sm:mb-4">
-              Perguntas sobre o <span className="text-primary">Plano Anual</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-3 sm:mb-4 text-white">
+              Perguntas <span className="text-primary">Frequentes</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Dúvidas sobre pagamento, transferência e condições especiais do Plano Anual.
+            <p className="text-base sm:text-lg md:text-xl text-neutral-300 max-w-2xl mx-auto">
+              Dúvidas sobre planos, pagamento, transferência e condições especiais.
               <br className="hidden sm:block" />
               <span className="text-white font-semibold">Não encontrou a resposta? Fale conosco no WhatsApp! 💬</span>
             </p>
@@ -79,12 +79,12 @@ const FAQ = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card border-2 border-border rounded-2xl px-6 shadow-card hover:shadow-yellow transition-smooth hover:border-primary/30"
+                className="bg-neutral-900 border-2 border-neutral-800 rounded-2xl px-6 shadow-card hover:shadow-glow-primary transition-smooth hover:border-primary/30"
               >
-                <AccordionTrigger className="text-left text-lg font-bold hover:text-primary transition-smooth py-6 hover:no-underline">
+                <AccordionTrigger className="text-left text-lg font-bold text-white hover:text-primary transition-smooth py-6 hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground text-base leading-relaxed pb-6">
+                <AccordionContent className="text-neutral-300 text-base leading-relaxed pb-6">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -93,10 +93,10 @@ const FAQ = () => {
 
           {/* CTA Footer */}
           <div className="mt-10 sm:mt-12 text-center p-6 sm:p-8 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-2xl border-2 border-primary/20">
-            <p className="text-base sm:text-lg font-semibold text-foreground mb-2">
-              Ainda com dúvidas sobre o Plano Anual? 🤔
+            <p className="text-base sm:text-lg font-semibold text-white mb-2">
+              Ainda com dúvidas? 🤔
             </p>
-            <p className="text-sm sm:text-base text-muted-foreground mb-4">
+            <p className="text-sm sm:text-base text-neutral-300 mb-4">
               Nossa equipe está pronta para te atender e explicar todas as vantagens!
             </p>
             <a

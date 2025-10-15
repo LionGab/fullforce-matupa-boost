@@ -74,69 +74,68 @@ const Hero = () => {
 
   return (
     <section
-      className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center pt-20 pb-24 md:pt-28 md:pb-32 overflow-hidden"
+      className="relative min-h-[85vh] sm:min-h-[90vh] md:min-h-screen flex items-center justify-center pt-16 sm:pt-20 pb-20 sm:pb-24 md:pt-28 md:pb-32 overflow-hidden"
       aria-label="Hero - Full Force Academia"
     >
-      {/* Background Image with Dark Overlay - Enhanced with transparency */}
+      {/* Background Image - Mobile Optimized */}
       <div className="absolute inset-0 z-0">
-        {/* Main background image */}
-        <div className="absolute inset-0">
+        {/* Mobile background (smaller, optimized image) */}
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcSet="/images/Fachada/fffrente.jpg"
+          />
+          <source
+            media="(min-width: 769px)"
+            srcSet="/images/equipment/fullforce-space.jpg"
+          />
           <img
             src="/images/equipment/fullforce-space.jpg"
             alt="Full Force Academia - Espaço moderno de treinamento"
-            className="w-full h-full object-cover object-center scale-105 animate-subtle-zoom"
+            className="w-full h-full object-cover object-center"
             loading="eager"
             fetchPriority="high"
           />
-        </div>
+        </picture>
 
-        {/* Layered Overlays for depth and transparency */}
-        {/* Base dark overlay */}
-        <div className="absolute inset-0 bg-neutral-950/85" />
+        {/* Optimized overlay layers for mobile */}
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/95 via-neutral-950/85 to-neutral-950/90" />
 
-        {/* Gradient overlay - darker on edges, lighter in center */}
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/90 via-neutral-950/70 to-neutral-950/95" />
+        {/* Subtle radial gradient */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_20%,_rgba(0,0,0,0.6)_100%)]" />
 
-        {/* Radial gradient for spotlight effect on center */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(0,0,0,0.4)_100%)]" />
-
-        {/* Yellow accent glow from bottom */}
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-transparent" />
-      </div>
-
-      {/* Animated Pattern Overlay */}
-      <div className="absolute inset-0 z-0 opacity-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(255,204,0,0.2),transparent_70%)] animate-pulse-slow" />
+        {/* Primary accent glow */}
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/8 via-transparent to-transparent" />
       </div>      {/* Content - Mobile First, Centered */}
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
 
-          {/* Main Headline - Matupá treina na Full Force */}
-          <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 md:mb-8 leading-[1.05] tracking-tight px-2">
+          {/* Main Headline - Mobile Optimized */}
+          <h1 className="text-[2.25rem] sm:text-[2.75rem] md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-5 sm:mb-6 md:mb-8 leading-[1.05] tracking-tight px-2">
             Matupá treina na{" "}
-            <span className="text-primary drop-shadow-[0_0_40px_rgba(255,204,0,0.6)] inline-block">
+            <span className="text-primary drop-shadow-[0_0_30px_rgba(255,204,0,0.6)] sm:drop-shadow-[0_0_40px_rgba(255,204,0,0.6)] inline-block">
               Full Force 💪
             </span>
             <br className="hidden sm:block" />
-            <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl block mt-3 sm:mt-4 text-primary font-black">
+            <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl block mt-3 sm:mt-4 text-primary font-black">
               Últimas vagas de outubro! 🔥
             </span>
           </h1>
 
-          {/* Subtítulo - Proposta de Valor Clara */}
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-neutral-300 mb-6 md:mb-8 leading-relaxed max-w-3xl mx-auto font-medium px-2">
+          {/* Subtítulo - Mobile Optimized */}
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-neutral-300 mb-5 sm:mb-6 md:mb-8 leading-relaxed max-w-3xl mx-auto font-medium px-2">
             A academia com{" "}
             <span className="text-white font-bold">acompanhamento real</span>{" "}
             e treinos todos os dias das{" "}
             <span className="text-primary font-black">04h30 às 21h</span>.
           </p>
 
-          {/* Prova Social - Destaque para 650+ alunos */}
-          <div className="mb-8 md:mb-10 inline-flex items-center justify-center gap-2 sm:gap-3 bg-neutral-900/60 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border border-primary/20 shadow-glow-primary">
-            <span className="text-2xl sm:text-3xl md:text-4xl flex-shrink-0">🏋️‍♂️</span>
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-neutral-200 leading-tight text-left">
+          {/* Prova Social - Mobile Optimized */}
+          <div className="mb-6 sm:mb-8 md:mb-10 inline-flex items-center justify-center gap-2 sm:gap-3 bg-neutral-900/60 backdrop-blur-sm px-3 sm:px-4 md:px-6 py-2.5 sm:py-3 md:py-4 rounded-xl sm:rounded-2xl border border-primary/20 shadow-glow-primary">
+            <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl flex-shrink-0">🏋️‍♂️</span>
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-neutral-200 leading-tight text-left">
               Mais de{" "}
-              <span className="text-primary font-black text-lg sm:text-xl md:text-2xl lg:text-3xl block sm:inline">
+              <span className="text-primary font-black text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl block sm:inline">
                 650 Alunos
               </span>
               {" "}
@@ -144,28 +143,28 @@ const Hero = () => {
                 Já Começaram.
               </span>
               <br />
-              <span className="text-base sm:text-lg md:text-xl text-white font-bold block mt-1">
+              <span className="text-sm sm:text-base md:text-lg lg:text-xl text-white font-bold block mt-1">
                 Falta Só Você.
               </span>
             </p>
           </div>
 
-          {/* CTA Principal - WhatsApp (Único e Marcante) */}
-          <div className="mb-6 md:mb-8 px-2">
+          {/* CTA Principal - Mobile Optimized */}
+          <div className="mb-5 sm:mb-6 md:mb-8 px-2">
             <Button
               onClick={handleWhatsAppClick}
               size="xl"
               variant="premium"
               aria-label="Falar no WhatsApp agora"
-              className="w-full sm:w-auto text-base sm:text-lg md:text-xl px-6 sm:px-10 md:px-12 py-5 sm:py-6 md:py-7 rounded-xl sm:rounded-2xl group relative overflow-hidden shadow-floating hover:shadow-glow-primary transition-all duration-300"
+              className="w-full sm:w-auto text-sm sm:text-base md:text-lg lg:text-xl px-5 sm:px-8 md:px-10 lg:px-12 py-4 sm:py-5 md:py-6 lg:py-7 rounded-lg sm:rounded-xl md:rounded-2xl group relative overflow-hidden shadow-floating hover:shadow-glow-primary transition-all duration-300"
             >
-              <MessageCircle className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 relative z-10 group-hover:scale-110 transition-transform" />
+              <MessageCircle className="mr-2 sm:mr-2.5 md:mr-3 h-5 w-5 sm:h-5 sm:w-5 md:h-6 md:w-6 lg:h-7 lg:w-7 relative z-10 group-hover:scale-110 transition-transform" />
               <span className="relative z-10 font-black">Fale no WhatsApp</span>
             </Button>
           </div>
 
-          {/* Trust Badge - Sem compromisso */}
-          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-neutral-400 leading-relaxed max-w-md mx-auto px-4">
+          {/* Trust Badge - Mobile Optimized */}
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-neutral-400 leading-relaxed max-w-md mx-auto px-3 sm:px-4">
             <span className="font-bold text-white">Sem compromisso</span> — primeira aula{" "}
             <span className="text-success font-bold">100% gratuita!</span>
           </p>

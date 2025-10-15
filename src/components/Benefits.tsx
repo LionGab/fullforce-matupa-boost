@@ -48,9 +48,9 @@ const Benefits = () => {
     },
     {
       icon: Dumbbell,
-      title: "Espaço pensado\npara o seu conforto", // quebra de linha
+      title: "💪 Equipamentos de alta qualidade",
       description: "Vestiários amplos, estacionamento gratuito, bebedouros e tudo o que você precisa para treinar com tranquilidade e foco.",
-      image: "/images/interior/Halteres-2.jpg",
+      image: "/images/interior/fullforce-treadmills.jpg",
       imageAlt: "Estrutura Completa - Full Force Academia",
       imagePosition: "left" as const,
     },
@@ -65,7 +65,7 @@ const Benefits = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-neutral-900 relative overflow-hidden" id="beneficios">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-neutral-900 relative overflow-hidden" id="beneficios">
       {/* Background Image with Transparency - Multiple Layers */}
       <div className="absolute inset-0 z-0">
         {/* Main background image */}
@@ -91,38 +91,38 @@ const Benefits = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-transparent" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12 md:mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 animate-fade-in">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3 sm:mb-4 leading-tight px-2">
             Por que a Full Force é{" "}
             <span className="text-primary">diferente?</span>
           </h2>
-          <p className="text-base md:text-lg lg:text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed px-4">
             Mais que equipamentos e horários. Aqui você encontra motivação, apoio e resultados reais.
           </p>
         </div>
 
-        {/* Benefits Grid - Alternating Layout */}
-        <div className="max-w-6xl mx-auto space-y-8 md:space-y-12">
+        {/* Benefits Grid - Mobile-First Optimized */}
+        <div className="max-w-6xl mx-auto space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12">
           {benefits.map((benefit, index) => (
             <Card
               key={index}
               variant="elevated"
-              className={`overflow-hidden group animate-slide-up`}
-              style={{ animationDelay: `${index * 0.08}s` }}
+              className="overflow-hidden group animate-slide-up bg-neutral-950 border-neutral-800"
+              style={{ animationDelay: `${index * 0.05}s` }}
             >
               <div
                 className={`flex flex-col ${benefit.imagePosition === "left" ? "md:flex-row" : "md:flex-row-reverse"
                   } gap-0`}
               >
-                {/* Image Side */}
+                {/* Image Side - Mobile Optimized */}
                 <div className="w-full md:w-1/2 relative overflow-hidden bg-neutral-950">
-                  <div className="aspect-[4/3] md:aspect-auto md:h-full">
+                  <div className="aspect-[16/10] sm:aspect-[4/3] md:aspect-auto md:h-full min-h-[200px] sm:min-h-[250px] md:min-h-[300px]">
                     <img
                       src={benefit.image}
                       alt={benefit.imageAlt}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
                       loading="lazy"
                     />
                     {/* Gradient Overlay */}
@@ -130,26 +130,25 @@ const Benefits = () => {
                   </div>
                 </div>
 
-                {/* Content Side */}
-                <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center bg-neutral-950">
+                {/* Content Side - Mobile Optimized */}
+                <div className="w-full md:w-1/2 p-5 sm:p-6 md:p-8 lg:p-10 flex flex-col justify-center bg-neutral-950">
                   {/* Icon Container */}
-                  <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-primary/10 mb-6 group-hover:bg-primary/20 transition-smooth group-hover:scale-110 group-hover:rotate-6">
-                    <benefit.icon className="w-8 h-8 md:w-10 md:h-10 text-primary" />
+                  <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 rounded-xl sm:rounded-2xl bg-primary/10 mb-4 sm:mb-5 md:mb-6 group-hover:bg-primary/20 transition-smooth group-hover:scale-105 group-hover:rotate-3">
+                    <benefit.icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 text-primary" />
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-lg md:text-xl lg:text-2xl font-black text-white mb-4 
-  leading-tight group-hover:text-primary transition-smooth break-words">
+                  {/* Title - Mobile Optimized */}
+                  <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-black text-white mb-3 sm:mb-4 leading-tight group-hover:text-primary transition-smooth">
                     {benefit.title}
                   </h3>
 
-                  {/* Description */}
-                  <p className="text-sm md:text-base lg:text-lg text-neutral-300 leading-relaxed">
+                  {/* Description - Mobile Optimized */}
+                  <p className="text-sm sm:text-base md:text-base lg:text-lg text-neutral-300 leading-relaxed">
                     {benefit.description}
                   </p>
 
                   {/* Decorative Accent Line */}
-                  <div className="mt-6 w-20 h-1 bg-gradient-to-r from-primary to-transparent rounded-full group-hover:w-32 transition-all duration-500" />
+                  <div className="mt-4 sm:mt-5 md:mt-6 w-16 sm:w-20 h-1 bg-gradient-to-r from-primary to-transparent rounded-full group-hover:w-24 sm:group-hover:w-32 transition-all duration-500" />
                 </div>
               </div>
             </Card>

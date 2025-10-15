@@ -7,7 +7,6 @@ import Facilities from './Facilities';
 import Campaigns from './Campaigns';
 import PlansComparison from './PlansComparison';
 import Team from './Team';
-import Testimonials from './Testimonials';
 import Gallery from './Gallery';
 import FinalCTA from './FinalCTA';
 import WhatsAppFloat from './WhatsAppFloat';
@@ -26,7 +25,6 @@ const LandingPage = () => (
     <Campaigns />
     <PlansComparison />
     <Team />
-    <Testimonials />
     <Gallery /> {/* Remove if not needed */}
     <FinalCTA />
     <WhatsAppFloat />

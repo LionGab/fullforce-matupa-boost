@@ -30,7 +30,7 @@ const PlansComparison = () => {
 
             window.gtag('event', 'generate_lead', {
                 currency: 'BRL',
-                value: planType === 'Anual' ? 1428 : 189
+                value: planType === 'Anual' ? 1428 : planType === 'Semestral' ? 1014 : 189
             });
 
             if (planType === 'Anual') {
@@ -49,6 +49,7 @@ const PlansComparison = () => {
 
         const messages = {
             Mensal: "Olá! Quero conhecer o Plano Mensal da Full Force Academia 💪",
+            Semestral: "Olá! Quero conhecer o Plano Semestral da Full Force Academia 💪",
             Anual: "Olá! Quero GARANTIR minha vaga no Plano Anual com 37% OFF até outubro! 🔥"
         };
 
@@ -64,36 +65,42 @@ const PlansComparison = () => {
         {
             name: "Acesso à musculação completa",
             mensal: true,
+            semestral: true,
             anual: true,
             icon: Check
         },
         {
             name: "Área de cardio equipada",
             mensal: true,
+            semestral: true,
             anual: true,
             icon: Check
         },
         {
             name: "Avaliação física inicial",
             mensal: true,
+            semestral: true,
             anual: true,
             icon: Check
         },
         {
             name: "Acesso 7 dias/semana",
             mensal: true,
+            semestral: true,
             anual: true,
             icon: Check
         },
         {
             name: "Horário flexível (04h30 às 21h)",
             mensal: true,
+            semestral: true,
             anual: true,
             icon: Check
         },
         {
             name: "Treino personalizado com acompanhamento",
             mensal: false,
+            semestral: true,
             anual: true,
             icon: Star,
             highlight: true
@@ -101,6 +108,7 @@ const PlansComparison = () => {
         {
             name: "Reavaliação física trimestral",
             mensal: false,
+            semestral: false,
             anual: true,
             icon: Star,
             highlight: true
@@ -108,6 +116,7 @@ const PlansComparison = () => {
         {
             name: "1 Convidado grátis por mês",
             mensal: false,
+            semestral: false,
             anual: true,
             icon: Crown,
             highlight: true
@@ -115,6 +124,7 @@ const PlansComparison = () => {
         {
             name: "Prioridade em eventos e desafios",
             mensal: false,
+            semestral: true,
             anual: true,
             icon: Zap,
             highlight: true
@@ -122,6 +132,7 @@ const PlansComparison = () => {
         {
             name: "Desconto em produtos e suplementos",
             mensal: false,
+            semestral: true,
             anual: true,
             icon: Star,
             highlight: true
@@ -129,6 +140,7 @@ const PlansComparison = () => {
         {
             name: "Economia de 37% no ano",
             mensal: false,
+            semestral: false,
             anual: true,
             icon: Crown,
             highlight: true,
@@ -166,8 +178,8 @@ const PlansComparison = () => {
                 </div>
 
                 {/* Comparison Table - Desktop */}
-                <div className="hidden lg:block max-w-6xl mx-auto">
-                    <div className="grid grid-cols-3 gap-6">
+                <div className="hidden lg:block max-w-7xl mx-auto">
+                    <div className="grid grid-cols-4 gap-4">
                         {/* Header Column - Features List */}
                         <div className="space-y-3">
                             <div className="h-32 flex items-end pb-4">
@@ -218,6 +230,39 @@ const PlansComparison = () => {
                                     className="w-full mt-6 border-neutral-700 hover:border-primary/50"
                                 >
                                     Escolher Mensal
+                                </Button>
+                            </CardContent>
+                        </Card>
+
+                        {/* Plano Semestral Column */}
+                        <Card variant="elevated" className="bg-neutral-900 border-neutral-800">
+                            <CardHeader className="text-center pb-6 pt-8">
+                                <h3 className="text-2xl font-black text-white mb-2">Plano Semestral</h3>
+                                <div className="text-center py-2">
+                                    <div className="flex items-baseline justify-center gap-1">
+                                        <span className="text-lg text-neutral-400 font-bold">R$</span>
+                                        <span className="text-5xl font-black text-white">169</span>
+                                        <span className="text-base text-neutral-400 font-medium">/mês</span>
+                                    </div>
+                                    <p className="text-neutral-400 text-xs mt-2">6 meses (Total: R$1.014)</p>
+                                </div>
+                            </CardHeader>
+                            <CardContent className="space-y-3 px-4 pb-6">
+                                {features.map((feature, index) => (
+                                    <div key={index} className="h-16 flex items-center justify-center">
+                                        {feature.semestral ? (
+                                            <Check className="w-6 h-6 text-green-500" />
+                                        ) : (
+                                            <X className="w-6 h-6 text-neutral-600" />
+                                        )}
+                                    </div>
+                                ))}
+                                <Button
+                                    onClick={() => handleWhatsAppClick('Semestral')}
+                                    variant="outline"
+                                    className="w-full mt-6 border-neutral-700 hover:border-primary/50"
+                                >
+                                    Escolher Semestral
                                 </Button>
                             </CardContent>
                         </Card>
@@ -353,6 +398,43 @@ const PlansComparison = () => {
                                 className="w-full text-sm sm:text-base"
                             >
                                 🔥 Garantir Minha Vaga no Anual
+                            </Button>
+                        </CardContent>
+                    </Card>
+
+                    {/* Plano Semestral */}
+                    <Card variant="elevated" className="bg-neutral-900 border-neutral-800">
+                        <CardHeader className="text-center pb-4 pt-6">
+                            <h3 className="text-xl sm:text-2xl font-black text-white mb-2">Plano Semestral</h3>
+
+                            <div className="text-center py-2">
+                                <div className="flex items-baseline justify-center gap-0.5 sm:gap-1">
+                                    <span className="text-base sm:text-lg text-neutral-400 font-bold">R$</span>
+                                    <span className="text-4xl sm:text-5xl font-black text-white">169</span>
+                                    <span className="text-sm sm:text-base text-neutral-400 font-medium">/mês</span>
+                                </div>
+                                <p className="text-neutral-400 text-xs mt-2">6 meses (Total: R$1.014)</p>
+                            </div>
+                        </CardHeader>
+
+                        <CardContent className="px-4 pb-4">
+                            <div className="space-y-2 mb-4">
+                                {features.filter(f => f.semestral).map((feature, index) => (
+                                    <div key={index} className="flex items-start gap-2">
+                                        <Check className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 mt-0.5 text-green-500" />
+                                        <span className="text-xs sm:text-sm text-neutral-300 font-medium leading-relaxed">
+                                            {feature.name}
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <Button
+                                onClick={() => handleWhatsAppClick('Semestral')}
+                                variant="outline"
+                                className="w-full border-neutral-700 hover:border-primary/50 text-sm sm:text-base"
+                            >
+                                Escolher Semestral
                             </Button>
                         </CardContent>
                     </Card>
