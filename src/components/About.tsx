@@ -25,14 +25,14 @@ const features = [
 
 const About = () => {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-background to-gym-light-gray/20">
+    <section className="py-16 md:py-24 bg-neutral-950">
       <div className="container px-4">
         <div className="max-w-3xl mx-auto mb-12 md:mb-16">
-          <h2 className="text-left text-3xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6">
+          <h2 className="text-left text-3xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 text-white">
             Mais Que Uma Academia: <span className="text-primary">O Lugar Onde Sua Transformação Começa de Verdade</span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground px-4 leading-relaxed">
-            A Full Force não é só sobre equipamentos modernos ou estrutura impecável. É sobre <strong className="text-foreground">PESSOAS</strong>.
+          <p className="text-base md:text-lg lg:text-xl text-neutral-300 px-4 leading-relaxed">
+            A Full Force não é só sobre equipamentos modernos ou estrutura impecável. É sobre <strong className="text-white">PESSOAS</strong>.
             <br /><br />
             Somos a única academia de Matupá onde você é tratado pelo nome, acompanhado de perto e motivado todos os dias por uma equipe que realmente liga para o SEU progresso.
             <br /><br />
@@ -44,7 +44,7 @@ const About = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group relative bg-card border border-border rounded-2xl p-6 md:p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(253,185,19,0.15)]"
+              className="group relative bg-neutral-900 border border-neutral-800 rounded-2xl p-6 md:p-8 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,204,0,0.3)]"
             >
               {/* Icon */}
               <div className="mb-4 md:mb-6">
@@ -54,10 +54,10 @@ const About = () => {
               </div>
 
               {/* Content */}
-              <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-3 group-hover:text-primary transition-colors">
+              <h3 className="text-base md:text-lg lg:text-xl font-bold mb-2 md:mb-3 text-white group-hover:text-primary transition-colors">
                 {feature.title}
               </h3>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+              <p className="text-sm md:text-base text-neutral-400 leading-relaxed">
                 {feature.description}
               </p>
 

@@ -56,7 +56,7 @@ const Facilities = () => {
     return (
         <section
             id="facilities"
-            className="py-16 md:py-20 lg:py-24 relative overflow-hidden bg-gradient-to-b from-layer-0 to-layer-1"
+            className="py-16 md:py-20 lg:py-24 relative overflow-hidden bg-neutral-900"
             aria-labelledby="facilities-heading"
         >
             {/* Decorative Elements */}
@@ -76,13 +76,13 @@ const Facilities = () => {
 
                     <h2
                         id="facilities-heading"
-                        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 leading-tight"
+                        className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 leading-tight text-white"
                     >
                         Mais do que uma academia.{" "}
                         <span className="text-primary">Um espaço para você.</span>
                     </h2>
 
-                    <p className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                    <p className="text-base md:text-lg lg:text-xl text-neutral-300 leading-relaxed">
                         Pensamos em cada detalhe para que você tenha a melhor experiência,
                         do estacionamento ao último exercício.
                     </p>
@@ -97,11 +97,11 @@ const Facilities = () => {
                             <Card
                                 key={index}
                                 variant="elevated"
-                                className="group overflow-hidden hover:shadow-floating transition-all duration-500 animate-scale-in"
+                                className="group overflow-hidden bg-neutral-950 border-neutral-800 hover:border-primary/50 hover:shadow-glow-primary transition-all duration-500 animate-scale-in"
                                 style={{ animationDelay: `${index * 100}ms` }}
                             >
                                 {/* Image Container with Overlay */}
-                                <div className="relative h-64 overflow-hidden">
+                                <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                                     <img
                                         src={facility.image}
                                         alt={facility.imageAlt}
@@ -114,26 +114,26 @@ const Facilities = () => {
 
                                     {/* Badge on Image */}
                                     <div className="absolute top-4 right-4 z-10">
-                                        <Badge variant="outline" className="bg-white/90 dark:bg-neutral-900/90 backdrop-blur-sm">
+                                        <Badge variant="outline" className="bg-neutral-900/90 backdrop-blur-sm border-primary/30 text-white">
                                             {facility.badge}
                                         </Badge>
                                     </div>
 
                                     {/* Icon Circle */}
                                     <div className="absolute bottom-4 left-4 z-10">
-                                        <div className="w-12 h-12 rounded-full bg-white dark:bg-neutral-900 shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                        <div className="w-12 h-12 rounded-full bg-neutral-900 shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-primary/30">
                                             <Icon className="w-6 h-6 text-primary" />
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Content */}
-                                <div className="p-6 md:p-8 bg-gradient-to-br from-layer-1 to-layer-2">
-                                    <h3 className="text-xl md:text-2xl font-black mb-3 group-hover:text-primary transition-colors duration-300">
+                                <div className="p-6 md:p-8 bg-neutral-950">
+                                    <h3 className="text-lg md:text-xl lg:text-2xl font-black mb-3 text-white group-hover:text-primary transition-colors duration-300">
                                         {facility.title}
                                     </h3>
 
-                                    <p className="text-base text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                                    <p className="text-sm md:text-base text-neutral-400 leading-relaxed">
                                         {facility.description}
                                     </p>
                                 </div>
@@ -144,7 +144,7 @@ const Facilities = () => {
 
                 {/* Bottom CTA */}
                 <div className="text-center mt-12 md:mt-16 animate-fade-in">
-                    <p className="text-lg md:text-xl text-neutral-700 dark:text-neutral-300 font-bold">
+                    <p className="text-base md:text-lg lg:text-xl text-neutral-300 font-bold">
                         💡 Venha conhecer pessoalmente.{" "}
                         <span className="text-primary">Você vai se surpreender!</span>
                     </p>

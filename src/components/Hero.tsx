@@ -131,7 +131,7 @@ const Hero = () => {
           </p>
         </div>
       </div>      {/* Decorative Gradient - Smooth transition */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 md:h-24 bg-gradient-to-t from-neutral-50 dark:from-background to-transparent z-10 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-16 md:h-24 bg-gradient-to-t from-neutral-950 to-transparent z-10 pointer-events-none" />
     </section>
   );
 };

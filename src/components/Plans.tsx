@@ -79,9 +79,9 @@ const Plans = () => {
   ];
 
   return (
-    <section className="relative py-20 md:py-32 bg-neutral-50 dark:bg-gradient-to-b dark:from-background dark:via-gym-dark/30 dark:to-background overflow-hidden">
+    <section className="relative py-20 md:py-32 bg-neutral-950 overflow-hidden">
       {/* Background Pattern - Subtle depth */}
-      <div className="absolute inset-0 opacity-5 dark:opacity-5">
+      <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(255,204,0,0.1),transparent_50%)]" />
       </div>
 
@@ -93,14 +93,14 @@ const Plans = () => {
             <span className="text-sm font-bold text-primary">680+ Alunos</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-neutral-900 dark:text-foreground mb-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
             Escolha Seu <span className="text-primary">Plano</span>
           </h2>
 
-          <p className="text-lg md:text-xl text-neutral-600 dark:text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed">
             Invista na sua saúde. Quanto mais tempo você se compromete,
             <br className="hidden sm:block" />
-            <span className="text-neutral-900 dark:text-foreground font-semibold">mais economia e resultados.</span>
+            <span className="text-white font-semibold">mais economia e resultados.</span>
           </p>
         </div>
 
@@ -110,8 +110,8 @@ const Plans = () => {
             <Card
               key={index}
               variant={plan.isPopular ? "glow" : "elevated"}
-              className={`relative overflow-hidden group bg-white dark:bg-card ${plan.isPopular
-                ? "md:scale-105 hover:scale-110"
+              className={`relative overflow-hidden group bg-neutral-900 border-neutral-800 ${plan.isPopular
+                ? "md:scale-105 hover:scale-110 border-primary/30"
                 : "hover:scale-105"
                 }`}
             >
@@ -142,10 +142,10 @@ const Plans = () => {
               <CardHeader className="pt-10 pb-6 space-y-4">
                 {/* Plan Title */}
                 <div className="text-center">
-                  <h3 className="text-3xl font-black text-neutral-900 dark:text-foreground mb-2">
+                  <h3 className="text-3xl font-black text-white mb-2">
                     {plan.title}
                   </h3>
-                  <p className="text-neutral-600 dark:text-muted-foreground font-medium">
+                  <p className="text-neutral-400 font-medium">
                     {plan.subtitle}
                   </p>
                 </div>
@@ -155,7 +155,7 @@ const Plans = () => {
                   {/* Original Price (tachado) */}
                   {plan.originalPrice && (
                     <div className="flex items-center justify-center gap-3 mb-2">
-                      <span className="text-2xl text-neutral-500 dark:text-muted-foreground line-through font-bold">
+                      <span className="text-2xl text-neutral-500 line-through font-bold">
                         R$ {plan.originalPrice}
                       </span>
                       <TrendingDown className="w-5 h-5 text-red-500" />
@@ -173,20 +173,20 @@ const Plans = () => {
 
                   {/* Main Price */}
                   <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-2xl text-neutral-600 dark:text-muted-foreground font-bold">R$</span>
+                    <span className="text-2xl text-neutral-400 font-bold">R$</span>
                     <span className={`font-black leading-none ${plan.isPopular
                       ? "text-7xl md:text-8xl text-primary drop-shadow-[0_0_30px_rgba(255,204,0,0.5)]"
-                      : "text-6xl md:text-7xl text-neutral-900 dark:text-foreground"
+                      : "text-6xl md:text-7xl text-white"
                       }`}>
                       {plan.price}
                     </span>
-                    <span className="text-xl text-neutral-600 dark:text-muted-foreground font-medium">
+                    <span className="text-xl text-neutral-400 font-medium">
                       {plan.period}
                     </span>
                   </div>
 
                   {/* Installment Info */}
-                  <p className="text-neutral-600 dark:text-muted-foreground text-sm mt-3 font-medium">
+                  <p className="text-neutral-400 text-sm mt-3 font-medium">
                     {plan.installment}
                   </p>
 
@@ -208,7 +208,7 @@ const Plans = () => {
                     <li key={i} className="flex items-start gap-3 group/item">
                       <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.isPopular ? "text-primary" : "text-green-500"
                         }`} />
-                      <span className="text-sm text-neutral-700 dark:text-foreground font-medium leading-relaxed group-hover/item:text-primary transition-colors">
+                      <span className="text-sm text-neutral-300 font-medium leading-relaxed group-hover/item:text-primary transition-colors">
                         {feature}
                       </span>
                     </li>
@@ -230,7 +230,7 @@ const Plans = () => {
 
                 {/* Guarantee (apenas Anual) */}
                 {plan.guarantee && (
-                  <p className="text-xs text-neutral-600 dark:text-muted-foreground text-center mt-3 font-medium">
+                  <p className="text-xs text-neutral-400 text-center mt-3 font-medium">
                     {plan.guarantee}
                   </p>
                 )}
@@ -241,7 +241,7 @@ const Plans = () => {
 
         {/* Why Annual Plan - Persuasion Section */}
         <div className="max-w-4xl mx-auto animate-slide-up">
-          <Card variant="glow" className="overflow-hidden bg-white dark:bg-card">
+          <Card variant="glow" className="overflow-hidden bg-neutral-900 border-primary/30">
             <CardContent className="p-8 md:p-12">
               <div className="text-center mb-8">
                 <Badge variant="primary" size="lg" className="mb-4">
@@ -249,20 +249,20 @@ const Plans = () => {
                   Por que escolher o Anual?
                 </Badge>
 
-                <h3 className="text-2xl md:text-3xl font-black text-neutral-900 dark:text-foreground mb-4 leading-tight">
+                <h3 className="text-2xl md:text-3xl font-black text-white mb-4 leading-tight">
                   💡 Por Que a Maioria Escolhe o Plano Anual?
                 </h3>
               </div>
 
               <div className="space-y-6 text-center">
-                <p className="text-lg text-neutral-700 dark:text-foreground/80 leading-relaxed">
-                  Porque <span className="text-neutral-900 dark:text-foreground font-bold">resultado não acontece em 30 dias</span>.
+                <p className="text-lg text-neutral-300 leading-relaxed">
+                  Porque <span className="text-white font-bold">resultado não acontece em 30 dias</span>.
                   Acontece quando você cria o <span className="text-primary font-black">HÁBITO</span>,
                   quando você não desiste, quando você tem uma equipe ao seu lado empurrando você para frente.
                 </p>
 
-                <div className="py-6 px-6 bg-neutral-100 dark:bg-layer-1 rounded-xl border border-primary/20 shadow-card">
-                  <p className="text-xl md:text-2xl text-neutral-900 dark:text-foreground font-bold mb-2">
+                <div className="py-6 px-6 bg-neutral-950 rounded-xl border border-primary/20 shadow-card">
+                  <p className="text-xl md:text-2xl text-white font-bold mb-2">
                     O plano anual é o compromisso que <span className="text-primary font-black">650+ alunos</span> fizeram com eles mesmos.
                   </p>
                   <p className="text-2xl md:text-3xl font-black text-primary mt-4">
@@ -270,23 +270,23 @@ const Plans = () => {
                   </p>
                 </div>
 
-                <p className="text-2xl md:text-3xl font-black text-neutral-900 dark:text-foreground pt-4">
+                <p className="text-2xl md:text-3xl font-black text-white pt-4">
                   Agora é sua vez. 💪
                 </p>
 
                 {/* Social Proof Mini */}
-                <div className="flex items-center justify-center gap-8 pt-6 border-t border-neutral-200 dark:border-border">
+                <div className="flex items-center justify-center gap-8 pt-6 border-t border-neutral-800">
                   <div className="text-center">
                     <div className="text-3xl font-black text-primary">4.9★</div>
-                    <div className="text-xs text-neutral-600 dark:text-muted-foreground font-medium">Avaliação</div>
+                    <div className="text-xs text-neutral-400 font-medium">Avaliação</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-black text-primary">650+</div>
-                    <div className="text-xs text-neutral-600 dark:text-muted-foreground font-medium">Alunos</div>
+                    <div className="text-xs text-neutral-400 font-medium">Alunos</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-black text-primary">37%</div>
-                    <div className="text-xs text-neutral-600 dark:text-muted-foreground font-medium">Economia</div>
+                    <div className="text-xs text-neutral-400 font-medium">Economia</div>
                   </div>
                 </div>
               </div>
