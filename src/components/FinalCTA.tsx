@@ -24,18 +24,18 @@ const FinalCTA = () => {
           <div className="bg-gradient-to-br from-neutral-950 to-neutral-900 rounded-3xl shadow-glow-primary overflow-hidden border border-primary/20">
             <div className="grid md:grid-cols-2">
               <div className="p-8 md:p-12 flex flex-col justify-center">
-                <h2 className="text-3xl md:text-4xl font-black text-white mb-4 leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 md:mb-6 leading-tight">
                   Mais de{" "}
                   <span className="text-primary">650 Alunos Já Começaram.</span>
                   <br />
                   Falta Só Você.
                 </h2>
 
-                <p className="text-lg md:text-xl text-neutral-300 mb-6 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl text-neutral-300 mb-4 md:mb-6 leading-relaxed">
                   Você chegou até aqui porque algo dentro de você <strong className="text-white">QUER mudar</strong>.
                 </p>
 
-                <p className="text-base md:text-lg text-neutral-400 mb-8 leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg text-neutral-400 mb-6 md:mb-8 leading-relaxed">
                   Não é sobre ter o corpo perfeito. É sobre se sentir bem na própria pele. É sobre ter energia pra viver melhor. É sobre conquistar a confiança que você merece.
                   <br /><br />
                   A Full Force não é só uma academia. É o lugar onde você vai <strong className="text-primary">PARAR DE ADIAR</strong> e <strong className="text-primary">COMEÇAR A AGIR</strong>.
@@ -113,7 +113,7 @@ const FinalCTA = () => {
               </Button>
             </div>
 
-            <div className="h-64 md:h-auto min-h-[300px]">
+            <div className="h-64 md:h-auto min-h-[300px] bg-black flex items-center justify-center">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.130764383648!2d-54.934846400000005!3d-10.1700249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9307230407413685%3A0x34e16236e349495d!2sAcademia%20Full%20Force!5e0!3m2!1spt-BR!2sbr!4v1760051000126!5m2!1spt-BR!2sbr"
                 width="100%"
@@ -122,7 +122,7 @@ const FinalCTA = () => {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="rounded-xl"
+                className="w-full h-full"
                 title="Localização Full Force Academia"
               />
             </div>
