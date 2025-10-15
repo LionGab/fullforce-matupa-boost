@@ -115,13 +115,13 @@ const Plans = () => {
             >
               {/* Badge "MAIS ESCOLHIDO" */}
               {plan.badge && (
-                <div className="absolute -top-2 sm:-top-3 left-1/2 -translate-x-1/2 z-20">
+                <div className="absolute -top-3 sm:-top-4 left-1/2 -translate-x-1/2 z-20">
                   <Badge
                     variant="primary"
                     size="lg"
-                    className="animate-bounce-subtle text-xs sm:text-sm"
+                    className="animate-bounce-subtle text-sm sm:text-base px-4 py-2"
                   >
-                    <Star className="w-3 h-3 sm:w-4 sm:h-4 fill-current mr-1" />
+                    <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-current mr-1.5" />
                     {plan.badge}
                   </Badge>
                 </div>
@@ -142,7 +142,7 @@ const Plans = () => {
 
 )}
 
-              <CardHeader className="pt-8 sm:pt-10 pb-4 sm:pb-6 space-y-3 sm:space-y-4">
+              <CardHeader className="pt-10 sm:pt-12 pb-4 space-y-3">
                 {/* Plan Title */}
                 <div className="text-center">
                   <h3 className="text-2xl sm:text-3xl font-black text-white mb-1 sm:mb-2">
@@ -154,11 +154,11 @@ const Plans = () => {
                 </div>
 
                 {/* Price Display */}
-                <div className="text-center py-4 sm:py-6">
+                <div className="text-center py-3 sm:py-4">
                   {/* Original Price (tachado) */}
                   {plan.originalPrice && (
-                    <div className="flex items-center justify-center gap-2 sm:gap-3 mb-2">
-                      <span className="text-xl sm:text-2xl text-neutral-500 line-through font-bold">
+                    <div className="flex items-center justify-center gap-2 mb-1 sm:mb-2">
+                      <span className="text-lg sm:text-xl text-neutral-500 line-through font-bold">
                         R$ {plan.originalPrice}
                       </span>
                       <TrendingDown className="w-4 h-4 sm:w-5 sm:h-5 text-red-500" />
@@ -167,8 +167,8 @@ const Plans = () => {
 
                   {/* Discount Badge */}
                   {plan.discount && (
-                    <div className="inline-block mb-2 sm:mb-3">
-                      <div className="bg-gradient-to-r from-primary/30 to-orange-500/30 border border-primary/40 text-primary font-black px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm shadow-glow-primary">
+                    <div className="inline-block mb-2">
+                      <div className="bg-gradient-to-r from-primary/30 to-orange-500/30 border border-primary/40 text-primary font-black px-3 py-1.5 rounded-lg text-xs sm:text-sm shadow-glow-primary">
                         🔥 {plan.discount}
                       </div>
                     </div>
@@ -176,27 +176,27 @@ const Plans = () => {
 
                   {/* Main Price */}
                   <div className="flex items-baseline justify-center gap-0.5 sm:gap-1">
-                    <span className="text-xl sm:text-2xl text-neutral-400 font-bold">R$</span>
+                    <span className="text-lg sm:text-xl text-neutral-400 font-bold">R$</span>
                     <span className={`font-black leading-none ${plan.isPopular
-                      ? "text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-primary drop-shadow-[0_0_30px_rgba(255,204,0,0.5)]"
+                      ? "text-5xl sm:text-6xl md:text-7xl text-primary drop-shadow-[0_0_30px_rgba(255,204,0,0.5)]"
                       : "text-5xl sm:text-6xl md:text-7xl text-white"
                       }`}>
                       {plan.price}
                     </span>
-                    <span className="text-base sm:text-lg md:text-xl text-neutral-400 font-medium">
+                    <span className="text-base sm:text-lg text-neutral-400 font-medium">
                       {plan.period}
                     </span>
                   </div>
 
                   {/* Installment Info */}
-                  <p className="text-neutral-400 text-xs sm:text-sm mt-2 sm:mt-3 font-medium px-2">
+                  <p className="text-neutral-400 text-xs sm:text-sm mt-2 font-medium px-2">
                     {plan.installment}
                   </p>
 
                   {/* Savings Info (apenas Anual) */}
                   {plan.savings && (
-                    <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-primary/20 px-2">
-                      <p className="text-primary font-bold text-sm sm:text-base leading-snug">
+                    <div className="mt-2 sm:mt-3 pt-2 sm:pt-3 border-t border-primary/20 px-2">
+                      <p className="text-primary font-bold text-xs sm:text-sm leading-snug">
                         💰 {plan.savings}
                       </p>
                     </div>
@@ -205,10 +205,10 @@ const Plans = () => {
               </CardHeader>
 
               {/* Features List */}
-              <CardContent className="px-4 sm:px-6 pb-4 sm:pb-6">
-                <ul className="space-y-2 sm:space-y-3">
+              <CardContent className="px-4 sm:px-6 pb-3 sm:pb-4">
+                <ul className="space-y-2">
                   {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-2 sm:gap-3 group/item">
+                    <li key={i} className="flex items-start gap-2 group/item">
                       <Check className={`w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 mt-0.5 ${plan.isPopular ? "text-primary" : "text-green-500"
                         }`} />
                       <span className="text-xs sm:text-sm text-neutral-300 font-medium leading-relaxed group-hover/item:text-primary transition-colors">
@@ -225,7 +225,7 @@ const Plans = () => {
                   onClick={() => handleWhatsAppClick(plan.title)}
                   size="lg"
                   variant={plan.isPopular ? "premium" : "success"}
-                  className="w-full text-sm sm:text-base py-3 sm:py-4"
+                  className="w-full text-sm sm:text-base py-3"
                 >
                   <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                   <span className="truncate">{plan.buttonText}</span>
@@ -233,7 +233,7 @@ const Plans = () => {
 
                 {/* Guarantee (apenas Anual) */}
                 {plan.guarantee && (
-                  <p className="text-xs text-neutral-400 text-center mt-2 sm:mt-3 font-medium leading-snug">
+                  <p className="text-xs text-neutral-400 text-center mt-2 font-medium leading-snug">
                     {plan.guarantee}
                   </p>
                 )}
