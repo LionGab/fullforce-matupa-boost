@@ -84,6 +84,13 @@ const PlansComparison = () => {
             icon: Check
         },
         {
+            name: "Sábado: 06h-09h e 15h-18h",
+            mensal: true,
+            semestral: true,
+            anual: true,
+            icon: Check
+        },
+        {
             name: "Avaliação física inicial",
             mensal: false,
             semestral: true,
