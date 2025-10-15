@@ -112,9 +112,10 @@ const Benefits = () => {
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg md:text-xl lg:text-2xl font-black text-white mb-4 leading-tight group-hover:text-primary transition-smooth">
-                    {benefit.title}
-                  </h3>
+<h3 className="text-lg md:text-xl lg:text-2xl font-black text-white mb-4 
+  leading-tight group-hover:text-primary transition-smooth break-words">
+  {benefit.title}
+</h3>
 
                   {/* Description */}
                   <p className="text-sm md:text-base lg:text-lg text-neutral-300 leading-relaxed">
