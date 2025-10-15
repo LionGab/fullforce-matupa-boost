@@ -104,7 +104,7 @@ const Plans = () => {
         </div>
 
         {/* Plans Grid - Mobile First, 2 cards only */}
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 max-w-5xl mx-auto mb-12 md:mb-16 pt-4 sm:pt-6">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-10 max-w-5xl mx-auto mb-12 md:mb-16 pt-8 sm:pt-10 md:pt-12">
           {plans.map((plan, index) => (
             <Card
               key={index}
@@ -112,15 +112,15 @@ const Plans = () => {
               className={`relative overflow-visible group bg-neutral-900 border-neutral-800 ${plan.isPopular
                 ? "md:scale-105 hover:scale-110 border-primary/30"
                 : "hover:scale-105"
-                }`}
+                } ${plan.badge ? "mt-6" : ""}`}
             >
               {/* Badge "MAIS ESCOLHIDO" */}
               {plan.badge && (
-                <div className="absolute -top-4 sm:-top-5 left-1/2 -translate-x-1/2 z-20">
+                <div className="absolute -top-5 sm:-top-6 left-1/2 -translate-x-1/2 z-20 w-max">
                   <Badge
                     variant="primary"
                     size="lg"
-                    className="animate-bounce-subtle text-sm sm:text-base font-black px-5 py-2.5 shadow-glow-primary"
+                    className="animate-bounce-subtle text-sm sm:text-base font-black px-5 py-2.5 shadow-glow-primary whitespace-nowrap"
                   >
                     <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-current mr-1.5" />
                     {plan.badge}
