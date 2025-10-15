@@ -394,26 +394,6 @@ const PlansComparison = () => {
                         </CardContent>
                     </Card>
                 </div>
-
-                {/* Social Proof Footer */}
-                <div className="max-w-4xl mx-auto mt-10 sm:mt-12 md:mt-16">
-                    <Card variant="glow" className="bg-neutral-950 border-primary/20 p-4 sm:p-6 md:p-8">
-                        <div className="text-center">
-                            <p className="text-base sm:text-lg md:text-xl text-white font-bold mb-2 sm:mb-3">
-                                🏆 Por que 650+ alunos escolheram o Plano Anual?
-                            </p>
-                            <p className="text-xs sm:text-sm md:text-base text-neutral-300 leading-relaxed">
-                                Porque resultado não acontece em 30 dias. Acontece quando você cria o <span className="text-primary font-black">HÁBITO</span>,
-                                quando você não desiste, quando você tem uma equipe ao seu lado.
-                                <br className="hidden sm:block" />
-                                <span className="text-white font-semibold">O plano anual é o compromisso que funcionou para centenas de alunos.</span>
-                            </p>
-                            <p className="text-lg sm:text-xl md:text-2xl font-black text-primary mt-3 sm:mt-4">
-                                Agora é sua vez. 💪
-                            </p>
-                        </div>
-                    </Card>
-                </div>
             </div>
         </section>
     );

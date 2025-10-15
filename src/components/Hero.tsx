@@ -160,7 +160,7 @@ const Hero = () => {
               className="w-full sm:w-auto text-base sm:text-lg md:text-xl px-6 sm:px-10 md:px-12 py-5 sm:py-6 md:py-7 rounded-xl sm:rounded-2xl group relative overflow-hidden shadow-floating hover:shadow-glow-primary transition-all duration-300"
             >
               <MessageCircle className="mr-2 sm:mr-3 h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 relative z-10 group-hover:scale-110 transition-transform" />
-              <span className="relative z-10 font-black">� Quero o Plano Anual Full Force!</span>
+              <span className="relative z-10 font-black">Fale no WhatsApp</span>
             </Button>
           </div>
 
