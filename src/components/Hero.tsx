@@ -98,32 +98,32 @@ const Hero = () => {
           />
         </picture>
 
-        {/* Optimized overlay layers for mobile */}
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/95 via-neutral-950/85 to-neutral-950/90" />
+        {/* Optimized overlay layers - More transparent on mobile */}
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/70 via-neutral-950/60 to-neutral-950/75 md:from-neutral-950/85 md:via-neutral-950/75 md:to-neutral-950/85" />
 
-        {/* Subtle radial gradient */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_20%,_rgba(0,0,0,0.6)_100%)]" />
+        {/* Subtle radial gradient - Lighter on mobile */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_30%,_rgba(0,0,0,0.4)_100%)] md:bg-[radial-gradient(ellipse_at_center,_transparent_20%,_rgba(0,0,0,0.6)_100%)]" />
 
         {/* Primary accent glow */}
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/8 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/10 via-transparent to-transparent md:from-primary/8" />
       </div>      {/* Content - Mobile First, Centered */}
       <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
 
           {/* Main Headline - Mobile Optimized */}
-          <h1 className="text-[2.25rem] sm:text-[2.75rem] md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-5 sm:mb-6 md:mb-8 leading-[1.05] tracking-tight px-2">
+          <h1 className="text-[2rem] sm:text-[2.5rem] md:text-5xl lg:text-6xl xl:text-7xl font-black text-white mb-4 sm:mb-5 md:mb-8 leading-[1.1] tracking-tight px-2 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
             Matupá treina na{" "}
-            <span className="text-primary drop-shadow-[0_0_30px_rgba(255,204,0,0.6)] sm:drop-shadow-[0_0_40px_rgba(255,204,0,0.6)] inline-block">
+            <span className="text-primary drop-shadow-[0_0_20px_rgba(255,204,0,0.8)] sm:drop-shadow-[0_0_30px_rgba(255,204,0,0.7)] inline-block">
               Full Force 💪
             </span>
             <br className="hidden sm:block" />
-            <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl block mt-3 sm:mt-4 text-primary font-black">
+            <span className="text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl block mt-2 sm:mt-2 text-primary font-bold drop-shadow-[0_0_15px_rgba(255,204,0,0.8)]">
               Últimas vagas de outubro! 🔥
             </span>
           </h1>
 
           {/* Subtítulo - Mobile Optimized */}
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-neutral-300 mb-5 sm:mb-6 md:mb-8 leading-relaxed max-w-3xl mx-auto font-medium px-2">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white mb-6 sm:mb-8 md:mb-10 leading-relaxed max-w-3xl mx-auto font-semibold px-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
             A academia com{" "}
             <span className="text-white font-bold">acompanhamento real</span>{" "}
             e treinos todos os dias das{" "}
@@ -131,9 +131,9 @@ const Hero = () => {
           </p>
 
           {/* Prova Social - Mobile Optimized */}
-          <div className="mb-6 sm:mb-8 md:mb-10 inline-flex items-center justify-center gap-2 sm:gap-3 bg-neutral-900/60 backdrop-blur-sm px-3 sm:px-4 md:px-6 py-2.5 sm:py-3 md:py-4 rounded-xl sm:rounded-2xl border border-primary/20 shadow-glow-primary">
+          <div className="mb-6 sm:mb-8 md:mb-10 inline-flex items-center justify-center gap-2 sm:gap-3 bg-neutral-900/95 backdrop-blur-md px-3 sm:px-4 md:px-6 py-2.5 sm:py-3 md:py-4 rounded-xl sm:rounded-2xl border-2 border-primary shadow-[0_0_25px_rgba(255,204,0,0.4)]">
             <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl flex-shrink-0">🏋️‍♂️</span>
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-neutral-200 leading-tight text-left">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white leading-tight text-left font-semibold">
               Mais de{" "}
               <span className="text-primary font-black text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl block sm:inline">
                 650 Alunos
@@ -156,20 +156,42 @@ const Hero = () => {
               size="xl"
               variant="premium"
               aria-label="Falar no WhatsApp agora"
-              className="w-full sm:w-auto text-sm sm:text-base md:text-lg lg:text-xl px-5 sm:px-8 md:px-10 lg:px-12 py-4 sm:py-5 md:py-6 lg:py-7 rounded-lg sm:rounded-xl md:rounded-2xl group relative overflow-hidden shadow-floating hover:shadow-glow-primary transition-all duration-300"
+              className="w-full sm:w-auto text-base sm:text-base md:text-lg lg:text-xl px-6 sm:px-8 md:px-10 lg:px-12 py-4 sm:py-5 md:py-6 lg:py-7 rounded-xl sm:rounded-xl md:rounded-2xl group relative overflow-hidden shadow-[0_0_30px_rgba(255,204,0,0.5)] hover:shadow-[0_0_40px_rgba(255,204,0,0.7)] transition-all duration-300 animate-pulse-slow active:scale-95"
             >
               <MessageCircle className="mr-2 sm:mr-2.5 md:mr-3 h-5 w-5 sm:h-5 sm:w-5 md:h-6 md:w-6 lg:h-7 lg:w-7 relative z-10 group-hover:scale-110 transition-transform" />
-              <span className="relative z-10 font-black">Fale no WhatsApp</span>
+              <span className="relative z-10 font-black">💬 Fale no WhatsApp</span>
             </Button>
           </div>
 
           {/* Trust Badge - Mobile Optimized */}
-          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-neutral-400 leading-relaxed max-w-md mx-auto px-3 sm:px-4">
-            <span className="font-bold text-white">Sem compromisso</span> — primeira aula{" "}
-            <span className="text-success font-bold">100% gratuita!</span>
-          </p>
+          <div className="inline-block bg-neutral-950/80 backdrop-blur-sm px-4 py-2 rounded-lg border border-neutral-800">
+            <p className="text-xs sm:text-sm md:text-base lg:text-lg text-neutral-300 leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+              <span className="font-bold text-white">Sem compromisso</span> — primeira aula{" "}
+              <span className="text-success font-bold">100% gratuita!</span>
+            </p>
+          </div>
         </div>
-      </div>      {/* Decorative Gradient - Smooth transition */}
+      </div>      {/* Scroll Indicator - Mobile only */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 animate-bounce md:hidden">
+        <div className="flex flex-col items-center gap-1">
+          <svg
+            className="w-6 h-6 text-primary drop-shadow-[0_0_10px_rgba(255,204,0,0.8)]"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="3"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+          <span className="text-xs text-primary font-semibold drop-shadow-[0_0_8px_rgba(255,204,0,0.8)]">
+            Ver planos
+          </span>
+        </div>
+      </div>
+
+      {/* Decorative Gradient - Smooth transition */}
       <div className="absolute bottom-0 left-0 right-0 h-16 md:h-24 bg-gradient-to-t from-neutral-950 to-transparent z-10 pointer-events-none" />
     </section>
   );
