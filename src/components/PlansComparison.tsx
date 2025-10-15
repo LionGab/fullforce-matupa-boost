@@ -77,23 +77,23 @@ const PlansComparison = () => {
             icon: Check
         },
         {
-            name: "Avaliação física inicial",
-            mensal: true,
-            semestral: true,
-            anual: true,
-            icon: Check
-        },
-        {
-            name: "Acesso 7 dias/semana",
-            mensal: true,
-            semestral: true,
-            anual: true,
-            icon: Check
-        },
-        {
             name: "Horário flexível (04h30 às 21h)",
             mensal: true,
             semestral: true,
+            anual: true,
+            icon: Check
+        },
+        {
+            name: "Avaliação física inicial",
+            mensal: false,
+            semestral: true,
+            anual: true,
+            icon: Check
+        },
+        {
+            name: "Acesso 6 dias/semana",
+            mensal: false,
+            semestral: false,
             anual: true,
             icon: Check
         },
@@ -106,7 +106,7 @@ const PlansComparison = () => {
             highlight: true
         },
         {
-            name: "Reavaliação física trimestral",
+            name: "Avaliação física gratuita",
             mensal: false,
             semestral: false,
             anual: true,
@@ -127,14 +127,6 @@ const PlansComparison = () => {
             semestral: true,
             anual: true,
             icon: Zap,
-            highlight: true
-        },
-        {
-            name: "Desconto em produtos e suplementos",
-            mensal: false,
-            semestral: true,
-            anual: true,
-            icon: Star,
             highlight: true
         },
         {
@@ -171,7 +163,7 @@ const PlansComparison = () => {
                     </h2>
 
                     <p className="text-sm sm:text-base md:text-lg lg:text-xl text-neutral-300 max-w-3xl mx-auto leading-relaxed">
-                        Veja por que <span className="text-primary font-bold">+ de 650 alunos</span> escolheram o Plano Anual:
+                        Veja por que <span className="text-primary font-bold">+ de 800 alunos</span> escolheram o Plano Anual:
                         <br className="hidden sm:block" />
                         <span className="text-white font-semibold">Mais benefícios, mais economia, mais resultados.</span>
                     </p>

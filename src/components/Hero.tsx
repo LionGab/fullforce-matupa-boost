@@ -156,7 +156,7 @@ const Hero = () => {
               size="xl"
               variant="premium"
               aria-label="Falar no WhatsApp agora"
-              className="w-full sm:w-auto sm:max-w-md text-base sm:text-base md:text-lg lg:text-xl px-6 sm:px-8 md:px-10 lg:px-12 py-4 sm:py-5 md:py-6 lg:py-7 rounded-xl sm:rounded-xl md:rounded-2xl group relative overflow-hidden shadow-[0_0_30px_rgba(255,204,0,0.5)] hover:shadow-[0_0_40px_rgba(255,204,0,0.7)] transition-all duration-300 animate-pulse-slow active:scale-95"
+              className="w-full sm:w-auto sm:max-w-md text-base sm:text-base md:text-lg lg:text-xl px-6 sm:px-8 md:px-10 lg:px-12 py-4 sm:py-5 md:py-6 lg:py-7 rounded-xl sm:rounded-xl md:rounded-2xl group relative overflow-hidden shadow-[0_0_30px_rgba(255,204,0,0.6)] hover:shadow-[0_0_40px_rgba(255,204,0,0.8)] transition-all duration-300 hover:scale-105 active:scale-95"
             >
               <MessageCircle className="mr-2 sm:mr-2.5 md:mr-3 h-5 w-5 sm:h-5 sm:w-5 md:h-6 md:w-6 lg:h-7 lg:w-7 relative z-10 group-hover:scale-110 transition-transform" />
               <span className="relative z-10 font-black">💬 Fale no WhatsApp</span>
