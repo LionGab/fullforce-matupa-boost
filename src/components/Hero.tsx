@@ -117,13 +117,13 @@ const Hero = () => {
             <span className="text-primary font-black">04h30 às 21h</span>.
           </p>
 
-          {/* Prova Social - Destaque para 700+ alunos */}
+          {/* Prova Social - Destaque para 650+ alunos */}
           <div className="mb-8 md:mb-10 inline-flex items-center justify-center gap-2 sm:gap-3 bg-neutral-900/60 backdrop-blur-sm px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border border-primary/20 shadow-glow-primary">
             <span className="text-2xl sm:text-3xl md:text-4xl flex-shrink-0">🏋️‍♂️</span>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-neutral-200 leading-tight text-left">
               Mais de{" "}
               <span className="text-primary font-black text-lg sm:text-xl md:text-2xl lg:text-3xl block sm:inline">
-                700 Alunos
+                650 Alunos
               </span>
               {" "}
               <span className="text-white font-bold block sm:inline">
