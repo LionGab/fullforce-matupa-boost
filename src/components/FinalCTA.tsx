@@ -1,6 +1,5 @@
 import { MessageCircle, MapPin, Clock, Navigation } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import gymExterior from "@/assets/gym-exterior.jpg";
 
 const FinalCTA = () => {
   const handleWhatsAppClick = () => {
@@ -83,7 +82,7 @@ const FinalCTA = () => {
 
               <div className="hidden md:block relative min-h-[300px] lg:min-h-[400px]">
                 <img
-                  src={gymExterior}
+                  src="/images/Fachada/fffrente.jpg"
                   alt="Full Force Academia Exterior"
                   className="w-full h-full object-cover"
                   loading="lazy"

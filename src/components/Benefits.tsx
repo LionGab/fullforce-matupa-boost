@@ -42,7 +42,7 @@ const Benefits = () => {
       icon: Sparkles,
       title: "🏠 Ambiente limpo e acolhedor",
       description: "Climatizado, organizado e pensado nos mínimos detalhes para você se sentir confortável e motivado em cada treino.",
-      image: "/images/Fachada/fullforce-facade-sunset.jpg",
+      image: "/images/interior/gym-interior-modern.jpg",
       imageAlt: "Ambiente Acolhedor - Full Force Academia",
       imagePosition: "right" as const,
     },
