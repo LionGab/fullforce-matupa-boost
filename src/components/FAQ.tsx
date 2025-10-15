@@ -36,7 +36,7 @@ const FAQ = () => {
     {
       question: "Quais modalidades estão inclusas nos planos?",
       answer:
-        "Nossos planos incluem acesso completo à musculação, treino funcional, área de cardio e todas as nossas instalações. Consulte nosso time sobre aulas específicas e modalidades extras.",
+        "Nossos planos incluem acesso completo à musculação, área de cardio e todas as nossas instalações. Consulte nosso time sobre treinos específicos e serviços extras.",
     },
     {
       question: "Vocês trabalham com treinamento personalizado?",

@@ -80,7 +80,7 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/95 via-neutral-950/90 to-neutral-950/95" />
         <div className="absolute inset-0 bg-neutral-950/40" />
       </div>
-      
+
       {/* Subtle Pattern Overlay */}
       <div className="absolute inset-0 z-0 opacity-5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(255,204,0,0.15),transparent_70%)]" />

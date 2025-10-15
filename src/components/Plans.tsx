@@ -44,7 +44,7 @@ const Plans = () => {
       isBestValue: false,
       features: [
         "Musculação completa",
-        "CrossFit e Funcional",
+        "Área de cardio",
         "Avaliação física",
         "Acesso 7 dias/semana",
         "Sem fidelidade",
@@ -65,12 +65,11 @@ const Plans = () => {
       isBestValue: true,
       urgency: "Oferta Especial Plano Anual com 37% OFF válido até 31 de Outubro",
       features: [
-        "Tudo do Semestral",
-        "+ Avaliações mensais",
-        "+ Acompanhamento nutricional",
+        "Tudo do Mensal",
+        "+ Treino personalizado",
         "+ 2 convidados grátis/mês",
         "+ Prioridade em eventos",
-        "20% OFF em produtos",
+        "+ Desconto em produtos",
       ],
       buttonText: "🔥 Garantir Desconto de 37%",
       badge: "MAIS ESCOLHIDO",
@@ -90,7 +89,7 @@ const Plans = () => {
         <div className="text-center mb-12 md:mb-16 animate-fade-in">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-subtle border border-primary/20 mb-6 shadow-subtle">
             <Star className="w-4 h-4 text-primary" />
-            <span className="text-sm font-bold text-primary">680+ Alunos</span>
+            <span className="text-sm font-bold text-primary">650+ Alunos</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
