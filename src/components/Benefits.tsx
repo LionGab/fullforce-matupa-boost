@@ -54,6 +54,7 @@ const Benefits = () => {
     imageAlt: "Estrutura Completa - Full Force Academia",
     imagePosition: "left" as const,
   },
+    {
       icon: Trophy,
       title: "🎯 Planos flexíveis para o seu ritmo",
       description: "Sem fidelidade, sem taxas escondidas. Você escolhe o plano que cabe no seu bolso e na sua rotina. Cancele quando quiser.",
