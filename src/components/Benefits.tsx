@@ -46,14 +46,14 @@ const Benefits = () => {
       imageAlt: "Ambiente Acolhedor - Full Force Academia",
       imagePosition: "right" as const,
     },
-   {
-    icon: Dumbbell,
-    title: "Espaço pensado\npara o seu conforto", // quebra de linha
-    description: "Vestiários amplos, estacionamento gratuito, bebedouros e tudo o que você precisa para treinar com tranquilidade e foco.",
-    image: "/images/interior/Halteres-2.jpg",
-    imageAlt: "Estrutura Completa - Full Force Academia",
-    imagePosition: "left" as const,
-  },
+    {
+      icon: Dumbbell,
+      title: "Espaço pensado\npara o seu conforto", // quebra de linha
+      description: "Vestiários amplos, estacionamento gratuito, bebedouros e tudo o que você precisa para treinar com tranquilidade e foco.",
+      image: "/images/interior/Halteres-2.jpg",
+      imageAlt: "Estrutura Completa - Full Force Academia",
+      imagePosition: "left" as const,
+    },
     {
       icon: Trophy,
       title: "🎯 Planos flexíveis para o seu ritmo",
@@ -65,8 +65,33 @@ const Benefits = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-neutral-900" id="beneficios">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 bg-neutral-900 relative overflow-hidden" id="beneficios">
+      {/* Background Image with Transparency - Multiple Layers */}
+      <div className="absolute inset-0 z-0">
+        {/* Main background image */}
+        <div className="absolute inset-0">
+          <img
+            src="/images/Imagens%20Adicionais/fullforce-weights.jpg"
+            alt="Full Force Academia - Equipamentos Premium"
+            className="w-full h-full object-cover object-center opacity-15"
+            loading="lazy"
+          />
+        </div>
+
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-neutral-900/85" />
+
+        {/* Gradient overlay - darker on edges */}
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-900/95 via-neutral-900/80 to-neutral-900/95" />
+
+        {/* Radial gradient for spotlight effect */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(0,0,0,0.5)_100%)]" />
+
+        {/* Yellow accent glow */}
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-transparent" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
@@ -113,10 +138,10 @@ const Benefits = () => {
                   </div>
 
                   {/* Title */}
-<h3 className="text-lg md:text-xl lg:text-2xl font-black text-white mb-4 
+                  <h3 className="text-lg md:text-xl lg:text-2xl font-black text-white mb-4 
   leading-tight group-hover:text-primary transition-smooth break-words">
-  {benefit.title}
-</h3>
+                    {benefit.title}
+                  </h3>
 
                   {/* Description */}
                   <p className="text-sm md:text-base lg:text-lg text-neutral-300 leading-relaxed">
