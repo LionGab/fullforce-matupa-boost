@@ -25,15 +25,15 @@ const Testimonials = () => {
 
   const stats = [
     { number: "4.9★", label: "Avaliação média dos alunos" },
-    { number: "700+", label: "Alunos ativos transformados" },
+    { number: "650+", label: "Alunos ativos transformados" },
     { number: "96.5%", label: "Índice de satisfação real" },
   ];
 
   return (
-    <section className="py-24 bg-background">
+    <section className="py-20 md:py-24 bg-neutral-950">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-black text-foreground mb-4">
+        <div className="text-center mb-12 md:mb-16 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
             Quem Treina na Full Force{" "}
             <span className="text-primary">Não Só Muda o Corpo. Muda de Vida.</span>
           </h2>
@@ -44,12 +44,12 @@ const Testimonials = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="text-center p-6 bg-card rounded-2xl border border-border hover:border-primary/50 transition-smooth"
+              className="text-center p-6 bg-neutral-900 rounded-2xl border border-neutral-800 hover:border-primary/50 transition-smooth hover:shadow-glow-primary"
             >
               <div className="text-4xl md:text-5xl font-black text-primary mb-2">
                 {stat.number}
               </div>
-              <div className="text-lg text-muted-foreground">
+              <div className="text-base md:text-lg text-neutral-300">
                 {stat.label}
               </div>
             </div>
@@ -61,20 +61,20 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
-              className="shadow-card hover:shadow-yellow transition-smooth"
+              className="bg-neutral-900 border-neutral-800 hover:border-primary/50 shadow-card hover:shadow-glow-primary transition-smooth"
             >
-              <CardContent className="p-8">
+              <CardContent className="p-6 md:p-8">
                 <div className="flex items-start gap-4 mb-4">
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-16 h-16 rounded-full object-cover"
+                    className="w-16 h-16 rounded-full object-cover border-2 border-primary/30"
                   />
                   <div>
-                    <h3 className="font-bold text-lg text-foreground">
+                    <h3 className="font-bold text-base md:text-lg text-white">
                       {testimonial.name}
                     </h3>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-xs md:text-sm text-neutral-400">
                       {testimonial.age} anos • {testimonial.location}
                     </p>
                   </div>
@@ -88,7 +88,7 @@ const Testimonials = () => {
 
                 <div className="relative">
                   <Quote className="absolute -top-2 -left-2 w-8 h-8 text-primary/20" />
-                  <p className="text-foreground text-lg leading-relaxed pl-6">
+                  <p className="text-neutral-300 text-sm md:text-base lg:text-lg leading-relaxed pl-6">
                     {testimonial.quote}
                   </p>
                 </div>

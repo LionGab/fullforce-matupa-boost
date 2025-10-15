@@ -65,15 +65,15 @@ const Benefits = () => {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-layer-0" id="beneficios">
+    <section className="py-16 md:py-24 bg-neutral-900" id="beneficios">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-foreground mb-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
             Por que a Full Force é{" "}
             <span className="text-primary">diferente?</span>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg lg:text-xl text-neutral-300 max-w-2xl mx-auto leading-relaxed">
             Mais que equipamentos e horários. Aqui você encontra motivação, apoio e resultados reais.
           </p>
         </div>
@@ -92,7 +92,7 @@ const Benefits = () => {
                   } gap-0`}
               >
                 {/* Image Side */}
-                <div className="w-full md:w-1/2 relative overflow-hidden bg-neutral-100 dark:bg-neutral-900">
+                <div className="w-full md:w-1/2 relative overflow-hidden bg-neutral-950">
                   <div className="aspect-[4/3] md:aspect-auto md:h-full">
                     <img
                       src={benefit.image}
@@ -101,24 +101,24 @@ const Benefits = () => {
                       loading="lazy"
                     />
                     {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-gym-dark/30 opacity-80 group-hover:opacity-60 transition-smooth" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-neutral-950/50 opacity-80 group-hover:opacity-60 transition-smooth" />
                   </div>
                 </div>
 
                 {/* Content Side */}
-                <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center bg-gradient-to-br from-layer-1 to-layer-2">
+                <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center bg-neutral-950">
                   {/* Icon Container */}
-                  <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-primary-subtle mb-6 group-hover:bg-primary/20 transition-smooth group-hover:scale-110 group-hover:rotate-6">
+                  <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-primary/10 mb-6 group-hover:bg-primary/20 transition-smooth group-hover:scale-110 group-hover:rotate-6">
                     <benefit.icon className="w-8 h-8 md:w-10 md:h-10 text-primary" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-foreground mb-4 leading-tight group-hover:text-primary transition-smooth">
+                  <h3 className="text-lg md:text-xl lg:text-2xl font-black text-white mb-4 leading-tight group-hover:text-primary transition-smooth">
                     {benefit.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                  <p className="text-sm md:text-base lg:text-lg text-neutral-300 leading-relaxed">
                     {benefit.description}
                   </p>
 

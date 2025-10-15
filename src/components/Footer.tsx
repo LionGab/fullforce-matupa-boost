@@ -14,12 +14,12 @@ const Footer = () => {
             <h3 className="text-2xl font-black mb-4">
               Full<span className="text-primary">Force</span>
             </h3>
-            <p className="text-gray-400 mb-4 max-w-md leading-relaxed">
+            <p className="text-gray-400 mb-4 max-w-md leading-relaxed text-sm md:text-base">
               💪 <strong className="text-white">Full Force Academia — Matupá, MT</strong>
               <br /><br />
               Transformando corpos e vidas. Mais que músculos, construímos confiança.
               <br /><br />
-              <span className="text-primary font-semibold">Venha fazer parte da nossa comunidade de +700 alunos transformados.</span>
+              <span className="text-primary font-semibold">Venha fazer parte da nossa comunidade de +650 alunos transformados.</span>
             </p>
             <div className="flex gap-4">
               <a
