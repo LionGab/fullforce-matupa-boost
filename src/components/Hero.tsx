@@ -67,23 +67,36 @@ const Hero = () => {
       className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center pt-20 pb-24 md:pt-28 md:pb-32 overflow-hidden"
       aria-label="Hero - Full Force Academia"
     >
-      {/* Background Image with Dark Overlay */}
+      {/* Background Image with Dark Overlay - Enhanced with transparency */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/images/interior/gemini-2.5-flash-image-preview_cross_processing_vintage_film_photography_of_high-end_fitness_gym_interior_photography_modern_arch-0.jpg"
-          alt="Full Force Academia - Interior com equipamentos modernos"
-          className="w-full h-full object-cover object-center"
-          loading="eager"
-          fetchPriority="high"
-        />
-        {/* Dark Overlay - Multiple layers for depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/95 via-neutral-950/90 to-neutral-950/95" />
-        <div className="absolute inset-0 bg-neutral-950/40" />
+        {/* Main background image */}
+        <div className="absolute inset-0">
+          <img
+            src="/images/equipment/fullforce-space.jpg"
+            alt="Full Force Academia - Espaço moderno de treinamento"
+            className="w-full h-full object-cover object-center scale-105 animate-subtle-zoom"
+            loading="eager"
+            fetchPriority="high"
+          />
+        </div>
+
+        {/* Layered Overlays for depth and transparency */}
+        {/* Base dark overlay */}
+        <div className="absolute inset-0 bg-neutral-950/85" />
+
+        {/* Gradient overlay - darker on edges, lighter in center */}
+        <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/90 via-neutral-950/70 to-neutral-950/95" />
+
+        {/* Radial gradient for spotlight effect on center */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(0,0,0,0.4)_100%)]" />
+
+        {/* Yellow accent glow from bottom */}
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/5 via-transparent to-transparent" />
       </div>
 
-      {/* Subtle Pattern Overlay */}
-      <div className="absolute inset-0 z-0 opacity-5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(255,204,0,0.15),transparent_70%)]" />
+      {/* Animated Pattern Overlay */}
+      <div className="absolute inset-0 z-0 opacity-10">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(255,204,0,0.2),transparent_70%)] animate-pulse-slow" />
       </div>      {/* Content - Mobile First, Centered */}
       <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in">

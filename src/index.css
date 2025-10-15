@@ -738,4 +738,39 @@ All colors MUST be HSL.
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
   }
+
+  /* ==========================================
+     HERO BACKGROUND ANIMATIONS
+     ========================================== */
+  @keyframes subtle-zoom {
+
+    0%,
+    100% {
+      transform: scale(1.05);
+    }
+
+    50% {
+      transform: scale(1.08);
+    }
+  }
+
+  @keyframes pulse-slow {
+
+    0%,
+    100% {
+      opacity: 0.1;
+    }
+
+    50% {
+      opacity: 0.15;
+    }
+  }
+
+  .animate-subtle-zoom {
+    animation: subtle-zoom 20s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 8s ease-in-out infinite;
+  }
 }
