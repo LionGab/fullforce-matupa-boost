@@ -53,7 +53,7 @@ const PlansComparison = () => {
         };
 
         window.open(
-            `https://wa.me/556699100808?text=${encodeURIComponent(messages[planType as keyof typeof messages])}`,
+            `https://wa.me/5566999100808?text=${encodeURIComponent(messages[planType as keyof typeof messages])}`,
             "_blank",
             "noopener,noreferrer"
         );
