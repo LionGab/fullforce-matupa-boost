@@ -241,8 +241,8 @@ const Plans = () => {
         {/* Why Annual Plan - Persuasion Section */}
         <div className="max-w-4xl mx-auto animate-slide-up">
           <Card variant="glow" className="overflow-hidden bg-neutral-900 border-primary/30">
-            <CardContent className="p-6 sm:p-8 md:p-12">
-              <div className="text-center mb-6 sm:mb-8">
+            <CardContent className="p-6 sm:p-6 md:p-10">
+              <div className="text-center mb-4 sm:mb-6">
                 <Badge variant="primary" size="lg" className="mb-3 sm:mb-4 text-xs sm:text-sm">
                   <Crown className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
                   Por que escolher o Anual?
