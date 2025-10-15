@@ -83,14 +83,14 @@ const Hero = () => {
         <picture>
           <source
             media="(max-width: 768px)"
-            srcSet="/images/Fachada/fffrente.jpg"
+            srcSet="/images/Fachada/fachada1.jpg"
           />
           <source
             media="(min-width: 769px)"
-            srcSet="/images/equipment/fullforce-space.jpg"
+            srcSet="/images/Fachada/fachada1.jpg"
           />
           <img
-            src="/images/equipment/fullforce-space.jpg"
+            src="/images/Fachada/fachada1.jpg"
             alt="Full Force Academia - Espaço moderno de treinamento"
             className="w-full h-full object-cover object-center"
             loading="eager"
