@@ -104,7 +104,7 @@ const Plans = () => {
         </div>
 
         {/* Plans Grid - Mobile First, 2 cards only */}
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto mb-16">
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto mb-12 md:mb-16">
           {plans.map((plan, index) => (
             <Card
               key={index}
@@ -116,13 +116,13 @@ const Plans = () => {
             >
               {/* Badge "MAIS ESCOLHIDO" */}
               {plan.badge && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20">
+                <div className="absolute -top-2 sm:-top-3 left-1/2 -translate-x-1/2 z-20">
                   <Badge
                     variant="primary"
                     size="lg"
-                    className="animate-bounce-subtle"
+                    className="animate-bounce-subtle text-xs sm:text-sm"
                   >
-                    <Star className="w-4 h-4 fill-current mr-1" />
+                    <Star className="w-3 h-3 sm:w-4 sm:h-4 fill-current mr-1" />
                     {plan.badge}
                   </Badge>
                 </div>
@@ -130,69 +130,69 @@ const Plans = () => {
 
               {/* Urgency Banner (apenas no Anual) */}
               {plan.urgency && (
-                <div className="bg-gradient-to-r from-primary/20 to-orange-500/20 border-b border-primary/30 px-4 py-3 text-center backdrop-blur-sm">
-                  <p className="text-primary text-sm font-bold flex items-center justify-center gap-2">
+                <div className="bg-gradient-to-r from-primary/20 to-orange-500/20 border-b border-primary/30 px-3 sm:px-4 py-2 sm:py-3 text-center backdrop-blur-sm">
+                  <p className="text-primary text-xs sm:text-sm font-bold flex items-center justify-center gap-1 sm:gap-2 flex-wrap">
                     <span className="animate-pulse">🔥</span>
-                    {plan.urgency}
+                    <span className="leading-snug">{plan.urgency}</span>
                   </p>
                 </div>
               )}
 
-              <CardHeader className="pt-10 pb-6 space-y-4">
+              <CardHeader className="pt-8 sm:pt-10 pb-4 sm:pb-6 space-y-3 sm:space-y-4">
                 {/* Plan Title */}
                 <div className="text-center">
-                  <h3 className="text-3xl font-black text-white mb-2">
+                  <h3 className="text-2xl sm:text-3xl font-black text-white mb-1 sm:mb-2">
                     {plan.title}
                   </h3>
-                  <p className="text-neutral-400 font-medium">
+                  <p className="text-sm sm:text-base text-neutral-400 font-medium">
                     {plan.subtitle}
                   </p>
                 </div>
 
                 {/* Price Display */}
-                <div className="text-center py-6">
+                <div className="text-center py-4 sm:py-6">
                   {/* Original Price (tachado) */}
                   {plan.originalPrice && (
-                    <div className="flex items-center justify-center gap-3 mb-2">
-                      <span className="text-2xl text-neutral-500 line-through font-bold">
+                    <div className="flex items-center justify-center gap-2 sm:gap-3 mb-2">
+                      <span className="text-xl sm:text-2xl text-neutral-500 line-through font-bold">
                         R$ {plan.originalPrice}
                       </span>
-                      <TrendingDown className="w-5 h-5 text-red-500" />
+                      <TrendingDown className="w-4 h-4 sm:w-5 sm:h-5 text-red-500" />
                     </div>
                   )}
 
                   {/* Discount Badge */}
                   {plan.discount && (
-                    <div className="inline-block mb-3">
-                      <div className="bg-gradient-to-r from-primary/30 to-orange-500/30 border border-primary/40 text-primary font-black px-4 py-2 rounded-lg text-sm shadow-glow-primary">
+                    <div className="inline-block mb-2 sm:mb-3">
+                      <div className="bg-gradient-to-r from-primary/30 to-orange-500/30 border border-primary/40 text-primary font-black px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm shadow-glow-primary">
                         🔥 {plan.discount}
                       </div>
                     </div>
                   )}
 
                   {/* Main Price */}
-                  <div className="flex items-baseline justify-center gap-1">
-                    <span className="text-2xl text-neutral-400 font-bold">R$</span>
+                  <div className="flex items-baseline justify-center gap-0.5 sm:gap-1">
+                    <span className="text-xl sm:text-2xl text-neutral-400 font-bold">R$</span>
                     <span className={`font-black leading-none ${plan.isPopular
-                      ? "text-7xl md:text-8xl text-primary drop-shadow-[0_0_30px_rgba(255,204,0,0.5)]"
-                      : "text-6xl md:text-7xl text-white"
+                      ? "text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-primary drop-shadow-[0_0_30px_rgba(255,204,0,0.5)]"
+                      : "text-5xl sm:text-6xl md:text-7xl text-white"
                       }`}>
                       {plan.price}
                     </span>
-                    <span className="text-xl text-neutral-400 font-medium">
+                    <span className="text-base sm:text-lg md:text-xl text-neutral-400 font-medium">
                       {plan.period}
                     </span>
                   </div>
 
                   {/* Installment Info */}
-                  <p className="text-neutral-400 text-sm mt-3 font-medium">
+                  <p className="text-neutral-400 text-xs sm:text-sm mt-2 sm:mt-3 font-medium px-2">
                     {plan.installment}
                   </p>
 
                   {/* Savings Info (apenas Anual) */}
                   {plan.savings && (
-                    <div className="mt-4 pt-4 border-t border-primary/20">
-                      <p className="text-primary font-bold text-base">
+                    <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-primary/20 px-2">
+                      <p className="text-primary font-bold text-sm sm:text-base leading-snug">
                         💰 {plan.savings}
                       </p>
                     </div>
@@ -201,13 +201,13 @@ const Plans = () => {
               </CardHeader>
 
               {/* Features List */}
-              <CardContent className="px-6 pb-6">
-                <ul className="space-y-3">
+              <CardContent className="px-4 sm:px-6 pb-4 sm:pb-6">
+                <ul className="space-y-2 sm:space-y-3">
                   {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3 group/item">
-                      <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.isPopular ? "text-primary" : "text-green-500"
+                    <li key={i} className="flex items-start gap-2 sm:gap-3 group/item">
+                      <Check className={`w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 mt-0.5 ${plan.isPopular ? "text-primary" : "text-green-500"
                         }`} />
-                      <span className="text-sm text-neutral-300 font-medium leading-relaxed group-hover/item:text-primary transition-colors">
+                      <span className="text-xs sm:text-sm text-neutral-300 font-medium leading-relaxed group-hover/item:text-primary transition-colors">
                         {feature}
                       </span>
                     </li>
@@ -216,20 +216,20 @@ const Plans = () => {
               </CardContent>
 
               {/* CTA Button */}
-              <CardFooter className="px-6 pb-6">
+              <CardFooter className="px-4 sm:px-6 pb-4 sm:pb-6">
                 <Button
                   onClick={() => handleWhatsAppClick(plan.title)}
                   size="lg"
                   variant={plan.isPopular ? "premium" : "success"}
-                  className="w-full"
+                  className="w-full text-sm sm:text-base py-3 sm:py-4"
                 >
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  {plan.buttonText}
+                  <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  <span className="truncate">{plan.buttonText}</span>
                 </Button>
 
                 {/* Guarantee (apenas Anual) */}
                 {plan.guarantee && (
-                  <p className="text-xs text-neutral-400 text-center mt-3 font-medium">
+                  <p className="text-xs text-neutral-400 text-center mt-2 sm:mt-3 font-medium leading-snug">
                     {plan.guarantee}
                   </p>
                 )}
@@ -241,51 +241,51 @@ const Plans = () => {
         {/* Why Annual Plan - Persuasion Section */}
         <div className="max-w-4xl mx-auto animate-slide-up">
           <Card variant="glow" className="overflow-hidden bg-neutral-900 border-primary/30">
-            <CardContent className="p-8 md:p-12">
-              <div className="text-center mb-8">
-                <Badge variant="primary" size="lg" className="mb-4">
-                  <Crown className="w-5 h-5 mr-2" />
+            <CardContent className="p-6 sm:p-8 md:p-12">
+              <div className="text-center mb-6 sm:mb-8">
+                <Badge variant="primary" size="lg" className="mb-3 sm:mb-4 text-xs sm:text-sm">
+                  <Crown className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
                   Por que escolher o Anual?
                 </Badge>
 
-                <h3 className="text-2xl md:text-3xl font-black text-white mb-4 leading-tight">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white mb-3 sm:mb-4 leading-tight px-2">
                   💡 Por Que a Maioria Escolhe o Plano Anual?
                 </h3>
               </div>
 
-              <div className="space-y-6 text-center">
-                <p className="text-lg text-neutral-300 leading-relaxed">
+              <div className="space-y-4 sm:space-y-6 text-center">
+                <p className="text-base sm:text-lg text-neutral-300 leading-relaxed px-2">
                   Porque <span className="text-white font-bold">resultado não acontece em 30 dias</span>.
                   Acontece quando você cria o <span className="text-primary font-black">HÁBITO</span>,
                   quando você não desiste, quando você tem uma equipe ao seu lado empurrando você para frente.
                 </p>
 
-                <div className="py-6 px-6 bg-neutral-950 rounded-xl border border-primary/20 shadow-card">
-                  <p className="text-xl md:text-2xl text-white font-bold mb-2">
+                <div className="py-4 sm:py-6 px-4 sm:px-6 bg-neutral-950 rounded-xl border border-primary/20 shadow-card">
+                  <p className="text-lg sm:text-xl md:text-2xl text-white font-bold mb-2 leading-snug">
                     O plano anual é o compromisso que <span className="text-primary font-black">650+ alunos</span> fizeram com eles mesmos.
                   </p>
-                  <p className="text-2xl md:text-3xl font-black text-primary mt-4">
+                  <p className="text-xl sm:text-2xl md:text-3xl font-black text-primary mt-3 sm:mt-4">
                     E funcionou. ✓
                   </p>
                 </div>
 
-                <p className="text-2xl md:text-3xl font-black text-white pt-4">
+                <p className="text-xl sm:text-2xl md:text-3xl font-black text-white pt-3 sm:pt-4">
                   Agora é sua vez. 💪
                 </p>
 
                 {/* Social Proof Mini */}
-                <div className="flex items-center justify-center gap-8 pt-6 border-t border-neutral-800">
-                  <div className="text-center">
-                    <div className="text-3xl font-black text-primary">4.9★</div>
-                    <div className="text-xs text-neutral-400 font-medium">Avaliação</div>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 pt-4 sm:pt-6 border-t border-neutral-800">
+                  <div className="text-center min-w-[80px]">
+                    <div className="text-2xl sm:text-3xl font-black text-primary">4.9★</div>
+                    <div className="text-xs text-neutral-400 font-medium mt-1">Avaliação</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-black text-primary">650+</div>
-                    <div className="text-xs text-neutral-400 font-medium">Alunos</div>
+                  <div className="text-center min-w-[80px]">
+                    <div className="text-2xl sm:text-3xl font-black text-primary">650+</div>
+                    <div className="text-xs text-neutral-400 font-medium mt-1">Alunos</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-black text-primary">37%</div>
-                    <div className="text-xs text-neutral-400 font-medium">Economia</div>
+                  <div className="text-center min-w-[80px]">
+                    <div className="text-2xl sm:text-3xl font-black text-primary">37%</div>
+                    <div className="text-xs text-neutral-400 font-medium mt-1">Economia</div>
                   </div>
                 </div>
               </div>
