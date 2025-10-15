@@ -35,9 +35,9 @@ const facilities: Facility[] = [
     {
         icon: Wind,
         title: "Espaço pensado para o seu conforto",
-        description: "Equipamentos premium e modernos em um ambiente que inspira resultados. Venha treinar com o que há de melhor em estrutura.",
-        image: "/images/interior/fullforce-treadmills.jpg",
-        imageAlt: "Equipamentos premium Full Force - Área de cardio com esteiras modernas e ambiente climatizado",
+        description: "Vestiários amplos, estacionamento gratuito, bebedouros e tudo o que você precisa para treinar com tranquilidade e foco.",
+        image: "/images/Imagens Adicionais/equipeff4.jpg",
+        imageAlt: "Equipamentos premium Full Force - Área de musculação com anilhas e equipamentos modernos",
         badge: "Premium",
         gradient: "from-primary/20 to-orange-500/20"
     },
