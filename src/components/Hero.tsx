@@ -1,6 +1,7 @@
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import LogoResponsive from "@/components/LogoResponsive";
 
 /**
  * Hero Section - Primeira impressão e conversão principal
@@ -121,6 +122,16 @@ const Hero = () => {
               Últimas vagas de outubro! 🔥
             </span>
           </h1>
+
+          {/* Logo com Efeito - Hero */}
+          <div className="mb-6 sm:mb-8 md:mb-10">
+            <LogoResponsive
+              variant="hero"
+              size="lg"
+              withGlow={true}
+              className="animate-fade-in"
+            />
+          </div>
 
           {/* Subtítulo - Mobile Optimized */}
           <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white mb-6 sm:mb-8 md:mb-10 leading-relaxed max-w-3xl mx-auto font-semibold px-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">

@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ThemeToggle";
-import logo from "@/assets/logo.jpg";
+import LogoResponsive from "@/components/LogoResponsive";
 
 const Header = () => {
   const handleWhatsAppClick = () => {
@@ -12,13 +12,13 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-gym-dark/95 backdrop-blur-sm border-b border-gym-gray">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img 
-            src={logo} 
-            alt="Full Force Academia" 
-            className="h-12 w-auto object-contain"
+          <LogoResponsive
+            variant="header"
+            size="md"
+            className="cursor-pointer hover:scale-105 transition-transform"
           />
         </div>
-        
+
         <div className="flex items-center gap-3">
           <ThemeToggle />
           <Button

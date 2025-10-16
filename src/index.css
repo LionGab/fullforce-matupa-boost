@@ -773,4 +773,20 @@ All colors MUST be HSL.
   .animate-pulse-slow {
     animation: pulse-slow 8s ease-in-out infinite;
   }
+
+  /* Logo Animations */
+  @keyframes pulse-subtle {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.02);
+      opacity: 0.9;
+    }
+  }
+
+  .animate-pulse-subtle {
+    animation: pulse-subtle 3s ease-in-out infinite;
+  }
 }
