@@ -124,27 +124,20 @@ const Hero = () => {
 
           {/* Subtítulo - Mobile Optimized */}
           <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white mb-6 sm:mb-8 md:mb-10 leading-relaxed max-w-3xl mx-auto font-semibold px-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-            A academia com{" "}
+            Treinos com{" "}
             <span className="text-white font-bold">acompanhamento real</span>{" "}
-            e treinos todos os dias das{" "}
-            <span className="text-primary font-black">04h30 às 21h</span>.
+            — de segunda a sexta das{" "}
+            <span className="text-primary font-black">04h30 às 21h</span>, aos sábados das{" "}
+            <span className="text-primary font-black">06h às 09h</span>. Domingo é nosso descanso.{" "}
+            <span className="text-xl">💪</span>
           </p>
 
-          {/* Prova Social - Mobile Optimized */}
+          {/* Prova Social Indireta - Mobile Optimized */}
           <div className="mb-6 sm:mb-8 md:mb-10 inline-flex items-center justify-center gap-2 sm:gap-3 bg-neutral-900/95 backdrop-blur-md px-3 sm:px-4 md:px-6 py-2.5 sm:py-3 md:py-4 rounded-xl sm:rounded-2xl border-2 border-primary/70 shadow-[0_0_25px_rgba(255,204,0,0.4)]">
             <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl flex-shrink-0">🏋️‍♂️</span>
-            <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-white leading-tight text-left font-semibold">
-              Mais de{" "}
-              <span className="text-primary font-black text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl block sm:inline">
-                650 Alunos
-              </span>
-              {" "}
-              <span className="text-white font-bold block sm:inline">
-                Já Começaram.
-              </span>
-              <br />
-              <span className="text-sm sm:text-base md:text-lg lg:text-xl text-white font-bold block mt-1">
-                Falta Só Você.
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white leading-tight text-center font-bold">
+              <span className="text-primary font-black">
+                A academia que faz Matupá se mover 💪
               </span>
             </p>
           </div>
