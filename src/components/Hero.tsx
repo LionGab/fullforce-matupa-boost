@@ -75,7 +75,7 @@ const Hero = () => {
 
   return (
     <section
-      className="relative min-h-[85vh] sm:min-h-[90vh] md:min-h-screen flex items-center justify-center pt-16 sm:pt-20 pb-20 sm:pb-24 md:pt-28 md:pb-32 overflow-hidden"
+      className="relative min-h-[85vh] sm:min-h-[90vh] md:min-h-screen flex items-center justify-center pt-20 sm:pt-24 pb-16 sm:pb-20 md:pt-32 md:pb-32 overflow-hidden"
       aria-label="Hero - Full Force Academia"
     >
       {/* Background Image - Mobile Optimized */}
@@ -123,11 +123,11 @@ const Hero = () => {
             </span>
           </h1>
 
-          {/* Logo com Efeito - Hero */}
-          <div className="mb-6 sm:mb-8 md:mb-10">
+          {/* Logo com Efeito - Hero Mobile Optimized */}
+          <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-10">
             <LogoResponsive
               variant="hero"
-              size="lg"
+              size="md" 
               withGlow={true}
               className="animate-fade-in"
             />

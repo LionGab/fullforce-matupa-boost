@@ -13,8 +13,8 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="mb-4">
-              <LogoResponsive 
-                variant="footer" 
+              <LogoResponsive
+                variant="footer"
                 size="md"
                 className="mb-2"
               />
