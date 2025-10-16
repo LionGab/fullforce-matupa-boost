@@ -14,7 +14,7 @@ const Header = () => {
         <div className="flex items-center gap-3">
           <LogoResponsive
             variant="header"
-            size="sm" 
+            size="sm"
             mobileSymbolOnly={true}
             className="cursor-pointer active:scale-95 sm:hover:scale-105 transition-transform"
           />

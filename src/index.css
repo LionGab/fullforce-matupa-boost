@@ -795,12 +795,13 @@ All colors MUST be HSL.
 
   /* Mobile-specific optimizations */
   @media (max-width: 640px) {
+
     /* Disable expensive animations on mobile for better performance */
     .mobile-performance-first * {
       animation-duration: 0.1s !important;
       transition-duration: 0.2s !important;
     }
-    
+
     /* Touch-friendly interactions */
     .logo-mobile-touch {
       touch-action: manipulation;
@@ -809,7 +810,7 @@ All colors MUST be HSL.
       -webkit-user-select: none;
       user-select: none;
     }
-    
+
     /* Optimize transforms for mobile */
     .mobile-transform {
       transform: translateZ(0);

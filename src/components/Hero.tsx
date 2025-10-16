@@ -127,7 +127,7 @@ const Hero = () => {
           <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-10">
             <LogoResponsive
               variant="hero"
-              size="md" 
+              size="md"
               withGlow={true}
               className="animate-fade-in"
             />

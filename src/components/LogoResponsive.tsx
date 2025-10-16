@@ -55,7 +55,7 @@ const LogoResponsive = ({
     // Seleção da logo baseada no tema, variante e dispositivo MOBILE-FIRST
     const getLogoSrc = () => {
         const isDark = mounted ? (resolvedTheme === 'dark') : true;
-        
+
         // No mobile, usar símbolo quando especificado
         if (isMobile && (mobileSymbolOnly || variant === "header")) {
             return isDark ? "/logo-symbol-yellow.jpg" : "/logo-symbol-only.jpg";
@@ -71,7 +71,7 @@ const LogoResponsive = ({
 
             case "header":
                 // Header mobile = símbolo, header desktop = logo completa
-                return isMobile 
+                return isMobile
                     ? (isDark ? "/logo-symbol-yellow.jpg" : "/logo-symbol-only.jpg")
                     : (isDark ? "/logo-full-white.jpg" : "/logo-full-dark.jpg");
 
@@ -106,8 +106,8 @@ const LogoResponsive = ({
             {glowEffect}
             <img
                 src={getLogoSrc()}
-                alt={isMobile && variant === "header" 
-                    ? "Full Force Academia" 
+                alt={isMobile && variant === "header"
+                    ? "Full Force Academia"
                     : "Full Force Academia - A academia que faz Matupá se mover"
                 }
                 className={baseClasses}
@@ -121,7 +121,7 @@ const LogoResponsive = ({
                     }
                 }}
                 // Touch optimization para mobile
-                style={isMobile ? { 
+                style={isMobile ? {
                     touchAction: 'manipulation',
                     WebkitTapHighlightColor: 'transparent'
                 } : {}}
