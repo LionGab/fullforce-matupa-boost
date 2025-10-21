@@ -1,8 +1,22 @@
-# Welcome to your Lovable project
+# Full Force Academia - Website de Conversão
+
+Site otimizado para conversão de leads via Google Ads para a maior academia de Matupá-MT.
 
 ## Project info
 
 **URL**: https://lovable.dev/projects/9bcb9a96-b439-4406-9ae1-10f1552ba7d2
+
+## 🤖 GitHub Copilot Instructions
+
+This repository includes comprehensive custom instructions for GitHub Copilot at `.github/copilot-instructions.md`. These instructions help Copilot understand:
+
+- Project architecture and tech stack
+- Design system and UX/UI philosophy
+- SEO and marketing requirements
+- Performance optimization goals
+- Coding conventions and best practices
+
+Make sure to review the instructions file before making significant changes to understand the project's conversion-focused philosophy.
 
 ## How can I edit this code?
 
@@ -36,6 +50,40 @@ npm i
 npm run dev
 ```
 
+## 🛠️ Development Commands
+
+```sh
+# Install dependencies
+npm install
+
+# Start development server (default port: 5173)
+npm run dev
+
+# Lint the codebase
+npm run lint
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## 📁 Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── Hero.tsx        # Main hero section with CTA
+│   ├── Plans.tsx       # Pricing plans (Monthly/Annual)
+│   ├── Benefits.tsx    # Academy benefits
+│   ├── Testimonials.tsx # Customer testimonials
+│   └── ui/             # shadcn/ui reusable components
+├── lib/                # Utilities
+└── pages/              # Page components
+    └── Index.tsx       # Landing page
+```
+
 **Edit a file directly in GitHub**
 
 - Navigate to the desired file(s).
@@ -54,11 +102,13 @@ npm run dev
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Framework**: React 18 + TypeScript + Vite
+- **UI Library**: shadcn/ui (Radix UI components)
+- **Styling**: Tailwind CSS
+- **Theme**: next-themes (Dark/Light mode)
+- **Analytics**: Google Analytics 4
+- **Deploy**: Netlify with optimized caching
+- **Package Manager**: npm (Bun also supported)
 
 ## How can I deploy this project?
 
