@@ -1,3 +1,30 @@
+---
+applyTo:
+  paths:
+    - "src/**"
+    - "*.config.ts"
+    - "*.config.js"
+    - "!node_modules/**"
+    - "!dist/**"
+  languages:
+    - "typescript"
+    - "javascript"
+    - "tsx"
+    - "jsx"
+  agents:
+    - "Copilot"
+build:
+  - command: "npm install"
+    description: "Install project dependencies"
+  - command: "npm run lint"
+    description: "Lint the codebase using ESLint"
+  - command: "npm run build"
+    description: "Build production-ready bundle with Vite"
+test:
+  - command: "npm run preview"
+    description: "Preview production build locally"
+---
+
 # Full Force Academia - Guia para Agentes de IA
 
 ## 🎯 Contexto do Projeto
@@ -311,6 +338,60 @@ Quando trabalhar neste projeto:
 
 ---
 
-**Última atualização**: 15 de outubro de 2025
-**Versão do projeto**: 1.0.0
+## 🤖 Diretrizes para Assistentes de IA
+
+### Code Completion Preferences
+- **Imports**: Use named imports para componentes React e utilities
+- **Styling**: Prefer Tailwind CSS classes over inline styles
+- **Components**: Use functional components with TypeScript interfaces
+- **State Management**: Use React hooks (useState, useEffect, useMemo)
+- **Event Handlers**: Follow naming convention `handleEventName` (e.g., `handleClick`, `handleSubmit`)
+
+### Code Quality Standards
+- **TypeScript**: Always provide explicit types for function parameters and return values
+- **Error Handling**: Wrap risky operations in try-catch blocks
+- **Accessibility**: Include proper ARIA labels and semantic HTML
+- **Performance**: Memoize expensive calculations and avoid unnecessary re-renders
+- **Security**: Never hardcode sensitive data; use environment variables
+
+### Common Patterns to Follow
+```typescript
+// Component structure
+interface ComponentProps {
+  // Props with explicit types
+}
+
+const Component: React.FC<ComponentProps> = ({ prop1, prop2 }) => {
+  // Constants and configuration first
+  const CONFIG = { /* ... */ };
+  
+  // Hooks
+  const [state, setState] = useState<Type>(initialValue);
+  
+  // Event handlers
+  const handleEvent = () => {
+    // Implementation
+  };
+  
+  // Render
+  return (
+    <div className="mobile-first lg:desktop-class">
+      {/* Content */}
+    </div>
+  );
+};
+
+export default Component;
+```
+
+### Testing Approach
+- Test responsiveness on mobile devices (80% of traffic)
+- Verify WhatsApp links open correctly
+- Ensure GA4 events fire on interactions
+- Validate Schema.org markup with Google Rich Results Test
+
+---
+
+**Última atualização**: 21 de outubro de 2025
+**Versão do projeto**: 1.0.1
 **Status**: Em produção ativa (campanha Google Ads rodando)
